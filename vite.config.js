@@ -31,6 +31,7 @@ export default defineConfig({
         ],
       },
       manifest: {
+        id: BASE,
         name: 'Hyrox Cancún 2027',
         short_name: 'Hyrox CUN',
         description: 'Plan integrado de entrenamiento, nutrición y día a día para Hyrox Cancún 2027.',
