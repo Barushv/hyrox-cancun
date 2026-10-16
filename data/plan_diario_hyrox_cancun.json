@@ -1,0 +1,4749 @@
+{
+  "version": "1.1",
+  "generado": "2026-10-15",
+  "horarios_comida_fijos": {
+    "desayuno": "08:00",
+    "colacion_1": "12:00",
+    "comida": "15:00",
+    "colacion_2": "18:00",
+    "cena_dia_con_sesion_20h": "22:00",
+    "cena_dia_sin_sesion_nocturna": "20:30"
+  },
+  "como_leer": "Cada día tiene anclas (hora de la sesión). Los ítems con ref distinto de 'fija' usan offset_min respecto a esa ancla: hora = ancla + offset. Los ítems 'fija' tienen hora_default editable. Las 5 comidas fijas respetan el horario del atleta; las tomas pre y post-sesión son satélites.",
+  "tipos_item": [
+    "despertar",
+    "comida",
+    "suplemento",
+    "hidratacion",
+    "entreno",
+    "cama"
+  ],
+  "dias": [
+    {
+      "id": "lunes_A",
+      "dia": "lunes",
+      "variante": "A: clase en la mañana",
+      "nutricion": "media",
+      "anclas": {
+        "clase": "05:00"
+      },
+      "items": [
+        {
+          "ref": "clase",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -60,
+          "hora": "04:00"
+        },
+        {
+          "ref": "clase",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -30,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "04:30"
+        },
+        {
+          "ref": "clase",
+          "tipo": "entreno",
+          "titulo": "Clase Strength",
+          "detalle": "Esfuerzo 8/10. Agua con Seltz durante la clase.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "hora": "05:00"
+        },
+        {
+          "ref": "clase",
+          "tipo": "comida",
+          "titulo": "Mini-toma post-sesión",
+          "detalle": "Batido: 1 scoop de whey (o leche + yogurt) + 1 plátano. Dentro de 30-60 min de terminar la sesión.",
+          "duracion_min": 10,
+          "offset_min": 75,
+          "macros": {
+            "p": 20,
+            "c": 35,
+            "g": 3
+          },
+          "hora": "06:15"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 25,
+            "c": 70,
+            "g": 12
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 66,
+              "rol": "proteina",
+              "macros": {
+                "p": 7.2,
+                "c": 0.4,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "4 piezas",
+              "piezas": 4,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "carbo",
+              "macros": {
+                "p": 5.6,
+                "c": 48,
+                "g": 2.8
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "1 pieza",
+              "piezas": 1,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.3,
+                "c": 27,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 125,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 21.7,
+                "c": 0,
+                "g": 2.5
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "350 g (≈ 2¼ tazas)",
+              "gramos": 350,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 9.5,
+                "c": 98,
+                "g": 1.1
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 15,
+            "c": 60,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "40 g",
+              "gramos": 40,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 7.2,
+                "c": 0.8,
+                "g": 0.8
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "½ taza",
+              "piezas": 0.5,
+              "unidad": "taza",
+              "gramos": 70,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.4,
+                "c": 7.5,
+                "g": 0.2
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra.",
+          "duracion_min": 30,
+          "hora_default": "20:30",
+          "macros": {
+            "p": 35,
+            "c": 105,
+            "g": 25
+          },
+          "hora": "20:30",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "320 g (≈ 2¼ tazas)",
+              "gramos": 320,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 18.6,
+                "c": 99.2,
+                "g": 2.9
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 20:30 y cama a las 21:30 duermes ~6.5 h si mañana te levantas a las 04:00. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde.",
+          "duracion_min": 0,
+          "hora_default": "21:30",
+          "hora": "21:30"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 499,
+        "g": 80,
+        "kcal": 3356
+      }
+    },
+    {
+      "id": "lunes_B",
+      "dia": "lunes",
+      "variante": "B: clase en la noche",
+      "nutricion": "media",
+      "anclas": {
+        "clase": "20:00"
+      },
+      "items": [
+        {
+          "ref": "fija",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "hora_default": "07:00",
+          "hora": "07:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 35,
+            "c": 90,
+            "g": 15
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "5 piezas",
+              "piezas": 5,
+              "unidad": "pieza",
+              "gramos": 165,
+              "rol": "proteina",
+              "macros": {
+                "p": 18,
+                "c": 1,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "3 piezas",
+              "piezas": 3,
+              "unidad": "pieza",
+              "gramos": 90,
+              "rol": "carbo",
+              "macros": {
+                "p": 4.2,
+                "c": 36,
+                "g": 2.1
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 240,
+              "rol": "fruta",
+              "macros": {
+                "p": 2.6,
+                "c": 54,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 130,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 21.7,
+                "c": 0,
+                "g": 2.5
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "370 g (≈ 2¼ tazas)",
+              "gramos": 370,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 10,
+                "c": 103.6,
+                "g": 1.1
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 20,
+            "c": 70,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 12.6,
+                "c": 1.4,
+                "g": 1.4
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "clase",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -45,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "19:15"
+        },
+        {
+          "ref": "clase",
+          "tipo": "entreno",
+          "titulo": "Clase Strength",
+          "detalle": "Esfuerzo 8/10. Agua con Seltz durante la clase.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "hora": "20:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra. Es tu comida post-sesión.",
+          "duracion_min": 30,
+          "hora_default": "22:00",
+          "macros": {
+            "p": 40,
+            "c": 105,
+            "g": 25
+          },
+          "hora": "22:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "320 g (≈ 2¼ tazas)",
+              "gramos": 320,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 18.6,
+                "c": 99.2,
+                "g": 2.9
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 22:00 y cama a las 23:00 duermes ~5.0 h si mañana te levantas a las 04:00. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde.",
+          "duracion_min": 0,
+          "hora_default": "23:00",
+          "hora": "23:00"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 499,
+        "g": 80,
+        "kcal": 3356
+      }
+    },
+    {
+      "id": "martes_A",
+      "dia": "martes",
+      "variante": "A: con clase Engine (extra)",
+      "nutricion": "alta",
+      "anclas": {
+        "gym": "05:00",
+        "engine": "20:00"
+      },
+      "items": [
+        {
+          "ref": "gym",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -60,
+          "hora": "04:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -30,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "04:30"
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Gym superior A",
+          "detalle": "~50-60 min, 1-3 repeticiones en reserva. Sin core hoy.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "hora": "05:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "suplemento",
+          "titulo": "Cafeína 100 mg",
+          "detalle": "45 min antes de Intervalos 1.",
+          "duracion_min": 0,
+          "offset_min": 30,
+          "opcional": true,
+          "hora": "05:30"
+        },
+        {
+          "ref": "gym",
+          "tipo": "comida",
+          "titulo": "Pausa: carbohidrato rápido",
+          "detalle": "2-3 dátiles o una fruta + agua con Seltz. 10-15 min.",
+          "duracion_min": 15,
+          "offset_min": 60,
+          "macros": {
+            "p": 0,
+            "c": 15,
+            "g": 0
+          },
+          "hora": "06:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Intervalos 1 (técnica + bloque principal)",
+          "detalle": "Según el bloque de la semana. Manda la FC (Helio). El desayuno de las 8:00 funciona como comida post.",
+          "duracion_min": 60,
+          "offset_min": 75,
+          "hora": "06:15"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 35,
+            "c": 110,
+            "g": 15
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "4 piezas",
+              "piezas": 4,
+              "unidad": "pieza",
+              "gramos": 132,
+              "rol": "proteina",
+              "macros": {
+                "p": 14.4,
+                "c": 0.8,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "5 piezas",
+              "piezas": 5,
+              "unidad": "pieza",
+              "gramos": 150,
+              "rol": "carbo",
+              "macros": {
+                "p": 7,
+                "c": 60,
+                "g": 3.5
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 240,
+              "rol": "fruta",
+              "macros": {
+                "p": 2.6,
+                "c": 54,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 150,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "440 g (≈ 2¾ tazas)",
+              "gramos": 440,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 11.9,
+                "c": 123.2,
+                "g": 1.3
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 20,
+            "c": 80,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 12.6,
+                "c": 1.4,
+                "g": 1.4
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "2 tazas",
+              "piezas": 2,
+              "unidad": "taza",
+              "gramos": 280,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.4,
+                "c": 30,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "engine",
+          "tipo": "entreno",
+          "titulo": "Clase Engine (extra opcional)",
+          "detalle": "Controlada 6-7/10. Se cancela si duermes menos de 6 h, el semáforo no está en verde o la fuerza está bajando.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "opcional": true,
+          "hora": "20:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra. Es tu comida post-sesión.",
+          "duracion_min": 30,
+          "hora_default": "22:00",
+          "macros": {
+            "p": 40,
+            "c": 120,
+            "g": 25
+          },
+          "hora": "22:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "360 g (≈ 2½ tazas)",
+              "gramos": 360,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 20.9,
+                "c": 111.6,
+                "g": 3.2
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 22:00 y cama a las 23:00 duermes ~5.0 h si mañana te levantas a las 04:00. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde. Con Engine esta noche, es la primera sesión que se cancela si estás cansado.",
+          "duracion_min": 0,
+          "hora_default": "23:00",
+          "hora": "23:00"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 579,
+        "g": 80,
+        "kcal": 3676
+      }
+    },
+    {
+      "id": "martes_B",
+      "dia": "martes",
+      "variante": "B: sin Engine",
+      "nutricion": "alta",
+      "anclas": {
+        "gym": "05:00"
+      },
+      "items": [
+        {
+          "ref": "gym",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -60,
+          "hora": "04:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -30,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "04:30"
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Gym superior A",
+          "detalle": "~50-60 min, 1-3 repeticiones en reserva. Sin core hoy.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "hora": "05:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "suplemento",
+          "titulo": "Cafeína 100 mg",
+          "detalle": "45 min antes de Intervalos 1.",
+          "duracion_min": 0,
+          "offset_min": 30,
+          "opcional": true,
+          "hora": "05:30"
+        },
+        {
+          "ref": "gym",
+          "tipo": "comida",
+          "titulo": "Pausa: carbohidrato rápido",
+          "detalle": "2-3 dátiles o una fruta + agua con Seltz. 10-15 min.",
+          "duracion_min": 15,
+          "offset_min": 60,
+          "macros": {
+            "p": 0,
+            "c": 15,
+            "g": 0
+          },
+          "hora": "06:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Intervalos 1 (técnica + bloque principal)",
+          "detalle": "Según el bloque de la semana. Manda la FC (Helio). El desayuno de las 8:00 funciona como comida post.",
+          "duracion_min": 60,
+          "offset_min": 75,
+          "hora": "06:15"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 35,
+            "c": 110,
+            "g": 15
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "4 piezas",
+              "piezas": 4,
+              "unidad": "pieza",
+              "gramos": 132,
+              "rol": "proteina",
+              "macros": {
+                "p": 14.4,
+                "c": 0.8,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "5 piezas",
+              "piezas": 5,
+              "unidad": "pieza",
+              "gramos": 150,
+              "rol": "carbo",
+              "macros": {
+                "p": 7,
+                "c": 60,
+                "g": 3.5
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 240,
+              "rol": "fruta",
+              "macros": {
+                "p": 2.6,
+                "c": 54,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 150,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "440 g (≈ 2¾ tazas)",
+              "gramos": 440,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 11.9,
+                "c": 123.2,
+                "g": 1.3
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 20,
+            "c": 80,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 12.6,
+                "c": 1.4,
+                "g": 1.4
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "2 tazas",
+              "piezas": 2,
+              "unidad": "taza",
+              "gramos": 280,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.4,
+                "c": 30,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra.",
+          "duracion_min": 30,
+          "hora_default": "20:30",
+          "macros": {
+            "p": 40,
+            "c": 120,
+            "g": 25
+          },
+          "hora": "20:30",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "360 g (≈ 2½ tazas)",
+              "gramos": 360,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 20.9,
+                "c": 111.6,
+                "g": 3.2
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 20:30 y cama a las 21:30 duermes ~6.5 h si mañana te levantas a las 04:00. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde.",
+          "duracion_min": 0,
+          "hora_default": "21:30",
+          "hora": "21:30"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 579,
+        "g": 80,
+        "kcal": 3676
+      }
+    },
+    {
+      "id": "miercoles_A",
+      "dia": "miercoles",
+      "variante": "A: clase en la mañana y rodaje después",
+      "nutricion": "media",
+      "anclas": {
+        "clase": "05:00"
+      },
+      "items": [
+        {
+          "ref": "clase",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -60,
+          "hora": "04:00"
+        },
+        {
+          "ref": "clase",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -30,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "04:30"
+        },
+        {
+          "ref": "clase",
+          "tipo": "entreno",
+          "titulo": "Clase Hybrid (controlada)",
+          "detalle": "6-7/10, FC máxima Z3 alto.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "hora": "05:00"
+        },
+        {
+          "ref": "clase",
+          "tipo": "hidratacion",
+          "titulo": "Agua con Seltz",
+          "detalle": "Sorbos durante la pausa de 10-15 min.",
+          "duracion_min": 0,
+          "offset_min": 60,
+          "hora": "06:00"
+        },
+        {
+          "ref": "clase",
+          "tipo": "entreno",
+          "titulo": "Rodaje fácil 30 min",
+          "detalle": "Z2 (máximo 131 lpm), 4 strides y 2 ejercicios de técnica.",
+          "duracion_min": 35,
+          "offset_min": 75,
+          "hora": "06:15"
+        },
+        {
+          "ref": "clase",
+          "tipo": "comida",
+          "titulo": "Mini-toma post-sesión",
+          "detalle": "Batido: 1 scoop de whey (o leche + yogurt) + 1 plátano. Dentro de 30-60 min de terminar la sesión.",
+          "duracion_min": 10,
+          "offset_min": 120,
+          "macros": {
+            "p": 20,
+            "c": 35,
+            "g": 3
+          },
+          "hora": "07:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 25,
+            "c": 70,
+            "g": 12
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 66,
+              "rol": "proteina",
+              "macros": {
+                "p": 7.2,
+                "c": 0.4,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "4 piezas",
+              "piezas": 4,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "carbo",
+              "macros": {
+                "p": 5.6,
+                "c": 48,
+                "g": 2.8
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "1 pieza",
+              "piezas": 1,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.3,
+                "c": 27,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 125,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 21.7,
+                "c": 0,
+                "g": 2.5
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "350 g (≈ 2¼ tazas)",
+              "gramos": 350,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 9.5,
+                "c": 98,
+                "g": 1.1
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 15,
+            "c": 60,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "40 g",
+              "gramos": 40,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 7.2,
+                "c": 0.8,
+                "g": 0.8
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "½ taza",
+              "piezas": 0.5,
+              "unidad": "taza",
+              "gramos": 70,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.4,
+                "c": 7.5,
+                "g": 0.2
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra.",
+          "duracion_min": 30,
+          "hora_default": "20:30",
+          "macros": {
+            "p": 35,
+            "c": 105,
+            "g": 25
+          },
+          "hora": "20:30",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "320 g (≈ 2¼ tazas)",
+              "gramos": 320,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 18.6,
+                "c": 99.2,
+                "g": 2.9
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 20:30 y cama a las 21:30 duermes ~7.0 h si mañana te levantas a las 04:30.",
+          "duracion_min": 0,
+          "hora_default": "21:30",
+          "hora": "21:30"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 499,
+        "g": 80,
+        "kcal": 3356
+      }
+    },
+    {
+      "id": "miercoles_B",
+      "dia": "miercoles",
+      "variante": "B: rodaje en la mañana y clase en la noche",
+      "nutricion": "media",
+      "anclas": {
+        "rodaje": "05:30",
+        "clase": "20:00"
+      },
+      "items": [
+        {
+          "ref": "rodaje",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -45,
+          "hora": "04:45"
+        },
+        {
+          "ref": "rodaje",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + Seltz en 300-400 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -20,
+          "macros": {
+            "p": 0,
+            "c": 25,
+            "g": 0
+          },
+          "hora": "05:10"
+        },
+        {
+          "ref": "rodaje",
+          "tipo": "entreno",
+          "titulo": "Rodaje fácil 30 min",
+          "detalle": "Z2 (máximo 131 lpm), 4 strides y 2 ejercicios de técnica.",
+          "duracion_min": 35,
+          "offset_min": 0,
+          "hora": "05:30"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 35,
+            "c": 90,
+            "g": 15
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "5 piezas",
+              "piezas": 5,
+              "unidad": "pieza",
+              "gramos": 165,
+              "rol": "proteina",
+              "macros": {
+                "p": 18,
+                "c": 1,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "3 piezas",
+              "piezas": 3,
+              "unidad": "pieza",
+              "gramos": 90,
+              "rol": "carbo",
+              "macros": {
+                "p": 4.2,
+                "c": 36,
+                "g": 2.1
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 240,
+              "rol": "fruta",
+              "macros": {
+                "p": 2.6,
+                "c": 54,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 130,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 21.7,
+                "c": 0,
+                "g": 2.5
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "370 g (≈ 2¼ tazas)",
+              "gramos": 370,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 10,
+                "c": 103.6,
+                "g": 1.1
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 20,
+            "c": 70,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 12.6,
+                "c": 1.4,
+                "g": 1.4
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "clase",
+          "tipo": "hidratacion",
+          "titulo": "Agua con Seltz",
+          "detalle": "400-500 ml. La colación de las 18:00 hace de comida pre-clase.",
+          "duracion_min": 0,
+          "offset_min": -30,
+          "hora": "19:30"
+        },
+        {
+          "ref": "clase",
+          "tipo": "entreno",
+          "titulo": "Clase Hybrid (controlada)",
+          "detalle": "6-7/10, FC máxima Z3 alto.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "hora": "20:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra. Es tu comida post-sesión.",
+          "duracion_min": 30,
+          "hora_default": "22:00",
+          "macros": {
+            "p": 40,
+            "c": 105,
+            "g": 25
+          },
+          "hora": "22:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "320 g (≈ 2¼ tazas)",
+              "gramos": 320,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 18.6,
+                "c": 99.2,
+                "g": 2.9
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 22:00 y cama a las 23:00 duermes ~5.5 h si mañana te levantas a las 04:30. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde.",
+          "duracion_min": 0,
+          "hora_default": "23:00",
+          "hora": "23:00"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 480,
+        "g": 80,
+        "kcal": 3280
+      }
+    },
+    {
+      "id": "jueves",
+      "dia": "jueves",
+      "variante": "Intervalos en la mañana, piernas en la tarde",
+      "nutricion": "alta",
+      "anclas": {
+        "correr": "05:30",
+        "gym": "20:00"
+      },
+      "items": [
+        {
+          "ref": "correr",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -60,
+          "hora": "04:30"
+        },
+        {
+          "ref": "correr",
+          "tipo": "suplemento",
+          "titulo": "Cafeína 100 mg",
+          "detalle": "45 min antes de los intervalos.",
+          "duracion_min": 0,
+          "offset_min": -45,
+          "opcional": true,
+          "hora": "04:45"
+        },
+        {
+          "ref": "correr",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -30,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "05:00"
+        },
+        {
+          "ref": "correr",
+          "tipo": "entreno",
+          "titulo": "Intervalos 2 (corto: sprints / cuestas)",
+          "detalle": "Calentamiento + strides + bloque corto. Volumen bajo.",
+          "duracion_min": 50,
+          "offset_min": 0,
+          "hora": "05:30"
+        },
+        {
+          "ref": "correr",
+          "tipo": "comida",
+          "titulo": "Mini-toma post-sesión",
+          "detalle": "Batido: 1 scoop de whey + 2 plátanos (o 1 plátano + jugo). Dentro de 30-60 min.",
+          "duracion_min": 10,
+          "offset_min": 75,
+          "macros": {
+            "p": 20,
+            "c": 50,
+            "g": 3
+          },
+          "hora": "06:45"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 20,
+            "c": 70,
+            "g": 12
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "4 piezas",
+              "piezas": 4,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "carbo",
+              "macros": {
+                "p": 5.6,
+                "c": 48,
+                "g": 2.8
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "1 pieza",
+              "piezas": 1,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.3,
+                "c": 27,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 50,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "½ taza",
+              "piezas": 0.5,
+              "unidad": "taza",
+              "gramos": 70,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.4,
+                "c": 7.5,
+                "g": 0.2
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 150,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "440 g (≈ 2¾ tazas)",
+              "gramos": 440,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 11.9,
+                "c": 123.2,
+                "g": 1.3
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 25,
+            "c": 90,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "100 g",
+              "gramos": 100,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 18,
+                "c": 2,
+                "g": 2
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "2½ tazas",
+              "piezas": 2.5,
+              "unidad": "taza",
+              "gramos": 350,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.8,
+                "c": 37.5,
+                "g": 1
+              }
+            }
+          ]
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Gym piernas",
+          "detalle": "Prensa/hack, RDL, curl femoral, hip thrust, búlgara, pantorrilla. Seltz durante. La colación de las 18:00 es tu comida pre-gym (2 h antes); la cena de las 22:00 es la post.",
+          "duracion_min": 70,
+          "offset_min": 0,
+          "hora": "20:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra. Es tu comida post-sesión.",
+          "duracion_min": 30,
+          "hora_default": "22:00",
+          "macros": {
+            "p": 30,
+            "c": 120,
+            "g": 25
+          },
+          "hora": "22:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "360 g (≈ 2½ tazas)",
+              "gramos": 360,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 20.9,
+                "c": 111.6,
+                "g": 3.2
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 22:00 y cama a las 23:00 duermes ~5.0 h si mañana te levantas a las 04:00. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde.",
+          "duracion_min": 0,
+          "hora_default": "23:00",
+          "hora": "23:00"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 574,
+        "g": 80,
+        "kcal": 3656
+      }
+    },
+    {
+      "id": "viernes_A",
+      "dia": "viernes",
+      "variante": "A: gym en la mañana y rodaje después",
+      "nutricion": "media",
+      "anclas": {
+        "gym": "05:00"
+      },
+      "items": [
+        {
+          "ref": "gym",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -60,
+          "hora": "04:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -30,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "04:30"
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Gym superior B + core",
+          "detalle": "~50 min, 1-3 repeticiones en reserva.",
+          "duracion_min": 55,
+          "offset_min": 0,
+          "hora": "05:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "hidratacion",
+          "titulo": "Agua con Seltz",
+          "detalle": "Sorbos durante la pausa de 10 min.",
+          "duracion_min": 0,
+          "offset_min": 60,
+          "hora": "06:00"
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Rodaje fácil 30 min",
+          "detalle": "Z2 de verdad fácil (máximo 131 lpm), 4 strides. Si hay agujetas: 20 min.",
+          "duracion_min": 35,
+          "offset_min": 70,
+          "hora": "06:10"
+        },
+        {
+          "ref": "gym",
+          "tipo": "comida",
+          "titulo": "Mini-toma post-sesión",
+          "detalle": "Batido: 1 scoop de whey (o leche + yogurt) + 1 plátano. Dentro de 30-60 min de terminar la sesión.",
+          "duracion_min": 10,
+          "offset_min": 115,
+          "macros": {
+            "p": 20,
+            "c": 35,
+            "g": 3
+          },
+          "hora": "06:55"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 25,
+            "c": 70,
+            "g": 12
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 66,
+              "rol": "proteina",
+              "macros": {
+                "p": 7.2,
+                "c": 0.4,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "4 piezas",
+              "piezas": 4,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "carbo",
+              "macros": {
+                "p": 5.6,
+                "c": 48,
+                "g": 2.8
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "1 pieza",
+              "piezas": 1,
+              "unidad": "pieza",
+              "gramos": 120,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.3,
+                "c": 27,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 125,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 21.7,
+                "c": 0,
+                "g": 2.5
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "350 g (≈ 2¼ tazas)",
+              "gramos": 350,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 9.5,
+                "c": 98,
+                "g": 1.1
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 15,
+            "c": 60,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "40 g",
+              "gramos": 40,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 7.2,
+                "c": 0.8,
+                "g": 0.8
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "½ taza",
+              "piezas": 0.5,
+              "unidad": "taza",
+              "gramos": 70,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.4,
+                "c": 7.5,
+                "g": 0.2
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra.",
+          "duracion_min": 30,
+          "hora_default": "20:30",
+          "macros": {
+            "p": 35,
+            "c": 105,
+            "g": 25
+          },
+          "hora": "20:30",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "320 g (≈ 2¼ tazas)",
+              "gramos": 320,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 18.6,
+                "c": 99.2,
+                "g": 2.9
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 20:30 y cama a las 21:30 duermes ~7.8 h si mañana te levantas a las 05:15.",
+          "duracion_min": 0,
+          "hora_default": "21:30",
+          "hora": "21:30"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 499,
+        "g": 80,
+        "kcal": 3356
+      }
+    },
+    {
+      "id": "viernes_B",
+      "dia": "viernes",
+      "variante": "B: rodaje en la mañana y gym en la noche",
+      "nutricion": "media",
+      "anclas": {
+        "rodaje": "05:30",
+        "gym": "20:00"
+      },
+      "items": [
+        {
+          "ref": "rodaje",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -45,
+          "hora": "04:45"
+        },
+        {
+          "ref": "rodaje",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + Seltz en 300-400 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -20,
+          "macros": {
+            "p": 0,
+            "c": 25,
+            "g": 0
+          },
+          "hora": "05:10"
+        },
+        {
+          "ref": "rodaje",
+          "tipo": "entreno",
+          "titulo": "Rodaje fácil 30 min",
+          "detalle": "Z2 de verdad fácil (máximo 131 lpm), 4 strides.",
+          "duracion_min": 35,
+          "offset_min": 0,
+          "hora": "05:30"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 35,
+            "c": 90,
+            "g": 15
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "5 piezas",
+              "piezas": 5,
+              "unidad": "pieza",
+              "gramos": 165,
+              "rol": "proteina",
+              "macros": {
+                "p": 18,
+                "c": 1,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "3 piezas",
+              "piezas": 3,
+              "unidad": "pieza",
+              "gramos": 90,
+              "rol": "carbo",
+              "macros": {
+                "p": 4.2,
+                "c": 36,
+                "g": 2.1
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 240,
+              "rol": "fruta",
+              "macros": {
+                "p": 2.6,
+                "c": 54,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 130,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 21.7,
+                "c": 0,
+                "g": 2.5
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "370 g (≈ 2¼ tazas)",
+              "gramos": 370,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 10,
+                "c": 103.6,
+                "g": 1.1
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 20,
+            "c": 70,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 12.6,
+                "c": 1.4,
+                "g": 1.4
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "gym",
+          "tipo": "entreno",
+          "titulo": "Gym superior B + core",
+          "detalle": "~50 min, 1-3 repeticiones en reserva. La colación de las 18:00 hace de comida pre-gym (2 h antes); la cena de las 22:00 es la post.",
+          "duracion_min": 55,
+          "offset_min": 0,
+          "hora": "20:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra. Es tu comida post-sesión.",
+          "duracion_min": 30,
+          "hora_default": "22:00",
+          "macros": {
+            "p": 40,
+            "c": 105,
+            "g": 25
+          },
+          "hora": "22:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "320 g (≈ 2¼ tazas)",
+              "gramos": 320,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 18.6,
+                "c": 99.2,
+                "g": 2.9
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 22:00 y cama a las 23:00 duermes ~6.2 h si mañana te levantas a las 05:15. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde.",
+          "duracion_min": 0,
+          "hora_default": "23:00",
+          "hora": "23:00"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 480,
+        "g": 80,
+        "kcal": 3280
+      }
+    },
+    {
+      "id": "sabado",
+      "dia": "sabado",
+      "variante": "Clase mezcla 6:30",
+      "nutricion": "alta",
+      "anclas": {
+        "clase": "06:30"
+      },
+      "items": [
+        {
+          "ref": "clase",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -75,
+          "hora": "05:15"
+        },
+        {
+          "ref": "clase",
+          "tipo": "suplemento",
+          "titulo": "Cafeína 100 mg",
+          "detalle": "45 min antes de la clase.",
+          "duracion_min": 0,
+          "offset_min": -45,
+          "opcional": true,
+          "hora": "05:45"
+        },
+        {
+          "ref": "clase",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -45,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "05:45"
+        },
+        {
+          "ref": "clase",
+          "tipo": "entreno",
+          "titulo": "Clase mezcla",
+          "detalle": "Esfuerzo 8/10; no salgas rápido en los runs. Agua con Seltz; si pasa de 60 min y notas bajón: 20-30 g de carbohidrato. El desayuno de las 8:00 es tu comida post.",
+          "duracion_min": 75,
+          "offset_min": 0,
+          "hora": "06:30"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 35,
+            "c": 110,
+            "g": 15
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "4 piezas",
+              "piezas": 4,
+              "unidad": "pieza",
+              "gramos": 132,
+              "rol": "proteina",
+              "macros": {
+                "p": 14.4,
+                "c": 0.8,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "5 piezas",
+              "piezas": 5,
+              "unidad": "pieza",
+              "gramos": 150,
+              "rol": "carbo",
+              "macros": {
+                "p": 7,
+                "c": 60,
+                "g": 3.5
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 240,
+              "rol": "fruta",
+              "macros": {
+                "p": 2.6,
+                "c": 54,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 70,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1½ tazas",
+              "piezas": 1.5,
+              "unidad": "taza",
+              "gramos": 210,
+              "rol": "fruta",
+              "macros": {
+                "p": 1,
+                "c": 22.5,
+                "g": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 150,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "440 g (≈ 2¾ tazas)",
+              "gramos": 440,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 11.9,
+                "c": 123.2,
+                "g": 1.3
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 20,
+            "c": 80,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 12.6,
+                "c": 1.4,
+                "g": 1.4
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "2 tazas",
+              "piezas": 2,
+              "unidad": "taza",
+              "gramos": 280,
+              "rol": "fruta",
+              "macros": {
+                "p": 1.4,
+                "c": 30,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra.",
+          "duracion_min": 30,
+          "hora_default": "20:30",
+          "macros": {
+            "p": 40,
+            "c": 120,
+            "g": 25
+          },
+          "hora": "20:30",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "360 g (≈ 2½ tazas)",
+              "gramos": 360,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 20.9,
+                "c": 111.6,
+                "g": 3.2
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 20:30 y cama a las 21:30 duermes ~7.5 h si mañana te levantas a las 05:00.",
+          "duracion_min": 0,
+          "hora_default": "21:30",
+          "hora": "21:30"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 574,
+        "g": 80,
+        "kcal": 3656
+      }
+    },
+    {
+      "id": "domingo",
+      "dia": "domingo",
+      "variante": "Long run",
+      "nutricion": "media",
+      "anclas": {
+        "correr": "06:00"
+      },
+      "items": [
+        {
+          "ref": "correr",
+          "tipo": "despertar",
+          "titulo": "Despertar + check-in",
+          "detalle": "Pésate en ayunas (después de ir al baño), mide FC en reposo (Helio), rodilla 0-10, agujetas 0-10, horas de sueño y energía 1-5. Verde, amarillo o rojo según el semáforo. Toma 300-400 ml de agua.",
+          "duracion_min": 0,
+          "offset_min": -60,
+          "hora": "05:00"
+        },
+        {
+          "ref": "correr",
+          "tipo": "comida",
+          "titulo": "Pre: carbohidrato rápido",
+          "detalle": "1 plátano + 1 cucharada de miel (o pan con miel) + Seltz en 400-500 ml de agua.",
+          "duracion_min": 10,
+          "offset_min": -30,
+          "macros": {
+            "p": 0,
+            "c": 44,
+            "g": 0
+          },
+          "hora": "05:30"
+        },
+        {
+          "ref": "correr",
+          "tipo": "entreno",
+          "titulo": "Long run Z2 (50-70 min)",
+          "detalle": "Máximo 131 lpm en Helio. Si pasa de 60 min o hace mucho calor: SaltStick y 20-30 g de carbohidrato. El desayuno de las 8:00 es tu comida post.",
+          "duracion_min": 60,
+          "offset_min": 0,
+          "hora": "06:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Desayuno",
+          "detalle": "Huevos y claras + tortillas o pan + fruta.",
+          "duracion_min": 30,
+          "hora_default": "08:00",
+          "macros": {
+            "p": 35,
+            "c": 90,
+            "g": 15
+          },
+          "hora": "08:00",
+          "porciones": [
+            {
+              "alimento": "Huevo entero",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 100,
+              "rol": "proteina",
+              "macros": {
+                "p": 12,
+                "c": 1,
+                "g": 10
+              }
+            },
+            {
+              "alimento": "Clara de huevo",
+              "cantidad": "5 piezas",
+              "piezas": 5,
+              "unidad": "pieza",
+              "gramos": 165,
+              "rol": "proteina",
+              "macros": {
+                "p": 18,
+                "c": 1,
+                "g": 0
+              }
+            },
+            {
+              "alimento": "Tortilla de maíz",
+              "cantidad": "3 piezas",
+              "piezas": 3,
+              "unidad": "pieza",
+              "gramos": 90,
+              "rol": "carbo",
+              "macros": {
+                "p": 4.2,
+                "c": 36,
+                "g": 2.1
+              },
+              "alternativa": "o 1 rebanada de pan de caja por tortilla"
+            },
+            {
+              "alimento": "Plátano mediano",
+              "cantidad": "2 piezas",
+              "piezas": 2,
+              "unidad": "pieza",
+              "gramos": 240,
+              "rol": "fruta",
+              "macros": {
+                "p": 2.6,
+                "c": 54,
+                "g": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "suplemento",
+          "titulo": "Creatina 3-5 g",
+          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "duracion_min": 0,
+          "hora_default": "08:00",
+          "hora": "08:00"
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Yogurt griego + fruta + granola.",
+          "duracion_min": 15,
+          "hora_default": "12:00",
+          "macros": {
+            "p": 25,
+            "c": 60,
+            "g": 10
+          },
+          "hora": "12:00",
+          "porciones": [
+            {
+              "alimento": "Yogurt griego natural sin azúcar",
+              "cantidad": "180 g",
+              "gramos": 180,
+              "rol": "proteina",
+              "c_por_100g": 3.6,
+              "macros": {
+                "p": 18,
+                "c": 6.5,
+                "g": 0.7
+              }
+            },
+            {
+              "alimento": "Granola",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "carbo",
+              "c_por_100g": 64,
+              "macros": {
+                "p": 6,
+                "c": 38.4,
+                "g": 9
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Comida",
+          "detalle": "Proteína magra (pollo, pescado, carne) + arroz o papa + verdura + frijoles + 1 cucharada de aceite o 1/4 de aguacate.",
+          "duracion_min": 30,
+          "hora_default": "15:00",
+          "macros": {
+            "p": 40,
+            "c": 130,
+            "g": 25
+          },
+          "hora": "15:00",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 21.7,
+                "c": 0,
+                "g": 2.5
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Arroz blanco cocido",
+              "cantidad": "370 g (≈ 2¼ tazas)",
+              "gramos": 370,
+              "taza_g": 160,
+              "rol": "carbo",
+              "c_por_100g": 28,
+              "macros": {
+                "p": 10,
+                "c": 103.6,
+                "g": 1.1
+              },
+              "alternativa": "o papa cocida: +40% de peso"
+            },
+            {
+              "alimento": "Frijoles cocidos",
+              "cantidad": "85 g (≈ ½ taza)",
+              "gramos": 85,
+              "taza_g": 170,
+              "rol": "carbo_fijo",
+              "c_por_100g": 23.5,
+              "macros": {
+                "p": 7.5,
+                "c": 20,
+                "g": 0.4
+              }
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Colación",
+          "detalle": "Sándwich de pavo o atún + fruta + jugo o bebida deportiva.",
+          "duracion_min": 15,
+          "hora_default": "18:00",
+          "macros": {
+            "p": 20,
+            "c": 70,
+            "g": 5
+          },
+          "hora": "18:00",
+          "porciones": [
+            {
+              "alimento": "Pan de caja integral",
+              "cantidad": "2 rebanadas",
+              "piezas": 2,
+              "unidad": "rebanada",
+              "gramos": 60,
+              "rol": "carbo",
+              "macros": {
+                "p": 6,
+                "c": 26,
+                "g": 2
+              }
+            },
+            {
+              "alimento": "Pechuga de pavo en rebanadas",
+              "cantidad": "70 g",
+              "gramos": 70,
+              "rol": "proteina",
+              "c_por_100g": 2,
+              "macros": {
+                "p": 12.6,
+                "c": 1.4,
+                "g": 1.4
+              },
+              "alternativa": "o atún en agua: 70% de ese peso"
+            },
+            {
+              "alimento": "Jugo de naranja",
+              "cantidad": "250 ml",
+              "piezas": 1,
+              "unidad": "vaso",
+              "gramos": 250,
+              "rol": "carbo",
+              "macros": {
+                "p": 1.7,
+                "c": 26,
+                "g": 0.5
+              }
+            },
+            {
+              "alimento": "Fruta picada (papaya o melón)",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 140,
+              "rol": "fruta",
+              "macros": {
+                "p": 0.7,
+                "c": 15,
+                "g": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "comida",
+          "titulo": "Cena",
+          "detalle": "Proteína magra + pasta, arroz o papa + verdura; poca grasa y fibra.",
+          "duracion_min": 30,
+          "hora_default": "20:30",
+          "macros": {
+            "p": 40,
+            "c": 105,
+            "g": 25
+          },
+          "hora": "20:30",
+          "porciones": [
+            {
+              "alimento": "Pechuga de pollo cocida",
+              "cantidad": "60 g",
+              "gramos": 60,
+              "rol": "proteina",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 18.6,
+                "c": 0,
+                "g": 2.2
+              },
+              "alternativa": "o pescado blanco: +25% de peso"
+            },
+            {
+              "alimento": "Pasta cocida",
+              "cantidad": "320 g (≈ 2¼ tazas)",
+              "gramos": 320,
+              "taza_g": 140,
+              "rol": "carbo",
+              "c_por_100g": 31,
+              "macros": {
+                "p": 18.6,
+                "c": 99.2,
+                "g": 2.9
+              },
+              "alternativa": "o arroz cocido: +10% de peso"
+            },
+            {
+              "alimento": "Verdura cocida",
+              "cantidad": "1 taza",
+              "piezas": 1,
+              "unidad": "taza",
+              "gramos": 150,
+              "rol": "verdura",
+              "macros": {
+                "p": 2,
+                "c": 7,
+                "g": 0.3
+              }
+            },
+            {
+              "alimento": "Aceite de oliva",
+              "cantidad": "20 g (≈ 1½ cda)",
+              "gramos": 20,
+              "cda_g": 14,
+              "rol": "grasa",
+              "c_por_100g": 0,
+              "macros": {
+                "p": 0,
+                "c": 0,
+                "g": 20
+              },
+              "alternativa": "o aguacate: 7 g de aceite = 50 g de aguacate"
+            }
+          ]
+        },
+        {
+          "ref": "fija",
+          "tipo": "cama",
+          "titulo": "A dormir",
+          "detalle": "Con cena a las 20:30 y cama a las 21:30 duermes ~6.5 h si mañana te levantas a las 04:00. Es menos de 7 h: si puedes, retrasa la primera sesión de mañana a las 6:00 o más tarde. Si el lunes entrenas en la noche, te levantas a las 7:00 y duermes más de 9 h.",
+          "duracion_min": 0,
+          "hora_default": "21:30",
+          "hora": "21:30"
+        }
+      ],
+      "totales": {
+        "p": 160,
+        "c": 499,
+        "g": 80,
+        "kcal": 3356
+      }
+    }
+  ],
+  "porciones_nota": "Cantidades aproximadas, calculadas con tablas de composición para cumplir los macros de cada toma. Pesos en cocido. Verifica etiquetas y valida con tu nutrióloga."
+}

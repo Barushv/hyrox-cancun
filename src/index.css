@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paleta: laguna del Caribe (acento), arena (sol), tinta profunda. Valores RGB para que Tailwind maneje opacidad. */
+:root {
+  --bg: 238 244 243;
+  --surface: 255 255 255;
+  --ink: 13 42 46;
+  --muted: 86 112 111;
+  --line: 211 225 223;
+  --accent: 0 133 127;
+  --accent-soft: 213 238 236;
+  --on-accent: 255 255 255;
+  --sun: 232 163 0;
+  --ok: 31 157 85;
+  --warn: 217 144 0;
+  --bad: 210 67 58;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 10 26 28;
+    --surface: 18 39 41;
+    --ink: 227 240 238;
+    --muted: 143 170 168;
+    --line: 34 64 63;
+    --accent: 46 196 187;
+    --accent-soft: 20 59 58;
+    --on-accent: 10 26 28;
+    --sun: 242 185 31;
+    --ok: 60 194 116;
+    --warn: 240 170 30;
+    --bad: 240 106 96;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    @apply bg-bg text-ink font-sans antialiased;
+    min-height: 100dvh;
+  }
+  h1, h2, h3 { text-wrap: balance; }
+  /* Sin flechas en campos numéricos: se captura con el teclado del teléfono */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type='number'] { -moz-appearance: textfield; }
+  button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card { @apply bg-surface border border-line rounded-xl; }
+  .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.12em] text-muted; }
+  .h-section { @apply font-display text-xl font-bold uppercase tracking-wide; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold; }
+  .field { @apply w-full rounded-lg border border-line bg-bg px-3 py-2 text-base text-ink; }
+  .btn-primary { @apply w-full rounded-xl bg-accent text-accent-on font-bold py-3 flex items-center justify-center gap-2 active:scale-[0.98] transition; }
+  .btn-ghost { @apply rounded-lg px-3 py-1.5 text-sm font-semibold text-accent active:bg-accent-soft; }
+}
+
+@layer utilities {
+  .safe-top { padding-top: env(safe-area-inset-top, 0px); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .tabular { font-variant-numeric: tabular-nums; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

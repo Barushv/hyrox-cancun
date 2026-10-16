@@ -1,0 +1,354 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hyrox Cancún PWA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: explicación arriba (flujo + estructura), luego 4 teléfonos lado a lado que muestran las pantallas reales */
+:root{
+  --bg:#EEF4F3; --surface:#FFFFFF; --ink:#0D2A2E; --muted:#56706F; --line:#D3E1DF;
+  --accent:#00857F; --accent-soft:#D5EEEC; --sun:#E8A300;
+  --ok:#1F9D55; --warn:#D99000; --bad:#D2433A;
+  --phone:#0D2A2E;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"Figtree",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;--bg:#0A1A1C;--surface:#122729;--ink:#E3F0EE;--muted:#8FAAA8;--line:#22403F;
+  --accent:#2EC4BB;--accent-soft:#143B3A;--sun:#F2B91F;--ok:#3CC274;--warn:#F0AA1E;--bad:#F06A60;--phone:#000;}}
+:root[data-theme="dark"]{
+  color-scheme:dark;--bg:#0A1A1C;--surface:#122729;--ink:#E3F0EE;--muted:#8FAAA8;--line:#22403F;
+  --accent:#2EC4BB;--accent-soft:#143B3A;--sun:#F2B91F;--ok:#3CC274;--warn:#F0AA1E;--bad:#F06A60;--phone:#000;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);padding:40px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:clamp(40px,6vw,64px);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+h1 span{color:var(--accent)}
+h2{font-size:28px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+p{margin:0;max-width:65ch}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:14px}
+.lead{font-size:17px;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:18px}
+
+/* flujo */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:stretch}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.step b{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.02em}
+.step .n{font:500 12px var(--mono);color:var(--accent)}
+.step p{font-size:14px;color:var(--muted)}
+.step code{font:500 12px var(--mono);color:var(--ink);background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}}
+
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+pre{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;font:500 12.5px/1.6 var(--mono);overflow-x:auto;color:var(--ink)}
+pre .c{color:var(--muted)}
+ul.why{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+ul.why li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:14.5px}
+ul.why svg{width:20px;height:20px;color:var(--accent);margin-top:2px}
+
+/* teléfonos */
+.phones{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:1100px){.phones{grid-template-columns:repeat(2,minmax(0,300px));justify-content:center}}
+@media (max-width:640px){.phones{grid-template-columns:minmax(0,320px)}}
+.ph{display:flex;flex-direction:column;gap:10px}
+.ph figcaption{font-size:13.5px;color:var(--muted)}
+.ph figcaption b{color:var(--ink);font-family:var(--display);font-size:18px;text-transform:uppercase;display:block;letter-spacing:.02em}
+figure{margin:0}
+.dev{background:var(--phone);border-radius:30px;padding:9px}
+.scr{background:var(--bg);border-radius:22px;overflow:hidden;height:560px;display:flex;flex-direction:column}
+.top{padding:16px 16px 10px;display:flex;flex-direction:column;gap:2px}
+.top .wk{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.top h3{font-size:24px;font-weight:700;text-transform:uppercase}
+.body{flex:1;overflow:hidden;padding:0 12px;display:flex;flex-direction:column;gap:8px}
+nav.tab{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);background:var(--surface);padding:7px 2px 9px}
+nav.tab span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9.5px;font-weight:600;color:var(--muted)}
+nav.tab span.on{color:var(--accent)}
+nav.tab svg{width:20px;height:20px}
+.ic{width:18px;height:18px;flex:none}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:600 11px var(--body);padding:3px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent)}
+.chip.sun{background:color-mix(in srgb,var(--sun) 20%,transparent);color:var(--ink)}
+
+/* timeline Hoy */
+.tl{display:flex;flex-direction:column}
+.tl .r{display:grid;grid-template-columns:40px 14px 1fr;gap:8px;align-items:start;padding:5px 0}
+.tl time{font:500 11px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;padding-top:1px}
+.tl .dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--line);margin-top:3px;background:var(--surface)}
+.tl .r.done .dot{background:var(--ok);border-color:var(--ok)}
+.tl .r.now .dot{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.tl .t{font-size:12.5px;font-weight:600;line-height:1.3}
+.tl .t small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.tl .r.done .t{color:var(--muted)}
+.tl .r.now{background:var(--accent-soft);border-radius:8px;margin:0 -6px;padding:5px 6px}
+
+/* semana */
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.d{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;border-radius:8px;background:var(--surface);border:1px solid var(--line);font-size:10px;color:var(--muted)}
+.d b{font:700 16px var(--display);color:var(--ink)}
+.d.on{background:var(--accent);border-color:var(--accent);color:#fff}.d.on b{color:#fff}
+.d i{width:5px;height:5px;border-radius:50%;background:var(--ok)}
+.d i.e{background:var(--line)}
+.sess{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center}
+.sess .bx{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.sess .t{font-size:13px;font-weight:600;line-height:1.25}
+.sess .t small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.ok{color:var(--ok)}
+.bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.phase{display:flex;justify-content:space-between;font:500 10.5px var(--mono);color:var(--muted)}
+
+/* sesión */
+.ex{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:12.5px}
+.ex:last-child{border-bottom:0}
+.ex b{font-weight:600}
+.ex span{font:500 11px var(--mono);color:var(--muted);text-align:right}
+.ex small{grid-column:1/-1;color:var(--muted);font-size:11px}
+.sem{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.sem button{font:600 11px var(--body);border-radius:9px;padding:8px 2px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer}
+.sem button i{width:14px;height:14px;border-radius:50%}
+.sem button.sel{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--surface))}
+.sem button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cta{background:var(--accent);color:#fff;font:700 14px var(--body);border:0;border-radius:12px;padding:12px;width:100%;display:flex;justify-content:center;gap:8px;align-items:center}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.fld{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:6px 9px}
+.fld label{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.fld b{font:600 15px var(--mono);font-variant-numeric:tabular-nums}
+
+/* nutrición */
+.ring{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:center}
+.ring svg{width:110px;height:110px}
+.mac{display:flex;flex-direction:column;gap:7px}
+.mac .m{display:flex;flex-direction:column;gap:3px;font-size:11.5px}
+.mac .m div:first-child{display:flex;justify-content:space-between}
+.mac .m span{font:500 11px var(--mono);color:var(--muted)}
+.toggle{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:3px;font-size:12px;font-weight:600;text-align:center}
+.toggle span{padding:6px;border-radius:8px;color:var(--muted)}
+.toggle span.on{background:var(--ink);color:var(--bg)}
+.sup{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;padding:5px 0}
+.sup span{display:flex;gap:8px;align-items:center}
+.check{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--line);display:grid;place-items:center}
+.check.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.water{display:flex;gap:4px}
+.water i{flex:1;height:18px;border-radius:4px;background:var(--accent-soft)}
+.water i.f{background:var(--accent)}
+.note{font-size:12.5px;color:var(--muted)}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-dumb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 7v10M3 9v6M18 7v10M21 9v6M6 12h12"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 3v8a2 2 0 0 0 2 2v8M11 3v8M3 3v8a2 2 0 0 0 2 2M17 21V3c2 0 4 2 4 6s-2 5-4 5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M7 17V11M12 17V6M17 17v-4"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="4" r="2"/><path d="M8 21l3-6 3 2v5M6 12l3-3 4 1 3 3h3M11 15l-2-3"/></symbol>
+  <symbol id="i-group" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M17 11a3 3 0 1 0 0-6M21 20c0-2-1.5-4-4-4.6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6v18h12V7zM14 3v4h4"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 9a15 15 0 0 1 20 0M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0M12 20h.01"/></symbol>
+  <symbol id="i-grow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h16M4 4v16M12 4v16M20 4v16"/></symbol>
+ </defs>
+</svg>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Boceto · PWA de preparación · 18 semanas</div>
+  <h1>Hyrox <span>Cancún</span></h1>
+  <p class="lead">Una sola app para saber qué toca hoy: la sesión de entrenamiento, qué comer y a qué hora. Los tres JSON alimentan todo; la app solo los lee y guarda lo que registras.</p>
+</header>
+
+<section>
+  <h2>Flujo de datos</h2>
+  <div class="flow">
+    <div class="step"><span class="n">1 · Fuente</span><b>3 JSON</b><p><code>plan_hyrox_cancun</code>, <code>plan_nutricion</code> y <code>plan_diario</code> en <code>/public/data</code>. Son de solo lectura.</p></div>
+    <div class="step"><span class="n">2 · Carga</span><b>planLoader</b><p>Lee los 3 en paralelo, valida la versión y los une en un solo objeto <code>plan</code>. El service worker los cachea para usar la app sin internet.</p></div>
+    <div class="step"><span class="n">3 · Motor</span><b>Fecha → semana</b><p>Con la fecha de hoy calcula semana (1–18), fase, tipo de día (alta o media) y la línea de tiempo que corresponde.</p></div>
+    <div class="step"><span class="n">4 · Registro</span><b>IndexedDB</b><p>Lo que capturas (semáforo, tiempos, peso, tomas hechas) se guarda aparte del plan. Así actualizas el plan sin perder tu historial.</p></div>
+  </div>
+</section>
+
+<section class="two">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <h2>Estructura del proyecto</h2>
+<pre><span class="c">hyrox-cancun/   (React + Vite + Tailwind + vite-plugin-pwa)</span>
+public/
+  data/plan_hyrox_cancun.json
+  data/plan_nutricion_hyrox_cancun.json
+  data/plan_diario_hyrox_cancun.json
+  icons/  manifest.webmanifest
+src/
+  data/planLoader.js      <span class="c">carga y une los 3 JSON</span>
+  engine/calendar.js      <span class="c">fecha → semana, fase, día</span>
+  engine/semaforo.js      <span class="c">reglas verde/amarillo/rojo</span>
+  engine/nutricion.js     <span class="c">metas + ajuste por peso</span>
+  store/db.js             <span class="c">IndexedDB: registros</span>
+  components/  Icon, Card, Timeline, MacroRing…
+  screens/
+    Hoy.jsx  Semana.jsx  Sesion.jsx
+    Nutricion.jsx  Progreso.jsx
+</pre>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <h2>Por qué escala</h2>
+    <ul class="why">
+      <li><svg><use href="#i-file"/></svg><span><b>El plan es dato, no código.</b> Para otra carrera cambias los 3 JSON y la app funciona igual.</span></li>
+      <li><svg><use href="#i-grow"/></svg><span><b>Pantallas separadas del motor.</b> Las reglas del semáforo y del ajuste de peso viven en <code>engine/</code> y se prueban solas.</span></li>
+      <li><svg><use href="#i-wifi"/></svg><span><b>Funciona sin señal.</b> En el gimnasio o en la playa abre igual, se instala en el celular como app.</span></li>
+      <li><svg><use href="#i-group"/></svg><span><b>Perfiles.</b> Igual que en Roma, puede haber más de un atleta con su historial propio.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Pantallas principales</h2>
+  <p class="note">Datos de ejemplo para el boceto. Los horarios, cargas y macros reales salen de tus JSON.</p>
+  <div class="phones">
+
+    <!-- HOY -->
+    <figure class="ph">
+      <div class="dev"><div class="scr">
+        <div class="top"><span class="wk">Sem 6 / 18 · Fase Base</span><h3>Hoy · Martes</h3></div>
+        <div class="body">
+          <div class="chips"><span class="chip">Día alta</span><span class="chip sun">Gym + Running</span></div>
+          <div class="card tl">
+            <div class="r done"><time>05:30</time><span class="dot"></span><div class="t">Despertar + agua<small>500 ml · electrolitos</small></div></div>
+            <div class="r done"><time>06:00</time><span class="dot"></span><div class="t">Pre-entreno<small>40 g carbs · 10 g prot</small></div></div>
+            <div class="r now"><time>06:30</time><span class="dot"></span><div class="t">Entreno: Fuerza + Ergs<small>Ancla · 75 min</small></div></div>
+            <div class="r"><time>08:00</time><span class="dot"></span><div class="t">Post-entreno<small>+90 min ancla · 35 g prot</small></div></div>
+            <div class="r"><time>10:30</time><span class="dot"></span><div class="t">Colación 1</div></div>
+            <div class="r"><time>13:30</time><span class="dot"></span><div class="t">Comida</div></div>
+            <div class="r"><time>16:30</time><span class="dot"></span><div class="t">Colación 2</div></div>
+            <div class="r"><time>18:30</time><span class="dot"></span><div class="t">Running Z2<small>40 min</small></div></div>
+            <div class="r"><time>20:00</time><span class="dot"></span><div class="t">Cena</div></div>
+          </div>
+        </div>
+        <nav class="tab"><span class="on"><svg><use href="#i-sun"/></svg>Hoy</span><span><svg><use href="#i-cal"/></svg>Plan</span><span><svg><use href="#i-dumb"/></svg>Sesión</span><span><svg><use href="#i-food"/></svg>Nutrición</span><span><svg><use href="#i-chart"/></svg>Progreso</span></nav>
+      </div></div>
+      <figcaption><b>Hoy</b>Pantalla de inicio. La línea de tiempo del día con la hora de cada toma; el punto activo marca lo que toca ahora.</figcaption>
+    </figure>
+
+    <!-- PLAN -->
+    <figure class="ph">
+      <div class="dev"><div class="scr">
+        <div class="top"><span class="wk">Calendario</span><h3>Semana 6</h3></div>
+        <div class="body">
+          <div class="card" style="display:flex;flex-direction:column;gap:6px">
+            <div class="phase"><span>Base</span><span>Fuerza</span><span>Específica</span><span>Taper</span></div>
+            <div class="bar"><i style="width:33%"></i></div>
+          </div>
+          <div class="days">
+            <div class="d">L<b>12</b><i></i></div><div class="d on">M<b>13</b><i></i></div><div class="d">M<b>14</b><i class="e"></i></div><div class="d">J<b>15</b><i class="e"></i></div><div class="d">V<b>16</b><i class="e"></i></div><div class="d">S<b>17</b><i class="e"></i></div><div class="d">D<b>18</b><i class="e"></i></div>
+          </div>
+          <div class="card sess"><span class="bx"><svg class="ic"><use href="#i-dumb"/></svg></span><div class="t">Fuerza + Ergs<small>Gym · 75 min</small></div><svg class="ic ok"><use href="#i-check"/></svg></div>
+          <div class="card sess"><span class="bx"><svg class="ic"><use href="#i-run"/></svg></span><div class="t">Rodaje Z2<small>Running · 40 min</small></div></div>
+          <div class="card" style="font-size:12px;display:flex;flex-direction:column;gap:4px">
+            <b style="font-size:12.5px">Parámetros de la semana</b>
+            <div class="ex" style="padding:3px 0"><b>Intervalos</b><span>6 × 800 m</span></div>
+            <div class="ex" style="padding:3px 0"><b>Rodaje</b><span>40 min Z2</span></div>
+            <div class="ex" style="padding:3px 0"><b>Long run</b><span>14 km</span></div>
+          </div>
+          <div class="card sess"><span class="bx"><svg class="ic"><use href="#i-group"/></svg></span><div class="t">Clase Hyrox<small>Jueves · 60 min</small></div></div>
+        </div>
+        <nav class="tab"><span><svg><use href="#i-sun"/></svg>Hoy</span><span class="on"><svg><use href="#i-cal"/></svg>Plan</span><span><svg><use href="#i-dumb"/></svg>Sesión</span><span><svg><use href="#i-food"/></svg>Nutrición</span><span><svg><use href="#i-chart"/></svg>Progreso</span></nav>
+      </div></div>
+      <figcaption><b>Plan</b>Las 18 semanas con su fase. Tocas un día y ves sus sesiones; el punto verde indica que ya la registraste.</figcaption>
+    </figure>
+
+    <!-- SESIÓN -->
+    <figure class="ph">
+      <div class="dev"><div class="scr">
+        <div class="top"><span class="wk" style="display:flex;gap:4px;align-items:center"><svg class="ic" style="width:12px;height:12px"><use href="#i-back"/></svg>Martes</span><h3>Fuerza + Ergs</h3></div>
+        <div class="body">
+          <div class="card">
+            <div class="ex"><b>Calentamiento</b><span>10 min</span></div>
+            <div class="ex"><b>Sled push</b><span>4 × 25 m</span><small>Carga RPE 7</small></div>
+            <div class="ex"><b>SkiErg</b><span>5 × 500 m</span><small>Desc. 1:30</small></div>
+            <div class="ex"><b>Wall balls</b><span>3 × 25</span></div>
+          </div>
+          <b style="font-size:12.5px">¿Cómo te sentiste?</b>
+          <div class="sem" role="radiogroup" aria-label="Semáforo">
+            <button id="sem-v" class="sel" role="radio" aria-checked="true"><i style="background:var(--ok)"></i>Verde</button>
+            <button id="sem-a" role="radio" aria-checked="false"><i style="background:var(--warn)"></i>Amarillo</button>
+            <button id="sem-r" role="radio" aria-checked="false"><i style="background:var(--bad)"></i>Rojo</button>
+          </div>
+          <p class="note" id="sem-msg" style="font-size:11.5px">Sigue el plan como está.</p>
+          <div class="fields">
+            <div class="fld"><label>RPE</label><b>7</b></div>
+            <div class="fld"><label>SkiErg 500</label><b>1:52</b></div>
+          </div>
+          <button class="cta"><svg class="ic"><use href="#i-check"/></svg>Guardar sesión</button>
+        </div>
+        <nav class="tab"><span><svg><use href="#i-sun"/></svg>Hoy</span><span><svg><use href="#i-cal"/></svg>Plan</span><span class="on"><svg><use href="#i-dumb"/></svg>Sesión</span><span><svg><use href="#i-food"/></svg>Nutrición</span><span><svg><use href="#i-chart"/></svg>Progreso</span></nav>
+      </div></div>
+      <figcaption><b>Sesión</b>Detalle de la plantilla y registro. El semáforo aplica tus reglas y te dice si mantener, bajar o descansar. Prueba los botones.</figcaption>
+    </figure>
+
+    <!-- NUTRICIÓN -->
+    <figure class="ph">
+      <div class="dev"><div class="scr">
+        <div class="top"><span class="wk">Metas del día</span><h3>Nutrición</h3></div>
+        <div class="body">
+          <div class="toggle"><span class="on">Día alta</span><span>Día media</span></div>
+          <div class="card ring">
+            <svg viewBox="0 0 110 110" role="img" aria-label="1,840 de 2,900 kcal">
+              <circle cx="55" cy="55" r="45" fill="none" stroke="var(--line)" stroke-width="10"/>
+              <circle cx="55" cy="55" r="45" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="178.2 282.7" transform="rotate(-90 55 55)"/>
+              <text x="55" y="54" text-anchor="middle" fill="var(--ink)" style="font:700 22px var(--display)">1,840</text>
+              <text x="55" y="70" text-anchor="middle" fill="var(--muted)" style="font:500 10px var(--mono)">/ 2,900 kcal</text>
+            </svg>
+            <div class="mac">
+              <div class="m"><div><b>Proteína</b><span>120/180 g</span></div><div class="bar"><i style="width:67%"></i></div></div>
+              <div class="m"><div><b>Carbs</b><span>210/360 g</span></div><div class="bar"><i style="width:58%;background:var(--sun)"></i></div></div>
+              <div class="m"><div><b>Grasa</b><span>48/80 g</span></div><div class="bar"><i style="width:60%;background:var(--muted)"></i></div></div>
+            </div>
+          </div>
+          <div class="card">
+            <b style="font-size:12.5px">Hidratación · 2.0 / 3.5 L</b>
+            <div class="water" style="margin-top:6px"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="card">
+            <b style="font-size:12.5px">Suplementos</b>
+            <div class="sup"><span><span class="check on"><svg class="ic" style="width:12px;height:12px"><use href="#i-check"/></svg></span>Creatina 5 g</span><time class="note">06:00</time></div>
+            <div class="sup"><span><span class="check on"><svg class="ic" style="width:12px;height:12px"><use href="#i-check"/></svg></span>Electrolitos</span><time class="note">06:30</time></div>
+            <div class="sup"><span><span class="check"></span>Caseína</span><time class="note">21:30</time></div>
+          </div>
+        </div>
+        <nav class="tab"><span><svg><use href="#i-sun"/></svg>Hoy</span><span><svg><use href="#i-cal"/></svg>Plan</span><span><svg><use href="#i-dumb"/></svg>Sesión</span><span class="on"><svg><use href="#i-food"/></svg>Nutrición</span><span><svg><use href="#i-chart"/></svg>Progreso</span></nav>
+      </div></div>
+      <figcaption><b>Nutrición</b>Metas según el tipo de día, agua y suplementos con palomita. El peso semanal ajusta las calorías con tus reglas.</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<section>
+  <h2>Orden de construcción</h2>
+  <div class="flow">
+    <div class="step"><span class="n">Fase 1</span><b>Base</b><p>Proyecto Vite + PWA, carga de los 3 JSON, cálculo de semana y pantalla Hoy.</p></div>
+    <div class="step"><span class="n">Fase 2</span><b>Entreno</b><p>Calendario de 18 semanas, detalle de sesión, semáforo y registro.</p></div>
+    <div class="step"><span class="n">Fase 3</span><b>Nutrición</b><p>Metas alta/media, tomas, agua, suplementos y ajuste por peso.</p></div>
+    <div class="step"><span class="n">Fase 4</span><b>Progreso</b><p>Gráficas de peso, tiempos y semáforos; exportar respaldo y notificaciones por toma.</p></div>
+  </div>
+</section>
+</div>
+
+<script>
+const msgs={"sem-v":"Sigue el plan como está.","sem-a":"Baja el volumen 20% y mantén la intensidad.","sem-r":"Cambia a movilidad o descanso hoy."};
+const colors={"sem-v":"var(--ok)","sem-a":"var(--warn)","sem-r":"var(--bad)"};
+document.querySelectorAll(".sem button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".sem button").forEach(x=>{x.classList.remove("sel");x.setAttribute("aria-checked","false");x.style.borderColor="";x.style.background=""});
+  b.classList.add("sel");b.setAttribute("aria-checked","true");
+  b.style.borderColor=colors[b.id];b.style.background="color-mix(in srgb,"+colors[b.id]+" 12%,var(--surface))";
+  document.getElementById("sem-msg").textContent=msgs[b.id];
+}));
+</script>
+
+</body></html>

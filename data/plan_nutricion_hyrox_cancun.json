@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generado": "2026-10-15",
+    "base": {
+      "peso_kg": 80,
+      "masa_libre_grasa_kg": 71.1,
+      "tmb_kcal": 1904,
+      "fuente": "InBody 23-jun-2026. Recalcular con el InBody nuevo."
+    },
+    "mantenimiento_estimado_kcal": [
+      3200,
+      3500
+    ],
+    "nota_estimacion": "TMB 1,904 + ~800 kcal de ejercicio + ~400 de actividad diaria + ~10% de digestión. Error posible 10-15%.",
+    "promedio_semanal_objetivo_kcal": 3420
+  },
+  "macros_g_kg": {
+    "proteina": "2.0 (rango 1.8-2.2)",
+    "grasa": "1.0 (mínimo 0.8)",
+    "carbos": "7 días altos, 6 días medios"
+  },
+  "tipos_dia": {
+    "alta": {
+      "dias_semana": [
+        "martes",
+        "jueves",
+        "sabado"
+      ],
+      "descripcion": "Días con doble sesión o calidad + piernas (martes, jueves) y clase larga del sábado.",
+      "carbos_g_kg": 7,
+      "carbos_g": 560,
+      "proteina_g": 160,
+      "grasa_g": 80,
+      "kcal": 3600
+    },
+    "media": {
+      "dias_semana": [
+        "lunes",
+        "miercoles",
+        "viernes",
+        "domingo"
+      ],
+      "descripcion": "Días de clase única, rodaje, gym superior o long run. También todas las semanas de descarga y el taper.",
+      "carbos_g_kg": 6,
+      "carbos_g": 480,
+      "proteina_g": 160,
+      "grasa_g": 80,
+      "kcal": 3280
+    }
+  },
+  "horarios_comida": {
+    "desayuno": "08:00",
+    "colacion_1": "12:00",
+    "comida": "15:00",
+    "colacion_2": "18:00",
+    "cena_dia_con_sesion_20h": "22:00",
+    "cena_dia_sin_sesion_nocturna": "20:30",
+    "nota": "Cinco comidas fijas. Las tomas pre y post-sesión son satélites que se suman según tu entrenamiento."
+  },
+  "tomas_satelite": [
+    {
+      "toma": "Pre-sesión (20-30 min antes)",
+      "ejemplo": "1 plátano + 1 cucharada de miel + Seltz",
+      "carbos_g": "44"
+    },
+    {
+      "toma": "Mini-toma post-sesión",
+      "ejemplo": "Batido: 1 scoop de whey + 1-2 plátanos",
+      "macros": "20 g de proteína, 35-50 g de carbohidrato",
+      "cuando": "Solo si el desayuno de las 8:00 queda a más de 60 min de terminar la sesión."
+    },
+    {
+      "toma": "Pausa entre dos sesiones (martes)",
+      "ejemplo": "2-3 dátiles o una fruta + Seltz",
+      "carbos_g": 15
+    }
+  ],
+  "plantillas_diarias": {
+    "nota": "Los gramos exactos de cada toma estan en plan_diario_hyrox_cancun.json.",
+    "alta": [
+      "martes_A",
+      "martes_B",
+      "jueves",
+      "sabado"
+    ],
+    "media": [
+      "lunes_A",
+      "lunes_B",
+      "miercoles_A",
+      "miercoles_B",
+      "viernes_A",
+      "viernes_B",
+      "domingo"
+    ]
+  },
+  "timing": {
+    "pre": "1-4 h antes: 1-4 g/kg de carbohidrato. Si entrenas a las 5-6am y no hay margen: 20-30 g de carbohidrato rápido 20-30 min antes + Seltz.",
+    "durante": "Menos de 60 min: nada, solo agua con electrolitos. 60-90 min (long run, clase del sábado): 20-30 g de carbohidrato por hora si lo toleras; en simulación o carrera hasta 30-60 g/h.",
+    "post": "Dentro de 30-60 min: 30-40 g de proteína + ~1 g/kg de carbohidrato cuando la siguiente sesión es en menos de 8 h. Si el desayuno de las 8:00 queda a más de 60 min de terminar, toma antes una mini-toma (20 g de proteína + 35-50 g de carbohidrato).",
+    "distribucion": "4-6 tomas al día, con 30-40 g de proteína cada una (cada 3-4 h)."
+  },
+  "hidratacion": [
+    "Antes: 400-500 ml de agua con Seltz.",
+    "Durante: sorbos regulares; en sesiones de más de 60 min o con mucho calor, agrega SaltStick según tu protocolo.",
+    "Después: pésate antes y después de las sesiones largas y repón alrededor de 125-150% del peso perdido en las siguientes horas, con Seltz.",
+    "Orina de color claro durante el día."
+  ],
+  "suplementos": [
+    {
+      "nombre": "Creatina monohidratada",
+      "dosis": "3-5 g al día, todos los días (también los de descanso), sin fase de carga",
+      "nota": "Consultar antes con tu médico por el medicamento recetado. Si te haces análisis de sangre, avisa que la tomas."
+    },
+    {
+      "nombre": "Proteína en polvo (whey)",
+      "dosis": "25-30 g para completar la meta de proteína cuando no llegues con comida",
+      "nota": "Es una herramienta, no obligatoria."
+    },
+    {
+      "nombre": "Carbohidratos en polvo",
+      "dosis": "30-60 g post-sesión en días de doble sesión",
+      "nota": "Tu protocolo actual, solo post."
+    },
+    {
+      "nombre": "Cafeína",
+      "dosis": "100 mg 45 min antes de Intervalos 1, Intervalos 2 y clase del sábado",
+      "nota": "No la uses para clases de las 8pm si te afecta el sueño."
+    },
+    {
+      "nombre": "Electrolitos Seltz",
+      "dosis": "Pre y post en 400-500 ml de agua",
+      "nota": "Como ya haces."
+    },
+    {
+      "nombre": "SaltStick FastChews",
+      "dosis": "1 en sesiones de más de 60-75 min (long run, sábado largo) o días de mucho calor",
+      "nota": ""
+    },
+    {
+      "nombre": "Gel GU con cafeína",
+      "dosis": "Solo en simulaciones y en la carrera",
+      "nota": "No hace falta en entrenamientos normales."
+    }
+  ],
+  "equivalencias_aprox": {
+    "nota": "Valores aproximados; verifica la etiqueta.",
+    "arroz_cocido_1_taza": "~45 g carbohidrato",
+    "tortilla_maiz_1": "~12 g carbohidrato",
+    "pan_de_caja_1_rebanada": "~13 g carbohidrato",
+    "platano_mediano": "~27 g carbohidrato",
+    "papa_mediana": "~37 g carbohidrato",
+    "frijoles_cocidos_1_taza": "~40 g carbohidrato + ~15 g proteína",
+    "avena_cruda_1_2_taza": "~27 g carbohidrato + ~5 g proteína",
+    "miel_1_cucharada": "~17 g carbohidrato",
+    "pechuga_cocida_100_g": "~31 g proteína",
+    "huevo_1": "~6 g proteína",
+    "yogurt_griego_170_g": "~15-17 g proteína",
+    "whey_1_scoop": "~24 g proteína"
+  },
+  "ajuste": {
+    "pesaje": "Todas las mañanas, al despertar y después de ir al baño; usa el promedio de 7 días.",
+    "meta_peso": "+0.2 a +0.4 kg por semana (aprox. +0.25 a +0.5% del peso).",
+    "primeras_semanas": "Evalúa a partir de la semana 3: la creatina y el glucógeno pueden subir 0.5-1 kg de agua al inicio.",
+    "cada_2_semanas": [
+      "Si el promedio sube menos de +0.1 kg por semana: +200 kcal al día (aprox. +50 g de carbohidrato).",
+      "Si sube más de +0.5 kg por semana: -200 kcal al día.",
+      "Si pierdes peso o tu rendimiento baja (Z2 más lento a la misma FC, menos fuerza): sube +300 kcal y revisa sueño."
+    ],
+    "si_no_llegas_a_comer_todo": "Empieza 2 semanas con ~3,000 kcal promedio y sube de 150-200 en 150-200 cada semana. Usa carbohidrato líquido (jugos, batidos, arroz con leche) y 5-6 tomas.",
+    "revision": "Con el InBody nuevo (y cada 4 semanas) recalcula calorías y macros."
+  },
+  "semanas_especiales": {
+    "descarga": "S4, S8, S12: todos los días tipo media (3,280 kcal), proteína igual (160 g).",
+    "taper_S17": "Todos los días tipo media.",
+    "carrera_S18": "Las 48 h previas a tu ola: 8 g/kg de carbohidrato (~640 g), poca fibra y grasa. Día de carrera: desayuno 2-4 h antes con 1-4 g/kg de carbohidrato, cafeína y electrolitos como siempre. Nada nuevo."
+  },
+  "alertas": [
+    "Con ~12 sesiones por semana, comer de menos es lo que más probablemente te hace perder músculo.",
+    "Este plan es una estimación: la báscula, el rendimiento y el InBody lo corrigen.",
+    "Valida el plan y la creatina con tu nutrióloga y tu médico por el medicamento recetado.",
+    "Después de una sesión a las 20:00 (cena a las 22:00), una sesión a las 4:00-5:00 al día siguiente te deja 5-5.75 h de sueño: retrásala a las 6:00 o más tarde."
+  ],
+  "registro_campos": [
+    "fecha",
+    "peso_kg_manana",
+    "proteina_g",
+    "carbos_g",
+    "kcal_opcional",
+    "agua_l",
+    "creatina(bool)",
+    "tomas_realizadas",
+    "hambre_energia_1_5",
+    "notas"
+  ]
+}
