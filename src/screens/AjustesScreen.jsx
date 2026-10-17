@@ -5,6 +5,7 @@ import { DIAS_LABEL, formatShort } from '../engine/dates'
 import { PRIMER_DIA, ULTIMO_DIA } from '../engine/calendar'
 import { useStored, KEYS, clearAll, exportarTodo, importarTodo, validarRespaldo } from '../store/store'
 import { compartirArchivo } from '../engine/ics'
+import InstalarApp from '../components/InstalarApp'
 import { todayISO } from '../engine/dates'
 
 // Días con más de una plantilla diaria. El martes se decide solo (semáforo y semana).
@@ -50,6 +51,10 @@ export default function AjustesScreen() {
         <div className="eyebrow">{plan.meta.nombre_plan}</div>
         <h1 className="mt-1 font-display text-[30px] font-bold uppercase leading-none">Ajustes</h1>
       </header>
+
+      <Seccion titulo="Instalar">
+        <InstalarApp />
+      </Seccion>
 
       <Seccion titulo="Tu ola">
         <label htmlFor="aj-fecha" className="flex items-center justify-between gap-3 p-3">

@@ -31,7 +31,8 @@ export default defineConfig({
         ],
       },
       manifest: {
-        id: BASE,
+        // id distinto de cualquier instalación anterior: Chrome la trata como app nueva
+        id: 'hyrox-cancun-2027',
         name: 'Hyrox Cancún 2027',
         short_name: 'Hyrox CUN',
         description: 'Plan integrado de entrenamiento, nutrición y día a día para Hyrox Cancún 2027.',
@@ -40,7 +41,7 @@ export default defineConfig({
         background_color: '#EEF4F3',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: BASE,
+        start_url: `${BASE}?pwa=1`,
         scope: BASE,
         icons: [
           { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
