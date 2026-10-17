@@ -13,7 +13,7 @@
       3500
     ],
     "nota_estimacion": "TMB 1,904 + ~800 kcal de ejercicio + ~400 de actividad diaria + ~10% de digestión. Error posible 10-15%.",
-    "promedio_semanal_objetivo_kcal": 3480
+    "promedio_semanal_objetivo_kcal": 3470
   },
   "macros_g_kg": {
     "proteina": "2.1-2.2 (rango 1.8-2.2)",
@@ -29,10 +29,10 @@
       ],
       "descripcion": "Días con doble sesión o calidad + piernas (martes, jueves) y clase larga del sábado.",
       "carbos_g_kg": 7,
-      "carbos_g": 562,
-      "proteina_g": 173,
-      "grasa_g": 73,
-      "kcal": 3602
+      "carbos_g": 564,
+      "proteina_g": 171,
+      "grasa_g": 80,
+      "kcal": 3666
     },
     "media": {
       "dias_semana": [
@@ -43,10 +43,10 @@
       ],
       "descripcion": "Días de clase única, rodaje, gym superior o long run. También todas las semanas de descarga y el taper.",
       "carbos_g_kg": 6,
-      "carbos_g": 482,
+      "carbos_g": 483,
       "proteina_g": 169,
-      "grasa_g": 86,
-      "kcal": 3380
+      "grasa_g": 79,
+      "kcal": 3320
     }
   },
   "horarios_comida": {
@@ -72,8 +72,8 @@
     },
     {
       "toma": "Pausa entre dos sesiones (martes)",
-      "ejemplo": "1 dátil medjool (24 g) o ½ plátano (60 g) + Seltz",
-      "carbos_g": 18
+      "ejemplo": "¾ de plátano mediano (90 g) + Seltz",
+      "carbos_g": 21
     }
   ],
   "plantillas_diarias": {
@@ -171,7 +171,7 @@
     "revision": "Con el InBody nuevo (y cada 4 semanas) recalcula calorías y macros."
   },
   "semanas_especiales": {
-    "descarga": "S4, S8, S12: todos los días tipo media (3,380 kcal), proteína igual (169 g).",
+    "descarga": "S4, S8, S12: todos los días tipo media (3,320 kcal), proteína igual (169 g).",
     "taper_S17": "Todos los días tipo media.",
     "carrera_S18": "Las 48 h previas a tu ola: 8 g/kg de carbohidrato (~640 g), poca fibra y grasa. Día de carrera: desayuno 2-4 h antes con 1-4 g/kg de carbohidrato, cafeína y electrolitos como siempre. Nada nuevo."
   },
@@ -196,12 +196,13 @@
   "reglas_alimentos": [
     "El desayuno siempre lleva avena y una fruta (plátano, manzana o berries).",
     "Los pesos de carnes, arroz, pasta, papa y frijoles son cocidos; la avena se pesa cruda.",
-    "Las cantidades están calculadas para ~80 kg. Son aproximadas: pesa con báscula cuando puedas."
+    "Las cantidades están calculadas para ~80 kg. Son aproximadas: pesa con báscula cuando puedas.",
+    "La proteína de la cena es huevo + claras líquidas. Alternativas: pechuga de pollo o res magra (gramajes en cada cena y en cena_proteína)."
   ],
   "sustituciones": {
     "fruta_del_desayuno": "120 g de plátano ≈ 180 g de manzana ≈ 225 g de berries",
     "carbohidrato": "100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz (60 g)",
-    "proteina": "100 g de pollo cocido ≈ 100 g de pescado blanco ≈ 100 g de res magra ≈ 120 g de atún escurrido"
+    "proteina": "Cena: huevo + claras como base. 100 g de pechuga de pollo cocida ≈ 115 g de res magra cocida (misma proteína)"
   },
   "alimentos_base_por_100g": {
     "avena": {
@@ -306,23 +307,11 @@
       "carbohidrato_g": 0,
       "grasa_g": 3.6
     },
-    "pescado": {
-      "nombre": "Pescado blanco (cocido)",
-      "proteina_g": 26,
-      "carbohidrato_g": 0,
-      "grasa_g": 2.7
-    },
     "res": {
       "nombre": "Carne magra de res (cocida)",
       "proteina_g": 27,
       "carbohidrato_g": 0,
       "grasa_g": 8
-    },
-    "atun": {
-      "nombre": "Atún en agua (escurrido)",
-      "proteina_g": 25,
-      "carbohidrato_g": 0,
-      "grasa_g": 1
     },
     "pavo": {
       "nombre": "Pechuga de pavo rebanada",
@@ -342,23 +331,11 @@
       "carbohidrato_g": 8.5,
       "grasa_g": 15
     },
-    "nueces": {
-      "nombre": "Nueces",
-      "proteina_g": 15,
-      "carbohidrato_g": 14,
-      "grasa_g": 65
-    },
     "whey": {
       "nombre": "Proteína whey en polvo",
       "proteina_g": 80,
       "carbohidrato_g": 7,
       "grasa_g": 5
-    },
-    "datil": {
-      "nombre": "Dátil medjool",
-      "proteina_g": 2,
-      "carbohidrato_g": 75,
-      "grasa_g": 0.2
     },
     "jugo": {
       "nombre": "Jugo de naranja",
@@ -373,6 +350,34 @@
       "grasa_g": 0.3
     }
   },
+  "cena_proteina": {
+    "base": "Huevo entero + claras líquidas",
+    "alternativas": [
+      {
+        "alimento": "Pechuga de pollo (cocida)",
+        "por_100g": {
+          "p": 31,
+          "c": 0,
+          "g": 3.6
+        },
+        "equivalencia": "85 g ≈ 26 g de proteína; 100 g ≈ 31 g"
+      },
+      {
+        "alimento": "Carne magra de res (cocida)",
+        "por_100g": {
+          "p": 27,
+          "c": 0,
+          "g": 8
+        },
+        "equivalencia": "100 g ≈ 27 g de proteína; 115 g ≈ 31 g"
+      }
+    ],
+    "ejemplos": [
+      "2 huevos + 100 ml de claras ≈ 24 g de proteína ≈ 75-80 g de pollo cocido ≈ 90 g de res magra cocida",
+      "2 huevos + 150 ml de claras ≈ 29 g de proteína ≈ 95 g de pollo cocido ≈ 105 g de res magra cocida"
+    ],
+    "nota": "Los gramos exactos para igualar la proteína de cada cena están en el campo alternativas de cada toma del plan diario."
+  },
   "lista_compras_semana_tipo": {
     "base": [
       "lunes_B",
@@ -383,13 +388,13 @@
       "sábado",
       "domingo"
     ],
-    "nota": "Con ~5% de margen. Cocido a crudo: pollo ÷0.75, pescado ÷0.80, arroz ÷2.6, frijoles ÷2.3 (aproximado).",
+    "nota": "Con ~5% de margen. Cocido a crudo: pollo ÷0.75, arroz ÷2.6, frijoles ÷2.3 (aproximado).",
     "items": [
       {
         "alimento": "Avena en hojuelas (cruda)",
-        "uso_semana": "375 g",
+        "uso_semana": "370 g",
         "comprar": "400 g",
-        "cantidad_g_ml": 375,
+        "cantidad_g_ml": 370,
         "unidad": "g"
       },
       {
@@ -401,23 +406,23 @@
       },
       {
         "alimento": "Plátano",
-        "uso_semana": "3.42 kg",
-        "comprar": "≈ 30 plátanos",
-        "cantidad_g_ml": 3420,
+        "uso_semana": "3.51 kg",
+        "comprar": "≈ 31 plátanos",
+        "cantidad_g_ml": 3510,
         "unidad": "g"
       },
       {
         "alimento": "Huevo entero",
-        "uso_semana": "600 g",
-        "comprar": "≈ 13 huevos (2 docena(s))",
-        "cantidad_g_ml": 600,
+        "uso_semana": "1.30 kg",
+        "comprar": "≈ 28 huevos (3 docena(s))",
+        "cantidad_g_ml": 1300,
         "unidad": "g"
       },
       {
         "alimento": "Claras de huevo (líquidas)",
-        "uso_semana": "250 ml",
-        "comprar": "300 ml",
-        "cantidad_g_ml": 250,
+        "uso_semana": "1.15 L",
+        "comprar": "1.25 L",
+        "cantidad_g_ml": 1150,
         "unidad": "ml"
       },
       {
@@ -464,23 +469,23 @@
       },
       {
         "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-        "uso_semana": "3.50 kg",
-        "comprar": "3.70 kg",
-        "cantidad_g_ml": 3500,
+        "uso_semana": "3.25 kg",
+        "comprar": "3.45 kg",
+        "cantidad_g_ml": 3250,
         "unidad": "g"
       },
       {
         "alimento": "Aceite de oliva",
-        "uso_semana": "270 ml",
-        "comprar": "300 ml",
-        "cantidad_g_ml": 270,
+        "uso_semana": "210 ml",
+        "comprar": "250 ml",
+        "cantidad_g_ml": 210,
         "unidad": "ml"
       },
       {
         "alimento": "Aguacate",
-        "uso_semana": "350 g",
+        "uso_semana": "400 g",
         "comprar": "≈ 3 aguacates",
-        "cantidad_g_ml": 350,
+        "cantidad_g_ml": 400,
         "unidad": "g"
       },
       {
@@ -505,20 +510,6 @@
         "unidad": "ml"
       },
       {
-        "alimento": "Pescado blanco (cocido)",
-        "uso_semana": "700 g",
-        "comprar": "Pescado blanco (crudo): 950 g",
-        "cantidad_g_ml": 700,
-        "unidad": "g"
-      },
-      {
-        "alimento": "Dátil medjool",
-        "uso_semana": "24 g",
-        "comprar": "≈ 2 dátiles",
-        "cantidad_g_ml": 24,
-        "unidad": "g"
-      },
-      {
         "alimento": "Miel",
         "uso_semana": "49 g",
         "comprar": "100 g",
@@ -530,13 +521,6 @@
         "uso_semana": "15 g",
         "comprar": "50 g",
         "cantidad_g_ml": 15,
-        "unidad": "g"
-      },
-      {
-        "alimento": "Nueces",
-        "uso_semana": "10 g",
-        "comprar": "50 g",
-        "cantidad_g_ml": 10,
         "unidad": "g"
       }
     ]

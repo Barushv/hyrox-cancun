@@ -12,7 +12,8 @@
   "reglas_alimentos": [
     "El desayuno siempre lleva avena y una fruta (plátano, manzana o berries).",
     "Los pesos de carnes, arroz, pasta, papa y frijoles son cocidos; la avena se pesa cruda. Sólidos en g, líquidos en ml.",
-    "Las cantidades son para un atleta de ~80 kg. Los gramos y las medidas son aproximados: pesa con báscula cuando puedas."
+    "Las cantidades son para un atleta de ~80 kg. Los gramos y las medidas son aproximados: pesa con báscula cuando puedas.",
+    "La proteína de la cena es huevo + claras líquidas. Alternativas: pechuga de pollo o res magra, con el gramaje en cada cena."
   ],
   "como_leer": "Cada día tiene anclas (hora de la sesión). Los ítems con ref distinto de 'fija' usan offset_min respecto a esa ancla: hora = ancla + offset. Los ítems 'fija' tienen hora_default editable. Cada comida trae 'alimentos' (alimento, cantidad, unidad, medida), 'macros' (p, c, g) y 'alternativas'.",
   "tipos_item": [
@@ -114,7 +115,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Nueces: 5 g",
+          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 25 g",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
@@ -149,14 +150,14 @@
               "medida": "1½ claras"
             },
             {
-              "alimento": "Nueces",
-              "cantidad": 5,
+              "alimento": "Aguacate",
+              "cantidad": 25,
               "unidad": "g"
             }
           ],
           "macros": {
             "p": 26,
-            "c": 69,
+            "c": 71,
             "g": 12
           },
           "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
@@ -259,7 +260,7 @@
             "c": 122,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -306,14 +307,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 30 ml (2 cucharadas). Pesos cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 100,
+              "unidad": "ml",
+              "medida": "3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -328,17 +336,17 @@
             },
             {
               "alimento": "Aceite de oliva",
-              "cantidad": 30,
+              "cantidad": 15,
               "unidad": "ml",
-              "medida": "2 cucharadas"
+              "medida": "1 cucharada"
             }
           ],
           "macros": {
-            "p": 39,
-            "c": 103,
-            "g": 32
+            "p": 36,
+            "c": 104,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -352,10 +360,10 @@
         }
       ],
       "totales": {
-        "p": 171,
-        "c": 482,
-        "g": 85,
-        "kcal": 3377
+        "p": 168,
+        "c": 485,
+        "g": 78,
+        "kcal": 3314
       }
     },
     {
@@ -522,7 +530,7 @@
             "c": 128,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -601,14 +609,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 30 ml (2 cucharadas). Pesos cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 150,
+              "unidad": "ml",
+              "medida": "4½ claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -618,22 +633,22 @@
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "g"
             },
             {
               "alimento": "Aceite de oliva",
-              "cantidad": 30,
+              "cantidad": 15,
               "unidad": "ml",
-              "medida": "2 cucharadas"
+              "medida": "1 cucharada"
             }
           ],
           "macros": {
-            "p": 40,
-            "c": 106,
-            "g": 32
+            "p": 42,
+            "c": 105,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -647,10 +662,10 @@
         }
       ],
       "totales": {
-        "p": 168,
-        "c": 482,
-        "g": 87,
-        "kcal": 3383
+        "p": 170,
+        "c": 481,
+        "g": 80,
+        "kcal": 3324
       }
     },
     {
@@ -720,23 +735,23 @@
           "ref": "gym",
           "tipo": "comida",
           "titulo": "Pausa: carbohidrato rápido",
-          "detalle": "Dátil medjool: 24 g (1 dátil). Con agua y Seltz. 10-15 min.",
+          "detalle": "Plátano: 90 g (¾ plátano mediano). Con agua y Seltz. 10-15 min.",
           "duracion_min": 15,
           "offset_min": 60,
           "alimentos": [
             {
-              "alimento": "Dátil medjool",
-              "cantidad": 24,
+              "alimento": "Plátano",
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "1 dátil"
+              "medida": "¾ plátano mediano"
             }
           ],
           "macros": {
-            "p": 0,
-            "c": 18,
+            "p": 1,
+            "c": 21,
             "g": 0
           },
-          "alternativas": "½ plátano (60 g).",
+          "alternativas": "½ plátano (60 g) si prefieres menos carbohidrato.",
           "hora": "06:00"
         },
         {
@@ -892,7 +907,7 @@
             "c": 147,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -949,14 +964,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Pesos cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 100,
+              "unidad": "ml",
+              "medida": "3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -977,11 +999,11 @@
             }
           ],
           "macros": {
-            "p": 41,
-            "c": 120,
-            "g": 18
+            "p": 39,
+            "c": 121,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -995,10 +1017,10 @@
         }
       ],
       "totales": {
-        "p": 171,
-        "c": 567,
-        "g": 74,
-        "kcal": 3618
+        "p": 170,
+        "c": 571,
+        "g": 81,
+        "kcal": 3693
       }
     },
     {
@@ -1067,23 +1089,23 @@
           "ref": "gym",
           "tipo": "comida",
           "titulo": "Pausa: carbohidrato rápido",
-          "detalle": "Dátil medjool: 24 g (1 dátil). Con agua y Seltz. 10-15 min.",
+          "detalle": "Plátano: 90 g (¾ plátano mediano). Con agua y Seltz. 10-15 min.",
           "duracion_min": 15,
           "offset_min": 60,
           "alimentos": [
             {
-              "alimento": "Dátil medjool",
-              "cantidad": 24,
+              "alimento": "Plátano",
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "1 dátil"
+              "medida": "¾ plátano mediano"
             }
           ],
           "macros": {
-            "p": 0,
-            "c": 18,
+            "p": 1,
+            "c": 21,
             "g": 0
           },
-          "alternativas": "½ plátano (60 g).",
+          "alternativas": "½ plátano (60 g) si prefieres menos carbohidrato.",
           "hora": "06:00"
         },
         {
@@ -1239,7 +1261,7 @@
             "c": 147,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -1286,14 +1308,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Pesos cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 100,
+              "unidad": "ml",
+              "medida": "3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -1314,11 +1343,11 @@
             }
           ],
           "macros": {
-            "p": 41,
-            "c": 120,
-            "g": 18
+            "p": 39,
+            "c": 121,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -1332,10 +1361,10 @@
         }
       ],
       "totales": {
-        "p": 171,
-        "c": 567,
-        "g": 74,
-        "kcal": 3618
+        "p": 170,
+        "c": 571,
+        "g": 81,
+        "kcal": 3693
       }
     },
     {
@@ -1446,7 +1475,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Nueces: 5 g",
+          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 25 g",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
@@ -1481,14 +1510,14 @@
               "medida": "1½ claras"
             },
             {
-              "alimento": "Nueces",
-              "cantidad": 5,
+              "alimento": "Aguacate",
+              "cantidad": 25,
               "unidad": "g"
             }
           ],
           "macros": {
             "p": 26,
-            "c": 69,
+            "c": 71,
             "g": 12
           },
           "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
@@ -1591,7 +1620,7 @@
             "c": 122,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -1638,14 +1667,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 30 ml (2 cucharadas). Pesos cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 100,
+              "unidad": "ml",
+              "medida": "3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -1660,17 +1696,17 @@
             },
             {
               "alimento": "Aceite de oliva",
-              "cantidad": 30,
+              "cantidad": 15,
               "unidad": "ml",
-              "medida": "2 cucharadas"
+              "medida": "1 cucharada"
             }
           ],
           "macros": {
-            "p": 39,
-            "c": 103,
-            "g": 32
+            "p": 36,
+            "c": 104,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -1684,10 +1720,10 @@
         }
       ],
       "totales": {
-        "p": 171,
-        "c": 482,
-        "g": 85,
-        "kcal": 3377
+        "p": 168,
+        "c": 485,
+        "g": 78,
+        "kcal": 3314
       }
     },
     {
@@ -1887,7 +1923,7 @@
             "c": 128,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -1952,14 +1988,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 30 ml (2 cucharadas). Pesos cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 150,
+              "unidad": "ml",
+              "medida": "4½ claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -1969,22 +2012,22 @@
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "g"
             },
             {
               "alimento": "Aceite de oliva",
-              "cantidad": 30,
+              "cantidad": 15,
               "unidad": "ml",
-              "medida": "2 cucharadas"
+              "medida": "1 cucharada"
             }
           ],
           "macros": {
-            "p": 40,
-            "c": 106,
-            "g": 32
+            "p": 42,
+            "c": 105,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -1998,10 +2041,10 @@
         }
       ],
       "totales": {
-        "p": 168,
-        "c": 482,
-        "g": 87,
-        "kcal": 3383
+        "p": 170,
+        "c": 481,
+        "g": 80,
+        "kcal": 3324
       }
     },
     {
@@ -2111,13 +2154,13 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Claras de huevo (líquidas): 50 ml (1½ claras) · Nueces: 10 g",
+          "detalle": "Avena en hojuelas (cruda): 40 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 50 g",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 45,
+              "cantidad": 40,
               "unidad": "g",
               "medida": "≈ ½ taza"
             },
@@ -2140,15 +2183,15 @@
               "medida": "1½ claras"
             },
             {
-              "alimento": "Nueces",
-              "cantidad": 10,
+              "alimento": "Aguacate",
+              "cantidad": 50,
               "unidad": "g"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 70,
-            "g": 10
+            "p": 20,
+            "c": 69,
+            "g": 11
           },
           "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
           "hora": "08:00"
@@ -2244,7 +2287,7 @@
             "c": 147,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -2300,14 +2343,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Pesos cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 100,
+              "unidad": "ml",
+              "medida": "3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -2317,7 +2367,7 @@
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "g"
             },
             {
@@ -2328,11 +2378,11 @@
             }
           ],
           "macros": {
-            "p": 41,
-            "c": 120,
-            "g": 18
+            "p": 38,
+            "c": 118,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -2346,10 +2396,10 @@
         }
       ],
       "totales": {
-        "p": 180,
-        "c": 556,
-        "g": 71,
-        "kcal": 3583
+        "p": 176,
+        "c": 553,
+        "g": 79,
+        "kcal": 3627
       }
     },
     {
@@ -2460,7 +2510,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Nueces: 5 g",
+          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 25 g",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
@@ -2495,14 +2545,14 @@
               "medida": "1½ claras"
             },
             {
-              "alimento": "Nueces",
-              "cantidad": 5,
+              "alimento": "Aguacate",
+              "cantidad": 25,
               "unidad": "g"
             }
           ],
           "macros": {
             "p": 26,
-            "c": 69,
+            "c": 71,
             "g": 12
           },
           "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
@@ -2605,7 +2655,7 @@
             "c": 122,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -2652,14 +2702,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 30 ml (2 cucharadas). Pesos cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 100,
+              "unidad": "ml",
+              "medida": "3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -2674,17 +2731,17 @@
             },
             {
               "alimento": "Aceite de oliva",
-              "cantidad": 30,
+              "cantidad": 15,
               "unidad": "ml",
-              "medida": "2 cucharadas"
+              "medida": "1 cucharada"
             }
           ],
           "macros": {
-            "p": 39,
-            "c": 103,
-            "g": 32
+            "p": 36,
+            "c": 104,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -2698,10 +2755,10 @@
         }
       ],
       "totales": {
-        "p": 171,
-        "c": 482,
-        "g": 85,
-        "kcal": 3377
+        "p": 168,
+        "c": 485,
+        "g": 78,
+        "kcal": 3314
       }
     },
     {
@@ -2901,7 +2958,7 @@
             "c": 128,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -2957,14 +3014,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 30 ml (2 cucharadas). Pesos cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 150,
+              "unidad": "ml",
+              "medida": "4½ claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -2974,22 +3038,22 @@
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "g"
             },
             {
               "alimento": "Aceite de oliva",
-              "cantidad": 30,
+              "cantidad": 15,
               "unidad": "ml",
-              "medida": "2 cucharadas"
+              "medida": "1 cucharada"
             }
           ],
           "macros": {
-            "p": 40,
-            "c": 106,
-            "g": 32
+            "p": 42,
+            "c": 105,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -3003,10 +3067,10 @@
         }
       ],
       "totales": {
-        "p": 168,
-        "c": 482,
-        "g": 87,
-        "kcal": 3383
+        "p": 170,
+        "c": 481,
+        "g": 80,
+        "kcal": 3324
       }
     },
     {
@@ -3227,7 +3291,7 @@
             "c": 147,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -3274,14 +3338,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Pesos cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 100,
+              "unidad": "ml",
+              "medida": "3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -3302,11 +3373,11 @@
             }
           ],
           "macros": {
-            "p": 41,
-            "c": 120,
-            "g": 18
+            "p": 39,
+            "c": 121,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -3320,10 +3391,10 @@
         }
       ],
       "totales": {
-        "p": 171,
-        "c": 560,
-        "g": 74,
-        "kcal": 3590
+        "p": 169,
+        "c": 561,
+        "g": 81,
+        "kcal": 3649
       }
     },
     {
@@ -3522,7 +3593,7 @@
             "c": 128,
             "g": 27
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
@@ -3569,14 +3640,21 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Pescado blanco (cocido): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 30 ml (2 cucharadas). Pesos cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
             {
-              "alimento": "Pescado blanco (cocido)",
+              "alimento": "Huevo entero",
               "cantidad": 100,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "2 piezas"
+            },
+            {
+              "alimento": "Claras de huevo (líquidas)",
+              "cantidad": 150,
+              "unidad": "ml",
+              "medida": "4½ claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
@@ -3586,22 +3664,22 @@
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "g"
             },
             {
               "alimento": "Aceite de oliva",
-              "cantidad": 30,
+              "cantidad": 15,
               "unidad": "ml",
-              "medida": "2 cucharadas"
+              "medida": "1 cucharada"
             }
           ],
           "macros": {
-            "p": 40,
-            "c": 106,
-            "g": 32
+            "p": 42,
+            "c": 105,
+            "g": 25
           },
-          "alternativas": "Proteína: pollo, pescado, res magra o atún en el mismo peso cocido. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -3615,10 +3693,10 @@
         }
       ],
       "totales": {
-        "p": 168,
-        "c": 482,
-        "g": 87,
-        "kcal": 3383
+        "p": 170,
+        "c": 481,
+        "g": 80,
+        "kcal": 3324
       }
     }
   ]
