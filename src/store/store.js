@@ -13,6 +13,7 @@ export const KEYS = {
   sesiones: 'sesiones', // { [fecha]: { [plantillaId]: registro } } campos según registro_campos del plan
   pruebas: 'pruebas', // [{ id, fecha, tipo, resultado, notas, ...campos InBody }]
   nutricionDia: 'nutricion_dia', // { [fecha]: { agua_l, suplementos: string[], hambre_1_5, notas } }
+  compras: 'compras', // { [semana del plan]: alimentos ya comprados }
 }
 
 function readRaw(key) {

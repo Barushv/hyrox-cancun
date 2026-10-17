@@ -5,7 +5,8 @@ export const variantesDe = (diaKey) => diario.dias.filter((d) => d.dia === diaKe
 
 // "A: clase en la manana" → "Clase en la manana"
 export function etiquetaVariante(v) {
-  const txt = v.variante.includes(':') ? v.variante.split(':').slice(1).join(':').trim() : v.variante
+  // Solo quita el prefijo "A:" / "B:"; no corta horas como "6:30"
+  const txt = v.variante.replace(/^[A-Z]:\s*/, '')
   return txt.charAt(0).toUpperCase() + txt.slice(1)
 }
 

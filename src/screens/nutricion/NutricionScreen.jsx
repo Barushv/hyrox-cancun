@@ -3,6 +3,7 @@ import Icon from '../../components/Icon'
 import { Escala, Texto } from '../../components/Campos'
 import MacroSummary from '../hoy/MacroSummary'
 import PesoChart from './PesoChart'
+import ListaCompras from './ListaCompras'
 import { nutricion } from '../../data/plan'
 import { useDiaPlan } from '../../hooks/useDiaPlan'
 import { suplementosDelDia, avisoNutricion, etiquetaEquivalencia } from '../../engine/nutricion'
@@ -219,6 +220,10 @@ export default function NutricionScreen({ fecha, setFecha }) {
           <Escala id="nut-hambre" label="Hambre" ayuda="1 = nada, 5 = mucha" min={1} max={5} value={reg.hambre_1_5 ?? null} onChange={(v) => setReg('hambre_1_5', v)} />
           <Texto id="nut-notas" label="Notas" multilinea value={reg.notas} onChange={(v) => setReg('notas', v)} placeholder="No llegué a la cena, cambié arroz por papa…" />
         </div>
+      </Seccion>
+
+      <Seccion titulo="Lista de compras">
+        <ListaCompras />
       </Seccion>
 
       <Seccion titulo="Guía rápida">
