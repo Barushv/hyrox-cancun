@@ -18,6 +18,7 @@ const MAPA = {
   segun: 'según', semaforo: 'semáforo', sesion: 'sesión', simulacion: 'simulación', sueno: 'sueño',
   tambien: 'también', tecnica: 'técnica', triceps: 'tríceps', ultima: 'última', unica: 'única',
   miercoles: 'miércoles', estas: 'estás', especifica: 'específica', estandar: 'estándar',
+  adaptacion: 'adaptación', ultimo: 'último', ultimos: 'últimos', estacion: 'estación',
 }
 
 // Casos que dependen del contexto ("esta semana" no lleva acento, "está en verde" sí)

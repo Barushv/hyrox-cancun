@@ -15,6 +15,15 @@ function Macros({ m, ajuste }) {
   )
 }
 
+// Si la comida trae lista de alimentos, el detalle repite esa lista: solo se muestra la nota final
+// ("Pesos cocidos.", "Más Seltz en 400-500 ml de agua.")
+function notaExtra(it) {
+  if (!it.alimentos) return it.detalle
+  const ultimo = (it.detalle ?? '').split(' · ').pop()
+  const i = ultimo.indexOf('. ')
+  return i >= 0 ? ultimo.slice(i + 2) : ''
+}
+
 function Fila({ it, hecho, actual, onToggle }) {
   const [open, setOpen] = useState(false)
   const entreno = it.tipo === 'entreno'
@@ -34,22 +43,28 @@ function Fila({ it, hecho, actual, onToggle }) {
           {it.opcional && <span className="chip ml-1.5 bg-line text-muted align-middle">opcional</span>}
         </span>
         {it.duracion_min > 0 && <span className="text-xs text-muted">{it.duracion_min} min</span>}
-        {it.porciones && (
+        {it.alimentos && (
           <span className="mt-1.5 flex flex-col gap-0.5">
-            {it.porciones.map((p, i) => (
-              <span key={i} className="grid grid-cols-[76px_1fr] gap-2 text-[13px] leading-snug">
-                <span className={`font-mono text-xs tabular ${p.ajustada ? 'text-warn' : 'text-accent'}`}>{p.cantidad.replace(/ \(.*\)/, '')}</span>
+            {it.alimentos.map((a, i) => (
+              <span key={i} className="grid grid-cols-[64px_1fr] gap-2 text-[13px] leading-snug">
+                <span className={`font-mono text-xs tabular ${a.ajustada ? 'text-warn' : 'text-accent'}`}>
+                  {a.cantidad} {a.unidad}
+                </span>
                 <span>
-                  {p.alimento}
-                  {open && p.cantidad.includes('(') && <span className="text-muted"> {p.cantidad.match(/\(.*\)/)[0]}</span>}
-                  {open && p.alternativa && <span className="block text-xs text-muted">{p.alternativa}</span>}
+                  {a.alimento}
+                  {open && a.medida && <span className="text-muted"> ({a.medida})</span>}
                 </span>
               </span>
             ))}
           </span>
         )}
         <Macros m={it.macros} ajuste={it.ajusteCarbos} />
-        {open && <span className="mt-1.5 block text-sm text-muted">{it.detalle}</span>}
+        {open && notaExtra(it) && <span className="mt-1.5 block text-sm text-muted">{notaExtra(it)}</span>}
+        {open && it.alternativas && (
+          <span className="mt-1.5 block rounded-md bg-accent-soft px-2 py-1.5 text-xs">
+            <b>Cambios:</b> {it.alternativas}
+          </span>
+        )}
       </button>
       <button
         onClick={onToggle}

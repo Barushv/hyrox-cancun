@@ -12,9 +12,13 @@ export const CARGA_STYLE = {
 // La carga es un identificador en el JSON; aquí se muestra con acentos
 export const CARGA_LABEL = { facil: 'fácil', 'facil-media': 'fácil-media', 'media-dura': 'media-dura', media: 'media', dura: 'dura', nula: 'descanso' }
 
+// El JSON puede traer la carga con o sin acento ("facil" o "fácil"): se compara sin acentos
+const sinAcento = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '')
+
 export function CargaChip({ carga }) {
   if (!carga) return null
-  return <span className={`chip ${CARGA_STYLE[carga] ?? 'bg-line text-muted'}`}>{CARGA_LABEL[carga] ?? carga}</span>
+  const k = sinAcento(carga)
+  return <span className={`chip ${CARGA_STYLE[k] ?? 'bg-line text-muted'}`}>{CARGA_LABEL[k] ?? carga}</span>
 }
 
 // Línea principal de la sesión. En clases, la indicación de la plantilla es más concreta que el texto general de la semana.

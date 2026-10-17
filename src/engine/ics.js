@@ -20,7 +20,7 @@ const fechaHora = (iso, hhmm) => `${iso.replace(/-/g, '')}T${hhmm.replace(':', '
 
 function descripcion(it) {
   const partes = []
-  if (it.porciones) partes.push(it.porciones.map((p) => `${p.cantidad} ${p.alimento}`).join('\n'))
+  if (it.alimentos) partes.push(it.alimentos.map((a) => `${a.cantidad} ${a.unidad} ${a.alimento}`).join('\n'))
   if (it.macros) partes.push(`P ${it.macros.p} · C ${it.macros.c} · G ${it.macros.g}`)
   if (it.detalle) partes.push(it.detalle)
   return partes.join('\n\n')

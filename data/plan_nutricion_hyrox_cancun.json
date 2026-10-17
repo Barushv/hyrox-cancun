@@ -13,10 +13,10 @@
       3500
     ],
     "nota_estimacion": "TMB 1,904 + ~800 kcal de ejercicio + ~400 de actividad diaria + ~10% de digestión. Error posible 10-15%.",
-    "promedio_semanal_objetivo_kcal": 3420
+    "promedio_semanal_objetivo_kcal": 3480
   },
   "macros_g_kg": {
-    "proteina": "2.0 (rango 1.8-2.2)",
+    "proteina": "2.1-2.2 (rango 1.8-2.2)",
     "grasa": "1.0 (mínimo 0.8)",
     "carbos": "7 días altos, 6 días medios"
   },
@@ -29,10 +29,10 @@
       ],
       "descripcion": "Días con doble sesión o calidad + piernas (martes, jueves) y clase larga del sábado.",
       "carbos_g_kg": 7,
-      "carbos_g": 560,
-      "proteina_g": 160,
-      "grasa_g": 80,
-      "kcal": 3600
+      "carbos_g": 562,
+      "proteina_g": 173,
+      "grasa_g": 73,
+      "kcal": 3602
     },
     "media": {
       "dias_semana": [
@@ -43,10 +43,10 @@
       ],
       "descripcion": "Días de clase única, rodaje, gym superior o long run. También todas las semanas de descarga y el taper.",
       "carbos_g_kg": 6,
-      "carbos_g": 480,
-      "proteina_g": 160,
-      "grasa_g": 80,
-      "kcal": 3280
+      "carbos_g": 482,
+      "proteina_g": 169,
+      "grasa_g": 86,
+      "kcal": 3380
     }
   },
   "horarios_comida": {
@@ -61,23 +61,23 @@
   "tomas_satelite": [
     {
       "toma": "Pre-sesión (20-30 min antes)",
-      "ejemplo": "1 plátano + 1 cucharada de miel + Seltz",
-      "carbos_g": "44"
+      "ejemplo": "1 plátano mediano (120 g); en días altos suma 1 cucharadita de miel (7 g). Más Seltz en 400-500 ml de agua",
+      "carbos_g": "28-33"
     },
     {
       "toma": "Mini-toma post-sesión",
-      "ejemplo": "Batido: 1 scoop de whey + 1-2 plátanos",
+      "ejemplo": "Batido: 20-25 g de whey (≈ ¾ de scoop) + 1-2 plátanos (120-240 g) + 150 ml de leche descremada",
       "macros": "20 g de proteína, 35-50 g de carbohidrato",
       "cuando": "Solo si el desayuno de las 8:00 queda a más de 60 min de terminar la sesión."
     },
     {
       "toma": "Pausa entre dos sesiones (martes)",
-      "ejemplo": "2-3 dátiles o una fruta + Seltz",
-      "carbos_g": 15
+      "ejemplo": "1 dátil medjool (24 g) o ½ plátano (60 g) + Seltz",
+      "carbos_g": 18
     }
   ],
   "plantillas_diarias": {
-    "nota": "Los gramos exactos de cada toma estan en plan_diario_hyrox_cancun.json.",
+    "nota": "Los gramos exactos de cada toma están en plan_diario_hyrox_cancun.json.",
     "alta": [
       "martes_A",
       "martes_B",
@@ -171,7 +171,7 @@
     "revision": "Con el InBody nuevo (y cada 4 semanas) recalcula calorías y macros."
   },
   "semanas_especiales": {
-    "descarga": "S4, S8, S12: todos los días tipo media (3,280 kcal), proteína igual (160 g).",
+    "descarga": "S4, S8, S12: todos los días tipo media (3,380 kcal), proteína igual (169 g).",
     "taper_S17": "Todos los días tipo media.",
     "carrera_S18": "Las 48 h previas a tu ola: 8 g/kg de carbohidrato (~640 g), poca fibra y grasa. Día de carrera: desayuno 2-4 h antes con 1-4 g/kg de carbohidrato, cafeína y electrolitos como siempre. Nada nuevo."
   },
@@ -192,5 +192,353 @@
     "tomas_realizadas",
     "hambre_energia_1_5",
     "notas"
-  ]
+  ],
+  "reglas_alimentos": [
+    "El desayuno siempre lleva avena y una fruta (plátano, manzana o berries).",
+    "Los pesos de carnes, arroz, pasta, papa y frijoles son cocidos; la avena se pesa cruda.",
+    "Las cantidades están calculadas para ~80 kg. Son aproximadas: pesa con báscula cuando puedas."
+  ],
+  "sustituciones": {
+    "fruta_del_desayuno": "120 g de plátano ≈ 180 g de manzana ≈ 225 g de berries",
+    "carbohidrato": "100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz (60 g)",
+    "proteina": "100 g de pollo cocido ≈ 100 g de pescado blanco ≈ 100 g de res magra ≈ 120 g de atún escurrido"
+  },
+  "alimentos_base_por_100g": {
+    "avena": {
+      "nombre": "Avena en hojuelas (cruda)",
+      "proteina_g": 13,
+      "carbohidrato_g": 67,
+      "grasa_g": 7
+    },
+    "leche_desc": {
+      "nombre": "Leche descremada",
+      "proteina_g": 3.4,
+      "carbohidrato_g": 5,
+      "grasa_g": 0.1
+    },
+    "platano": {
+      "nombre": "Plátano",
+      "proteina_g": 1.1,
+      "carbohidrato_g": 23,
+      "grasa_g": 0.3
+    },
+    "manzana": {
+      "nombre": "Manzana",
+      "proteina_g": 0.3,
+      "carbohidrato_g": 14,
+      "grasa_g": 0.2
+    },
+    "berries": {
+      "nombre": "Berries (fresas o arándanos)",
+      "proteina_g": 0.7,
+      "carbohidrato_g": 10.5,
+      "grasa_g": 0.3
+    },
+    "huevo": {
+      "nombre": "Huevo entero",
+      "proteina_g": 12.6,
+      "carbohidrato_g": 0.7,
+      "grasa_g": 9.5
+    },
+    "clara": {
+      "nombre": "Claras de huevo (líquidas)",
+      "proteina_g": 10.9,
+      "carbohidrato_g": 0.7,
+      "grasa_g": 0.2
+    },
+    "yogurt": {
+      "nombre": "Yogurt griego natural sin azúcar",
+      "proteina_g": 9,
+      "carbohidrato_g": 4,
+      "grasa_g": 2
+    },
+    "granola": {
+      "nombre": "Granola",
+      "proteina_g": 10,
+      "carbohidrato_g": 64,
+      "grasa_g": 15
+    },
+    "miel": {
+      "nombre": "Miel",
+      "proteina_g": 0.3,
+      "carbohidrato_g": 82,
+      "grasa_g": 0
+    },
+    "pan": {
+      "nombre": "Pan de caja integral",
+      "proteina_g": 9,
+      "carbohidrato_g": 43,
+      "grasa_g": 3.5
+    },
+    "tortilla": {
+      "nombre": "Tortilla de maíz",
+      "proteina_g": 5.7,
+      "carbohidrato_g": 46,
+      "grasa_g": 2.8
+    },
+    "arroz": {
+      "nombre": "Arroz blanco (cocido)",
+      "proteina_g": 2.7,
+      "carbohidrato_g": 28,
+      "grasa_g": 0.3
+    },
+    "papa": {
+      "nombre": "Papa (cocida)",
+      "proteina_g": 2,
+      "carbohidrato_g": 20,
+      "grasa_g": 0.1
+    },
+    "pasta": {
+      "nombre": "Pasta (cocida)",
+      "proteina_g": 5.8,
+      "carbohidrato_g": 31,
+      "grasa_g": 0.9
+    },
+    "frijoles": {
+      "nombre": "Frijoles (cocidos)",
+      "proteina_g": 8.9,
+      "carbohidrato_g": 23,
+      "grasa_g": 0.5
+    },
+    "pollo": {
+      "nombre": "Pechuga de pollo (cocida)",
+      "proteina_g": 31,
+      "carbohidrato_g": 0,
+      "grasa_g": 3.6
+    },
+    "pescado": {
+      "nombre": "Pescado blanco (cocido)",
+      "proteina_g": 26,
+      "carbohidrato_g": 0,
+      "grasa_g": 2.7
+    },
+    "res": {
+      "nombre": "Carne magra de res (cocida)",
+      "proteina_g": 27,
+      "carbohidrato_g": 0,
+      "grasa_g": 8
+    },
+    "atun": {
+      "nombre": "Atún en agua (escurrido)",
+      "proteina_g": 25,
+      "carbohidrato_g": 0,
+      "grasa_g": 1
+    },
+    "pavo": {
+      "nombre": "Pechuga de pavo rebanada",
+      "proteina_g": 18,
+      "carbohidrato_g": 2,
+      "grasa_g": 2
+    },
+    "aceite": {
+      "nombre": "Aceite de oliva",
+      "proteina_g": 0,
+      "carbohidrato_g": 0,
+      "grasa_g": 91
+    },
+    "aguacate": {
+      "nombre": "Aguacate",
+      "proteina_g": 2,
+      "carbohidrato_g": 8.5,
+      "grasa_g": 15
+    },
+    "nueces": {
+      "nombre": "Nueces",
+      "proteina_g": 15,
+      "carbohidrato_g": 14,
+      "grasa_g": 65
+    },
+    "whey": {
+      "nombre": "Proteína whey en polvo",
+      "proteina_g": 80,
+      "carbohidrato_g": 7,
+      "grasa_g": 5
+    },
+    "datil": {
+      "nombre": "Dátil medjool",
+      "proteina_g": 2,
+      "carbohidrato_g": 75,
+      "grasa_g": 0.2
+    },
+    "jugo": {
+      "nombre": "Jugo de naranja",
+      "proteina_g": 0.7,
+      "carbohidrato_g": 10,
+      "grasa_g": 0.2
+    },
+    "verduras": {
+      "nombre": "Verduras (brócoli, calabacitas, ensalada)",
+      "proteina_g": 2,
+      "carbohidrato_g": 6,
+      "grasa_g": 0.3
+    }
+  },
+  "lista_compras_semana_tipo": {
+    "base": [
+      "lunes_B",
+      "martes_A",
+      "miércoles_B",
+      "jueves",
+      "viernes_B",
+      "sábado",
+      "domingo"
+    ],
+    "nota": "Con ~5% de margen. Cocido a crudo: pollo ÷0.75, pescado ÷0.80, arroz ÷2.6, frijoles ÷2.3 (aproximado).",
+    "items": [
+      {
+        "alimento": "Avena en hojuelas (cruda)",
+        "uso_semana": "375 g",
+        "comprar": "400 g",
+        "cantidad_g_ml": 375,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Leche descremada",
+        "uso_semana": "1.95 L",
+        "comprar": "2.05 L",
+        "cantidad_g_ml": 1950,
+        "unidad": "ml"
+      },
+      {
+        "alimento": "Plátano",
+        "uso_semana": "3.42 kg",
+        "comprar": "≈ 30 plátanos",
+        "cantidad_g_ml": 3420,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Huevo entero",
+        "uso_semana": "600 g",
+        "comprar": "≈ 13 huevos (2 docena(s))",
+        "cantidad_g_ml": 600,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Claras de huevo (líquidas)",
+        "uso_semana": "250 ml",
+        "comprar": "300 ml",
+        "cantidad_g_ml": 250,
+        "unidad": "ml"
+      },
+      {
+        "alimento": "Yogurt griego natural sin azúcar",
+        "uso_semana": "1.19 kg",
+        "comprar": "1.25 kg",
+        "cantidad_g_ml": 1190,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Granola",
+        "uso_semana": "280 g",
+        "comprar": "300 g",
+        "cantidad_g_ml": 280,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Berries (fresas o arándanos)",
+        "uso_semana": "1.05 kg",
+        "comprar": "1.15 kg",
+        "cantidad_g_ml": 1050,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Pechuga de pollo (cocida)",
+        "uso_semana": "700 g",
+        "comprar": "Pechuga de pollo (cruda): 1 kg",
+        "cantidad_g_ml": 700,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Arroz blanco (cocido)",
+        "uso_semana": "4.85 kg",
+        "comprar": "Arroz blanco (crudo): 2 kg",
+        "cantidad_g_ml": 4850,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Frijoles (cocidos)",
+        "uso_semana": "600 g",
+        "comprar": "Frijoles (secos): 300 g",
+        "cantidad_g_ml": 600,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Verduras (brócoli, calabacitas, ensalada)",
+        "uso_semana": "3.50 kg",
+        "comprar": "3.70 kg",
+        "cantidad_g_ml": 3500,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Aceite de oliva",
+        "uso_semana": "270 ml",
+        "comprar": "300 ml",
+        "cantidad_g_ml": 270,
+        "unidad": "ml"
+      },
+      {
+        "alimento": "Aguacate",
+        "uso_semana": "350 g",
+        "comprar": "≈ 3 aguacates",
+        "cantidad_g_ml": 350,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Pan de caja integral",
+        "uso_semana": "450 g",
+        "comprar": "≈ 16 rebanadas",
+        "cantidad_g_ml": 450,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Pechuga de pavo rebanada",
+        "uso_semana": "420 g",
+        "comprar": "450 g",
+        "cantidad_g_ml": 420,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Jugo de naranja",
+        "uso_semana": "1.30 L",
+        "comprar": "1.40 L",
+        "cantidad_g_ml": 1300,
+        "unidad": "ml"
+      },
+      {
+        "alimento": "Pescado blanco (cocido)",
+        "uso_semana": "700 g",
+        "comprar": "Pescado blanco (crudo): 950 g",
+        "cantidad_g_ml": 700,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Dátil medjool",
+        "uso_semana": "24 g",
+        "comprar": "≈ 2 dátiles",
+        "cantidad_g_ml": 24,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Miel",
+        "uso_semana": "49 g",
+        "comprar": "100 g",
+        "cantidad_g_ml": 49,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Proteína whey en polvo",
+        "uso_semana": "15 g",
+        "comprar": "50 g",
+        "cantidad_g_ml": 15,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Nueces",
+        "uso_semana": "10 g",
+        "comprar": "50 g",
+        "cantidad_g_ml": 10,
+        "unidad": "g"
+      }
+    ]
+  }
 }

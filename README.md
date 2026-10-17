@@ -36,10 +36,9 @@ src/components/           Icon (iconos SVG propios), NavBar, Sheet.
 
 ## Scripts de datos
 
-Si regeneras los JSON, corre estos dos en orden (se pueden repetir sin problema):
+Los gramos de cada comida vienen en `plan_diario` (campo `alimentos`). Si regeneras los JSON, corre:
 
 ```bash
-node scripts/add-porciones.cjs   # gramos por alimento de las 5 comidas fijas, según sus macros
 node scripts/add-acentos.cjs     # acentos en textos visibles (no toca identificadores)
 ```
 

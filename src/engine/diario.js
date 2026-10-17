@@ -17,23 +17,22 @@ function fraccion(x) {
   return ent === 0 ? dec || '0' : `${ent}${dec}`
 }
 
-// Mismo formato que scripts/add-porciones.cjs: "300 g (≈ 2 tazas)"
-function cantidadEnGramos(gr, porcion) {
-  if (!porcion.taza_g) return `${gr} g`
-  const tazas = gr / porcion.taza_g
-  return `${gr} g (≈ ${fraccion(tazas)} taza${tazas > 1.1 ? 's' : ''})`
-}
+// Composición por 100 g que trae el plan de nutrición, buscada por nombre del alimento
+const BASE = Object.values(nutricion.alimentos_base_por_100g ?? {})
+const carbosPor100 = (nombre) => BASE.find((b) => b.nombre === nombre)?.carbohidrato_g
+// Gramos aproximados por taza para mostrar la medida casera
+const TAZA_G = { arroz: 160, pasta: 140, papa: 150 }
 
-// Quita carbohidrato de la porción principal de carbo (arroz, pasta) y recalcula sus gramos
-function reducirCarbo(porciones, quita) {
-  const carbo = porciones?.find((p) => p.rol === 'carbo' && p.c_por_100g)
-  if (!carbo) return porciones
-  const gr = Math.max(0, Math.round((carbo.gramos - (quita / carbo.c_por_100g) * 100) / 10) * 10)
-  return porciones.map((p) =>
-    p === carbo
-      ? { ...p, gramos: gr, cantidad: cantidadEnGramos(gr, p), macros: { ...p.macros, c: Math.round(gr * p.c_por_100g) / 100 }, ajustada: true }
-      : p,
-  )
+// Quita carbohidrato de la fuente principal (arroz, pasta o papa) y recalcula sus gramos
+function reducirCarbo(alimentos, quita) {
+  const carbo = alimentos?.find((a) => a.unidad === 'g' && /arroz|pasta|papa/i.test(a.alimento) && carbosPor100(a.alimento))
+  if (!carbo) return alimentos
+  const c100 = carbosPor100(carbo.alimento)
+  const gr = Math.max(0, Math.round((carbo.cantidad - (quita / c100) * 100) / 5) * 5)
+  const tipo = Object.keys(TAZA_G).find((k) => carbo.alimento.toLowerCase().includes(k))
+  const tazas = tipo ? gr / TAZA_G[tipo] : null
+  const medida = tazas ? `≈ ${fraccion(tazas)} taza${tazas > 1.1 ? 's' : ''}` : undefined
+  return alimentos.map((a) => (a === carbo ? { ...a, cantidad: gr, medida, ajustada: true } : a))
 }
 
 export const ANCLA_LABEL = { clase: 'Clase', gym: 'Gym', engine: 'Clase Engine', correr: 'Correr', rodaje: 'Rodaje' }
@@ -95,7 +94,7 @@ export function construirDia(variante, { anclas = {}, tipoNutricion, sinSesiones
         const quita = i === objetivo.length - 1 ? diff - parte * (objetivo.length - 1) : parte
         it.macros.c -= quita
         it.ajusteCarbos = -quita
-        it.porciones = reducirCarbo(it.porciones, quita)
+        it.alimentos = reducirCarbo(it.alimentos, quita)
       })
       ajuste = `Hoy toca día media: se quitaron ${diff} g de carbohidrato entre la comida y la cena.`
     }
