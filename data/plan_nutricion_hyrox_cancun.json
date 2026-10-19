@@ -13,11 +13,11 @@
       3500
     ],
     "nota_estimacion": "TMB 1,904 + ~800 kcal de ejercicio + ~400 de actividad diaria + ~10% de digestión. Error posible 10-15%.",
-    "promedio_semanal_objetivo_kcal": 3470
+    "promedio_semanal_objetivo_kcal": 3350
   },
   "macros_g_kg": {
-    "proteina": "2.1-2.2 (rango 1.8-2.2)",
-    "grasa": "1.0 (mínimo 0.8)",
+    "proteina": "2.0-2.1 (rango 1.8-2.2)",
+    "grasa": "0.9 (mínimo 0.8)",
     "carbos": "7 días altos, 6 días medios"
   },
   "tipos_dia": {
@@ -28,11 +28,11 @@
         "sabado"
       ],
       "descripcion": "Días con doble sesión o calidad + piernas (martes, jueves) y clase larga del sábado.",
-      "carbos_g_kg": 7,
-      "carbos_g": 564,
-      "proteina_g": 171,
-      "grasa_g": 80,
-      "kcal": 3666
+      "carbos_g_kg": 6.9,
+      "carbos_g": 549,
+      "proteina_g": 167,
+      "grasa_g": 73,
+      "kcal": 3522
     },
     "media": {
       "dias_semana": [
@@ -43,10 +43,10 @@
       ],
       "descripcion": "Días de clase única, rodaje, gym superior o long run. También todas las semanas de descarga y el taper.",
       "carbos_g_kg": 6,
-      "carbos_g": 483,
-      "proteina_g": 169,
-      "grasa_g": 79,
-      "kcal": 3320
+      "carbos_g": 481,
+      "proteina_g": 162,
+      "grasa_g": 72,
+      "kcal": 3225
     }
   },
   "horarios_comida": {
@@ -171,7 +171,7 @@
     "revision": "Con el InBody nuevo (y cada 4 semanas) recalcula calorías y macros."
   },
   "semanas_especiales": {
-    "descarga": "S4, S8, S12: todos los días tipo media (3,320 kcal), proteína igual (169 g).",
+    "descarga": "S4, S8, S12: todos los días tipo media (3,225 kcal), proteína igual (162 g).",
     "taper_S17": "Todos los días tipo media.",
     "carrera_S18": "Las 48 h previas a tu ola: 8 g/kg de carbohidrato (~640 g), poca fibra y grasa. Día de carrera: desayuno 2-4 h antes con 1-4 g/kg de carbohidrato, cafeína y electrolitos como siempre. Nada nuevo."
   },
@@ -194,15 +194,15 @@
     "notas"
   ],
   "reglas_alimentos": [
-    "El desayuno siempre lleva avena y una fruta (plátano, manzana o berries).",
+    "El desayuno es un bowl: avena + whey + leche + plátano + arándanos, con la creatina mezclada.",
     "Los pesos de carnes, arroz, pasta, papa y frijoles son cocidos; la avena se pesa cruda.",
     "Las cantidades están calculadas para ~80 kg. Son aproximadas: pesa con báscula cuando puedas.",
     "La proteína de la cena es huevo + claras líquidas. Alternativas: pechuga de pollo o res magra (gramajes en cada cena y en cena_proteína)."
   ],
   "sustituciones": {
-    "fruta_del_desayuno": "120 g de plátano ≈ 180 g de manzana ≈ 225 g de berries",
+    "fruta_del_desayuno": "100 g de arándanos ≈ 190 g de fresas ≈ 100 g de manzana",
     "carbohidrato": "100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz (60 g)",
-    "proteina": "Cena: huevo + claras como base. 100 g de pechuga de pollo cocida ≈ 115 g de res magra cocida (misma proteína)"
+    "proteina": "Comida: 150 g de pechuga de pollo cocida ≈ 170 g de res magra cocida. Cena: huevo + claras como base (alternativas en cada cena)"
   },
   "alimentos_base_por_100g": {
     "avena": {
@@ -235,6 +235,12 @@
       "carbohidrato_g": 10.5,
       "grasa_g": 0.3
     },
+    "arandanos": {
+      "nombre": "Arándanos azules (blueberries)",
+      "proteina_g": 0.7,
+      "carbohidrato_g": 14.5,
+      "grasa_g": 0.3
+    },
     "huevo": {
       "nombre": "Huevo entero",
       "proteina_g": 12.6,
@@ -242,10 +248,10 @@
       "grasa_g": 9.5
     },
     "clara": {
-      "nombre": "Claras de huevo (líquidas)",
-      "proteina_g": 10.9,
-      "carbohidrato_g": 0.7,
-      "grasa_g": 0.2
+      "nombre": "Claras de huevo líquidas (San Juan)",
+      "proteina_g": 10,
+      "carbohidrato_g": 1,
+      "grasa_g": 0
     },
     "yogurt": {
       "nombre": "Yogurt griego natural sin azúcar",
@@ -373,8 +379,8 @@
       }
     ],
     "ejemplos": [
-      "2 huevos + 100 ml de claras ≈ 24 g de proteína ≈ 75-80 g de pollo cocido ≈ 90 g de res magra cocida",
-      "2 huevos + 150 ml de claras ≈ 29 g de proteína ≈ 95 g de pollo cocido ≈ 105 g de res magra cocida"
+      "2 huevos + 100 ml de claras ≈ 23 g de proteína ≈ 75 g de pollo cocido ≈ 85 g de res magra cocida",
+      "2 huevos + 150 ml de claras ≈ 28 g de proteína ≈ 90 g de pollo cocido ≈ 105 g de res magra cocida"
     ],
     "nota": "Los gramos exactos para igualar la proteína de cada cena están en el campo alternativas de cada toma del plan diario."
   },
@@ -392,86 +398,93 @@
     "items": [
       {
         "alimento": "Avena en hojuelas (cruda)",
-        "uso_semana": "370 g",
-        "comprar": "400 g",
-        "cantidad_g_ml": 370,
+        "uso_semana": "405 g",
+        "comprar": "450 g",
+        "cantidad_g_ml": 405,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Proteína whey en polvo",
+        "uso_semana": "165 g",
+        "comprar": "200 g",
+        "cantidad_g_ml": 165,
         "unidad": "g"
       },
       {
         "alimento": "Leche descremada",
-        "uso_semana": "1.95 L",
-        "comprar": "2.05 L",
-        "cantidad_g_ml": 1950,
+        "uso_semana": "1.70 L",
+        "comprar": "1.80 L",
+        "cantidad_g_ml": 1700,
         "unidad": "ml"
       },
       {
         "alimento": "Plátano",
-        "uso_semana": "3.51 kg",
-        "comprar": "≈ 31 plátanos",
-        "cantidad_g_ml": 3510,
+        "uso_semana": "3.75 kg",
+        "comprar": "≈ 33 plátanos",
+        "cantidad_g_ml": 3750,
         "unidad": "g"
       },
       {
-        "alimento": "Huevo entero",
-        "uso_semana": "1.30 kg",
-        "comprar": "≈ 28 huevos (3 docena(s))",
-        "cantidad_g_ml": 1300,
-        "unidad": "g"
-      },
-      {
-        "alimento": "Claras de huevo (líquidas)",
-        "uso_semana": "1.15 L",
-        "comprar": "1.25 L",
-        "cantidad_g_ml": 1150,
-        "unidad": "ml"
-      },
-      {
-        "alimento": "Yogurt griego natural sin azúcar",
-        "uso_semana": "1.19 kg",
-        "comprar": "1.25 kg",
-        "cantidad_g_ml": 1190,
-        "unidad": "g"
-      },
-      {
-        "alimento": "Granola",
-        "uso_semana": "280 g",
-        "comprar": "300 g",
-        "cantidad_g_ml": 280,
-        "unidad": "g"
-      },
-      {
-        "alimento": "Berries (fresas o arándanos)",
-        "uso_semana": "1.05 kg",
-        "comprar": "1.15 kg",
-        "cantidad_g_ml": 1050,
-        "unidad": "g"
-      },
-      {
-        "alimento": "Pechuga de pollo (cocida)",
+        "alimento": "Arándanos azules (blueberries)",
         "uso_semana": "700 g",
-        "comprar": "Pechuga de pollo (cruda): 1 kg",
+        "comprar": "750 g",
         "cantidad_g_ml": 700,
         "unidad": "g"
       },
       {
+        "alimento": "Yogurt griego natural sin azúcar",
+        "uso_semana": "595 g",
+        "comprar": "650 g",
+        "cantidad_g_ml": 595,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Granola",
+        "uso_semana": "350 g",
+        "comprar": "400 g",
+        "cantidad_g_ml": 350,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Berries (fresas o arándanos)",
+        "uso_semana": "1.50 kg",
+        "comprar": "1.60 kg",
+        "cantidad_g_ml": 1500,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Miel",
+        "uso_semana": "105 g",
+        "comprar": "150 g",
+        "cantidad_g_ml": 105,
+        "unidad": "g"
+      },
+      {
+        "alimento": "Pechuga de pollo (cocida)",
+        "uso_semana": "1.05 kg",
+        "comprar": "Pechuga de pollo (cruda): 1.50 kg",
+        "cantidad_g_ml": 1050,
+        "unidad": "g"
+      },
+      {
         "alimento": "Arroz blanco (cocido)",
-        "uso_semana": "4.85 kg",
-        "comprar": "Arroz blanco (crudo): 2 kg",
-        "cantidad_g_ml": 4850,
+        "uso_semana": "3.52 kg",
+        "comprar": "Arroz blanco (crudo): 1.45 kg",
+        "cantidad_g_ml": 3525,
         "unidad": "g"
       },
       {
         "alimento": "Frijoles (cocidos)",
-        "uso_semana": "600 g",
-        "comprar": "Frijoles (secos): 300 g",
-        "cantidad_g_ml": 600,
+        "uso_semana": "350 g",
+        "comprar": "Frijoles (secos): 200 g",
+        "cantidad_g_ml": 350,
         "unidad": "g"
       },
       {
         "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-        "uso_semana": "3.25 kg",
-        "comprar": "3.45 kg",
-        "cantidad_g_ml": 3250,
+        "uso_semana": "2.90 kg",
+        "comprar": "3.05 kg",
+        "cantidad_g_ml": 2900,
         "unidad": "g"
       },
       {
@@ -483,45 +496,38 @@
       },
       {
         "alimento": "Aguacate",
-        "uso_semana": "400 g",
+        "uso_semana": "350 g",
         "comprar": "≈ 3 aguacates",
-        "cantidad_g_ml": 400,
+        "cantidad_g_ml": 350,
         "unidad": "g"
       },
       {
         "alimento": "Pan de caja integral",
-        "uso_semana": "450 g",
-        "comprar": "≈ 16 rebanadas",
-        "cantidad_g_ml": 450,
-        "unidad": "g"
-      },
-      {
-        "alimento": "Pechuga de pavo rebanada",
-        "uso_semana": "420 g",
-        "comprar": "450 g",
-        "cantidad_g_ml": 420,
+        "uso_semana": "690 g",
+        "comprar": "≈ 25 rebanadas",
+        "cantidad_g_ml": 690,
         "unidad": "g"
       },
       {
         "alimento": "Jugo de naranja",
-        "uso_semana": "1.30 L",
-        "comprar": "1.40 L",
-        "cantidad_g_ml": 1300,
+        "uso_semana": "1.65 L",
+        "comprar": "1.75 L",
+        "cantidad_g_ml": 1650,
         "unidad": "ml"
       },
       {
-        "alimento": "Miel",
-        "uso_semana": "49 g",
-        "comprar": "100 g",
-        "cantidad_g_ml": 49,
+        "alimento": "Huevo entero",
+        "uso_semana": "700 g",
+        "comprar": "≈ 15 huevos (2 docena(s))",
+        "cantidad_g_ml": 700,
         "unidad": "g"
       },
       {
-        "alimento": "Proteína whey en polvo",
-        "uso_semana": "15 g",
-        "comprar": "50 g",
-        "cantidad_g_ml": 15,
-        "unidad": "g"
+        "alimento": "Claras de huevo líquidas (San Juan)",
+        "uso_semana": "800 ml",
+        "comprar": "850 ml",
+        "cantidad_g_ml": 800,
+        "unidad": "ml"
       }
     ]
   }

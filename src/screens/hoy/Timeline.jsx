@@ -52,7 +52,10 @@ function Fila({ it, hecho, actual, onToggle }) {
                 </span>
                 <span>
                   {a.alimento}
-                  {open && a.medida && <span className="text-muted"> ({a.medida})</span>}
+                  {/* La porción del plan explica cómo medirlo; si la app ajustó los gramos, se muestra la medida recalculada */}
+                  {open && (a.ajustada ? a.medida : a.porcion ?? a.medida) && (
+                    <span className="block text-xs text-muted">{a.ajustada ? a.medida : a.porcion ?? a.medida}</span>
+                  )}
                 </span>
               </span>
             ))}

@@ -1,6 +1,6 @@
 {
-  "version": "1.2",
-  "generado": "2026-10-15",
+  "version": "1.3",
+  "generado": "2026-10-17",
   "horarios_comida_fijos": {
     "desayuno": "08:00",
     "colacion_1": "12:00",
@@ -10,8 +10,8 @@
     "cena_dia_sin_sesion_nocturna": "20:30"
   },
   "reglas_alimentos": [
-    "El desayuno siempre lleva avena y una fruta (plátano, manzana o berries).",
-    "Los pesos de carnes, arroz, pasta, papa y frijoles son cocidos; la avena se pesa cruda. Sólidos en g, líquidos en ml.",
+    "El desayuno es un bowl: avena + whey + leche + plátano + arándanos, con la creatina mezclada.",
+    "Los pesos de carnes, arroz, pasta, papa y frijoles son cocidos; la avena se pesa cruda. Sólidos en g, líquidos en ml. Cada alimento trae su porción detallada (piezas, tazas, cucharadas).",
     "Las cantidades son para un atleta de ~80 kg. Los gramos y las medidas son aproximados: pesa con báscula cuando puedas.",
     "La proteína de la cena es huevo + claras líquidas. Alternativas: pechuga de pollo o res magra, con el gramaje en cada cena."
   ],
@@ -57,7 +57,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -89,19 +93,27 @@
               "alimento": "Proteína whey en polvo",
               "cantidad": 15,
               "unidad": "g",
-              "medida": "½ scoop"
+              "medida": "½ scoop",
+              "estado": "tal cual",
+              "porcion": "15 g ≈ ½ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
               "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -115,59 +127,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 25 g",
+          "detalle": "Avena en hojuelas (cruda): 50 g (≈ ½ taza) · Proteína whey en polvo: 10 g (¼ scoop) · Leche descremada: 150 ml (≈ ½ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 45,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "crudo",
+              "porcion": "50 g de hojuelas crudas ≈ ½ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 10,
+              "unidad": "g",
+              "medida": "¼ scoop",
+              "estado": "tal cual",
+              "porcion": "10 g ≈ ¼ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 200,
+              "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
-              "cantidad": 50,
+              "alimento": "Arándanos azules (blueberries)",
+              "cantidad": 100,
               "unidad": "g",
-              "medida": "1 pieza"
-            },
-            {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
-            },
-            {
-              "alimento": "Aguacate",
-              "cantidad": 25,
-              "unidad": "g"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 26,
-            "c": 71,
-            "g": 12
+            "p": 22,
+            "c": 84,
+            "g": 5
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -176,38 +195,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 60 g (½ plátano mediano) · Miel: 7 g (1 cucharadita)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 60,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "½ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "60 g pelado = ½ plátano mediano",
+              "piezas": 0.5,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 7,
+              "unidad": "g",
+              "medida": "1 cucharadita",
+              "estado": "tal cual",
+              "porcion": "7 g ≈ 1 cucharadita"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 15,
+            "c": 76,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -217,88 +254,106 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
               "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 50,
-            "c": 122,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 30 g (1 rebanada) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 30,
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "1 rebanada"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
               "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ ¾ vaso"
+              "medida": "≈ ¾ vaso",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 16,
-            "c": 62,
-            "g": 3
+            "p": 11,
+            "c": 86,
+            "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
           "hora": "18:00"
@@ -307,7 +362,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 225 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 150 g (≈ 1 taza) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
@@ -315,38 +370,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
+              "alimento": "Claras de huevo líquidas (San Juan)",
               "cantidad": 100,
               "unidad": "ml",
-              "medida": "3 claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 225,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "225 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 200,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "medida": "≈ 1 taza",
+              "estado": "tal cual",
+              "porcion": "150 g (cocidas o en ensalada) ≈ 1 taza"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 36,
-            "c": 104,
-            "g": 25
+            "p": 32,
+            "c": 74,
+            "g": 24
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -360,10 +428,10 @@
         }
       ],
       "totales": {
-        "p": 168,
-        "c": 485,
-        "g": 78,
-        "kcal": 3314
+        "p": 162,
+        "c": 482,
+        "g": 72,
+        "kcal": 3224
       }
     },
     {
@@ -390,54 +458,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 50 g (≈ ½ taza) · Leche descremada: 250 ml (≈ 1 taza) · Plátano: 180 g (1½ plátanos medianos) · Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 50 ml (1½ claras)",
+          "detalle": "Avena en hojuelas (cruda): 60 g (≈ ¾ taza) · Proteína whey en polvo: 25 g (¾ scoop) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 50,
+              "cantidad": 60,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¾ taza",
+              "estado": "crudo",
+              "porcion": "60 g de hojuelas crudas ≈ ¾ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 25,
+              "unidad": "g",
+              "medida": "¾ scoop",
+              "estado": "tal cual",
+              "porcion": "25 g ≈ ¾ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ 1 taza"
+              "medida": "≈ ¾ taza",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 180,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
+              "alimento": "Arándanos azules (blueberries)",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
-            },
-            {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 35,
-            "c": 88,
-            "g": 14
+            "p": 37,
+            "c": 94,
+            "g": 6
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 180 g de plátano, o 270 g de manzana, o 338 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -446,38 +526,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 60 g (½ plátano mediano) · Miel: 14 g (2 cucharaditas)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 60,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "½ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "60 g pelado = ½ plátano mediano",
+              "piezas": 0.5,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 14,
+              "unidad": "g",
+              "medida": "2 cucharaditas",
+              "estado": "tal cual",
+              "porcion": "14 g ≈ 2 cucharaditas"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 15,
+            "c": 82,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -487,87 +585,105 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Frijoles (cocidos): 75 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 75,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 52,
-            "c": 128,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 60 g (2 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 150 ml (≈ ½ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 250 ml (≈ 1 vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 60,
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "2 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 150,
+              "cantidad": 250,
               "unidad": "ml",
-              "medida": "≈ ½ vaso"
+              "medida": "≈ 1 vaso",
+              "estado": "líquido",
+              "porcion": "250 ml ≈ 1 vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 19,
-            "c": 70,
+            "p": 11,
+            "c": 91,
             "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
@@ -585,7 +701,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -609,7 +729,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g (≈ 1¾ tazas) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
@@ -617,38 +737,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 150,
+              "alimento": "Claras de huevo líquidas (San Juan)",
+              "cantidad": 100,
               "unidad": "ml",
-              "medida": "4½ claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 200,
-              "unidad": "g"
+              "cantidad": 250,
+              "unidad": "g",
+              "medida": "≈ 1¾ tazas",
+              "estado": "tal cual",
+              "porcion": "250 g (cocidas o en ensalada) ≈ 1¾ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 42,
-            "c": 105,
+            "p": 34,
+            "c": 87,
             "g": 25
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -662,10 +795,10 @@
         }
       ],
       "totales": {
-        "p": 170,
-        "c": 481,
-        "g": 80,
-        "kcal": 3324
+        "p": 161,
+        "c": 480,
+        "g": 73,
+        "kcal": 3221
       }
     },
     {
@@ -701,7 +834,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -743,7 +880,11 @@
               "alimento": "Plátano",
               "cantidad": 90,
               "unidad": "g",
-              "medida": "¾ plátano mediano"
+              "medida": "¾ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "90 g pelado = ¾ plátano mediano",
+              "piezas": 0.75,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -767,54 +908,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 65 g (≈ ¾ taza) · Leche descremada: 300 ml (≈ 1¼ tazas) · Plátano: 180 g (1½ plátanos medianos) · Huevo entero: 100 g (2 piezas) · Miel: 14 g (2 cucharaditas)",
+          "detalle": "Avena en hojuelas (cruda): 60 g (≈ ¾ taza) · Proteína whey en polvo: 20 g (¾ scoop) · Leche descremada: 300 ml (≈ 1¼ tazas) · Plátano: 180 g (1½ plátanos medianos) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 65,
+              "cantidad": 60,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¾ taza",
+              "estado": "crudo",
+              "porcion": "60 g de hojuelas crudas ≈ ¾ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 20,
+              "unidad": "g",
+              "medida": "¾ scoop",
+              "estado": "tal cual",
+              "porcion": "20 g ≈ ¾ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
               "cantidad": 300,
               "unidad": "ml",
-              "medida": "≈ 1¼ tazas"
+              "medida": "≈ 1¼ tazas",
+              "estado": "líquido",
+              "porcion": "300 ml ≈ 1¼ tazas (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 180,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
+              "alimento": "Arándanos azules (blueberries)",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
-            },
-            {
-              "alimento": "Miel",
-              "cantidad": 14,
-              "unidad": "g",
-              "medida": "2 cucharaditas"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 33,
+            "p": 37,
             "c": 112,
-            "g": 15
+            "g": 6
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 180 g de plátano, o 270 g de manzana, o 338 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -823,38 +976,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 250 g (≈ 1¾ tazas) · Plátano: 120 g (1 plátano mediano) · Miel: 14 g (2 cucharaditas)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¾ tazas",
+              "estado": "tal cual",
+              "porcion": "250 g ≈ 1¾ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 60,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 14,
+              "unidad": "g",
+              "medida": "2 cucharaditas",
+              "estado": "tal cual",
+              "porcion": "14 g ≈ 2 cucharaditas"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 16,
+            "c": 101,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -864,88 +1035,106 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Frijoles (cocidos): 100 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 100,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 56,
-            "c": 147,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 60 g (2 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 250 ml (≈ 1 vaso)",
+          "detalle": "Pan de caja integral: 120 g (4 rebanadas) · Plátano: 180 g (1½ plátanos medianos) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 60,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "2 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "4 rebanadas",
+              "estado": "tal cual",
+              "porcion": "4 rebanadas (≈ 30 g cada una)",
+              "piezas": 4,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
-              "cantidad": 120,
+              "cantidad": 180,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ 1 vaso"
+              "medida": "≈ ¾ vaso",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 19,
-            "c": 80,
-            "g": 4
+            "p": 14,
+            "c": 113,
+            "g": 5
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
           "hora": "18:00"
@@ -964,7 +1153,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g (≈ 1¾ tazas) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
@@ -972,38 +1161,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
+              "alimento": "Claras de huevo líquidas (San Juan)",
               "cantidad": 100,
               "unidad": "ml",
-              "medida": "3 claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
               "cantidad": 250,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "≈ 1¾ tazas",
+              "estado": "tal cual",
+              "porcion": "250 g (cocidas o en ensalada) ≈ 1¾ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 39,
-            "c": 121,
+            "p": 34,
+            "c": 87,
             "g": 25
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -1017,10 +1219,10 @@
         }
       ],
       "totales": {
-        "p": 170,
-        "c": 571,
-        "g": 81,
-        "kcal": 3693
+        "p": 166,
+        "c": 560,
+        "g": 74,
+        "kcal": 3570
       }
     },
     {
@@ -1055,7 +1257,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -1097,7 +1303,11 @@
               "alimento": "Plátano",
               "cantidad": 90,
               "unidad": "g",
-              "medida": "¾ plátano mediano"
+              "medida": "¾ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "90 g pelado = ¾ plátano mediano",
+              "piezas": 0.75,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -1121,54 +1331,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 65 g (≈ ¾ taza) · Leche descremada: 300 ml (≈ 1¼ tazas) · Plátano: 180 g (1½ plátanos medianos) · Huevo entero: 100 g (2 piezas) · Miel: 14 g (2 cucharaditas)",
+          "detalle": "Avena en hojuelas (cruda): 60 g (≈ ¾ taza) · Proteína whey en polvo: 20 g (¾ scoop) · Leche descremada: 300 ml (≈ 1¼ tazas) · Plátano: 180 g (1½ plátanos medianos) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 65,
+              "cantidad": 60,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¾ taza",
+              "estado": "crudo",
+              "porcion": "60 g de hojuelas crudas ≈ ¾ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 20,
+              "unidad": "g",
+              "medida": "¾ scoop",
+              "estado": "tal cual",
+              "porcion": "20 g ≈ ¾ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
               "cantidad": 300,
               "unidad": "ml",
-              "medida": "≈ 1¼ tazas"
+              "medida": "≈ 1¼ tazas",
+              "estado": "líquido",
+              "porcion": "300 ml ≈ 1¼ tazas (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 180,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
+              "alimento": "Arándanos azules (blueberries)",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
-            },
-            {
-              "alimento": "Miel",
-              "cantidad": 14,
-              "unidad": "g",
-              "medida": "2 cucharaditas"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 33,
+            "p": 37,
             "c": 112,
-            "g": 15
+            "g": 6
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 180 g de plátano, o 270 g de manzana, o 338 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -1177,38 +1399,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 250 g (≈ 1¾ tazas) · Plátano: 120 g (1 plátano mediano) · Miel: 14 g (2 cucharaditas)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¾ tazas",
+              "estado": "tal cual",
+              "porcion": "250 g ≈ 1¾ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 60,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 14,
+              "unidad": "g",
+              "medida": "2 cucharaditas",
+              "estado": "tal cual",
+              "porcion": "14 g ≈ 2 cucharaditas"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 16,
+            "c": 101,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -1218,88 +1458,106 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Frijoles (cocidos): 100 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 100,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 56,
-            "c": 147,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 60 g (2 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 250 ml (≈ 1 vaso)",
+          "detalle": "Pan de caja integral: 120 g (4 rebanadas) · Plátano: 180 g (1½ plátanos medianos) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 60,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "2 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "4 rebanadas",
+              "estado": "tal cual",
+              "porcion": "4 rebanadas (≈ 30 g cada una)",
+              "piezas": 4,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
-              "cantidad": 120,
+              "cantidad": 180,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ 1 vaso"
+              "medida": "≈ ¾ vaso",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 19,
-            "c": 80,
-            "g": 4
+            "p": 14,
+            "c": 113,
+            "g": 5
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
           "hora": "18:00"
@@ -1308,7 +1566,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 150 ml (4½ claras) · Arroz blanco (cocido): 225 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 150 g (≈ 1 taza) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
@@ -1316,38 +1574,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 100,
+              "alimento": "Claras de huevo líquidas (San Juan)",
+              "cantidad": 150,
               "unidad": "ml",
-              "medida": "3 claras"
+              "medida": "4½ claras",
+              "estado": "líquido",
+              "porcion": "150 ml de claras líquidas ≈ 10 cucharadas soperas (1 cucharada = 15 ml); ≈ 4½ claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 225,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "225 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "medida": "≈ 1 taza",
+              "estado": "tal cual",
+              "porcion": "150 g (cocidas o en ensalada) ≈ 1 taza"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 39,
-            "c": 121,
-            "g": 25
+            "p": 37,
+            "c": 74,
+            "g": 24
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 28 g): 90 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 100 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -1361,10 +1632,10 @@
         }
       ],
       "totales": {
-        "p": 170,
-        "c": 571,
-        "g": 81,
-        "kcal": 3693
+        "p": 169,
+        "c": 547,
+        "g": 73,
+        "kcal": 3521
       }
     },
     {
@@ -1399,7 +1670,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -1449,19 +1724,27 @@
               "alimento": "Proteína whey en polvo",
               "cantidad": 15,
               "unidad": "g",
-              "medida": "½ scoop"
+              "medida": "½ scoop",
+              "estado": "tal cual",
+              "porcion": "15 g ≈ ½ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
               "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -1475,59 +1758,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 25 g",
+          "detalle": "Avena en hojuelas (cruda): 50 g (≈ ½ taza) · Proteína whey en polvo: 10 g (¼ scoop) · Leche descremada: 150 ml (≈ ½ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 45,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "crudo",
+              "porcion": "50 g de hojuelas crudas ≈ ½ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 10,
+              "unidad": "g",
+              "medida": "¼ scoop",
+              "estado": "tal cual",
+              "porcion": "10 g ≈ ¼ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 200,
+              "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
-              "cantidad": 50,
+              "alimento": "Arándanos azules (blueberries)",
+              "cantidad": 100,
               "unidad": "g",
-              "medida": "1 pieza"
-            },
-            {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
-            },
-            {
-              "alimento": "Aguacate",
-              "cantidad": 25,
-              "unidad": "g"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 26,
-            "c": 71,
-            "g": 12
+            "p": 22,
+            "c": 84,
+            "g": 5
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -1536,38 +1826,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 60 g (½ plátano mediano) · Miel: 7 g (1 cucharadita)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 60,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "½ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "60 g pelado = ½ plátano mediano",
+              "piezas": 0.5,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 7,
+              "unidad": "g",
+              "medida": "1 cucharadita",
+              "estado": "tal cual",
+              "porcion": "7 g ≈ 1 cucharadita"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 15,
+            "c": 76,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -1577,88 +1885,106 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
               "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 50,
-            "c": 122,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 30 g (1 rebanada) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 30,
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "1 rebanada"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
               "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ ¾ vaso"
+              "medida": "≈ ¾ vaso",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 16,
-            "c": 62,
-            "g": 3
+            "p": 11,
+            "c": 86,
+            "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
           "hora": "18:00"
@@ -1667,7 +1993,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 225 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 150 g (≈ 1 taza) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
@@ -1675,38 +2001,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
+              "alimento": "Claras de huevo líquidas (San Juan)",
               "cantidad": 100,
               "unidad": "ml",
-              "medida": "3 claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 225,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "225 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 200,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "medida": "≈ 1 taza",
+              "estado": "tal cual",
+              "porcion": "150 g (cocidas o en ensalada) ≈ 1 taza"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 36,
-            "c": 104,
-            "g": 25
+            "p": 32,
+            "c": 74,
+            "g": 24
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -1720,10 +2059,10 @@
         }
       ],
       "totales": {
-        "p": 168,
-        "c": 485,
-        "g": 78,
-        "kcal": 3314
+        "p": 162,
+        "c": 482,
+        "g": 72,
+        "kcal": 3224
       }
     },
     {
@@ -1759,7 +2098,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -1783,54 +2126,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 50 g (≈ ½ taza) · Leche descremada: 250 ml (≈ 1 taza) · Plátano: 180 g (1½ plátanos medianos) · Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 50 ml (1½ claras)",
+          "detalle": "Avena en hojuelas (cruda): 60 g (≈ ¾ taza) · Proteína whey en polvo: 25 g (¾ scoop) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 50,
+              "cantidad": 60,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¾ taza",
+              "estado": "crudo",
+              "porcion": "60 g de hojuelas crudas ≈ ¾ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 25,
+              "unidad": "g",
+              "medida": "¾ scoop",
+              "estado": "tal cual",
+              "porcion": "25 g ≈ ¾ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ 1 taza"
+              "medida": "≈ ¾ taza",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 180,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
+              "alimento": "Arándanos azules (blueberries)",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
-            },
-            {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 35,
-            "c": 88,
-            "g": 14
+            "p": 37,
+            "c": 94,
+            "g": 6
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 180 g de plátano, o 270 g de manzana, o 338 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -1839,38 +2194,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 60 g (½ plátano mediano) · Miel: 14 g (2 cucharaditas)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 60,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "½ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "60 g pelado = ½ plátano mediano",
+              "piezas": 0.5,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 14,
+              "unidad": "g",
+              "medida": "2 cucharaditas",
+              "estado": "tal cual",
+              "porcion": "14 g ≈ 2 cucharaditas"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 15,
+            "c": 82,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -1880,87 +2253,105 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Frijoles (cocidos): 75 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 75,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 52,
-            "c": 128,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 60 g (2 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 150 ml (≈ ½ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 250 ml (≈ 1 vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 60,
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "2 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 150,
+              "cantidad": 250,
               "unidad": "ml",
-              "medida": "≈ ½ vaso"
+              "medida": "≈ 1 vaso",
+              "estado": "líquido",
+              "porcion": "250 ml ≈ 1 vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 19,
-            "c": 70,
+            "p": 11,
+            "c": 91,
             "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
@@ -1988,7 +2379,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g (≈ 1¾ tazas) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
@@ -1996,38 +2387,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 150,
+              "alimento": "Claras de huevo líquidas (San Juan)",
+              "cantidad": 100,
               "unidad": "ml",
-              "medida": "4½ claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 200,
-              "unidad": "g"
+              "cantidad": 250,
+              "unidad": "g",
+              "medida": "≈ 1¾ tazas",
+              "estado": "tal cual",
+              "porcion": "250 g (cocidas o en ensalada) ≈ 1¾ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 42,
-            "c": 105,
+            "p": 34,
+            "c": 87,
             "g": 25
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -2041,10 +2445,10 @@
         }
       ],
       "totales": {
-        "p": 170,
-        "c": 481,
-        "g": 80,
-        "kcal": 3324
+        "p": 161,
+        "c": 480,
+        "g": 73,
+        "kcal": 3221
       }
     },
     {
@@ -2090,13 +2494,19 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Miel",
               "cantidad": 7,
               "unidad": "g",
-              "medida": "1 cucharadita"
+              "medida": "1 cucharadita",
+              "estado": "tal cual",
+              "porcion": "7 g ≈ 1 cucharadita"
             }
           ],
           "macros": {
@@ -2128,19 +2538,27 @@
               "alimento": "Proteína whey en polvo",
               "cantidad": 15,
               "unidad": "g",
-              "medida": "½ scoop"
+              "medida": "½ scoop",
+              "estado": "tal cual",
+              "porcion": "15 g ≈ ½ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
               "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 180,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -2154,53 +2572,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 40 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 50 g",
+          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Proteína whey en polvo: 10 g (¼ scoop) · Leche descremada: 150 ml (≈ ½ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 40,
+              "cantidad": 45,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "crudo",
+              "porcion": "45 g de hojuelas crudas ≈ ½ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 10,
+              "unidad": "g",
+              "medida": "¼ scoop",
+              "estado": "tal cual",
+              "porcion": "10 g ≈ ¼ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 200,
+              "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
-            },
-            {
-              "alimento": "Aguacate",
-              "cantidad": 50,
-              "unidad": "g"
+              "alimento": "Arándanos azules (blueberries)",
+              "cantidad": 100,
+              "unidad": "g",
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 20,
-            "c": 69,
-            "g": 11
+            "p": 21,
+            "c": 80,
+            "g": 4
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -2209,32 +2640,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 60 g (½ plátano mediano) · Miel: 14 g (2 cucharaditas)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
+            },
+            {
+              "alimento": "Plátano",
+              "cantidad": 60,
+              "unidad": "g",
+              "medida": "½ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "60 g pelado = ½ plátano mediano",
+              "piezas": 0.5,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 14,
+              "unidad": "g",
+              "medida": "2 cucharaditas",
+              "estado": "tal cual",
+              "porcion": "14 g ≈ 2 cucharaditas"
             }
           ],
           "macros": {
-            "p": 20,
-            "c": 48,
+            "p": 15,
+            "c": 82,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -2244,57 +2699,70 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Frijoles (cocidos): 100 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 100,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 56,
-            "c": 147,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 180 g (1½ plátanos medianos) · Jugo de naranja: 300 ml (≈ 1¼ vasos)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
@@ -2302,30 +2770,35 @@
               "alimento": "Pan de caja integral",
               "cantidad": 90,
               "unidad": "g",
-              "medida": "3 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
-              "cantidad": 120,
+              "cantidad": 180,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 200,
+              "cantidad": 300,
               "unidad": "ml",
-              "medida": "≈ ¾ vaso"
+              "medida": "≈ 1¼ vasos",
+              "estado": "líquido",
+              "porcion": "300 ml ≈ 1¼ vasos (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 22,
-            "c": 88,
-            "g": 5
+            "p": 12,
+            "c": 110,
+            "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
           "hora": "18:00"
@@ -2343,7 +2816,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
@@ -2351,38 +2824,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
+              "alimento": "Claras de huevo líquidas (San Juan)",
               "cantidad": 100,
               "unidad": "ml",
-              "medida": "3 claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 325,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 2 tazas",
+              "estado": "cocido",
+              "porcion": "325 g de arroz cocido ≈ 2 tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
               "cantidad": 200,
-              "unidad": "g"
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 38,
-            "c": 118,
+            "p": 35,
+            "c": 105,
             "g": 25
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -2396,10 +2882,10 @@
         }
       ],
       "totales": {
-        "p": 176,
-        "c": 553,
-        "g": 79,
-        "kcal": 3627
+        "p": 166,
+        "c": 558,
+        "g": 72,
+        "kcal": 3544
       }
     },
     {
@@ -2434,7 +2920,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -2484,19 +2974,27 @@
               "alimento": "Proteína whey en polvo",
               "cantidad": 15,
               "unidad": "g",
-              "medida": "½ scoop"
+              "medida": "½ scoop",
+              "estado": "tal cual",
+              "porcion": "15 g ≈ ½ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
               "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -2510,59 +3008,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 45 g (≈ ½ taza) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Huevo entero: 50 g (1 pieza) · Claras de huevo (líquidas): 50 ml (1½ claras) · Aguacate: 25 g",
+          "detalle": "Avena en hojuelas (cruda): 50 g (≈ ½ taza) · Proteína whey en polvo: 10 g (¼ scoop) · Leche descremada: 150 ml (≈ ½ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 45,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ½ taza",
+              "estado": "crudo",
+              "porcion": "50 g de hojuelas crudas ≈ ½ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 10,
+              "unidad": "g",
+              "medida": "¼ scoop",
+              "estado": "tal cual",
+              "porcion": "10 g ≈ ¼ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 200,
+              "cantidad": 150,
               "unidad": "ml",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ½ taza",
+              "estado": "líquido",
+              "porcion": "150 ml ≈ ½ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
-              "cantidad": 50,
+              "alimento": "Arándanos azules (blueberries)",
+              "cantidad": 100,
               "unidad": "g",
-              "medida": "1 pieza"
-            },
-            {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
-            },
-            {
-              "alimento": "Aguacate",
-              "cantidad": 25,
-              "unidad": "g"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 26,
-            "c": 71,
-            "g": 12
+            "p": 22,
+            "c": 84,
+            "g": 5
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 120 g de plátano, o 180 g de manzana, o 225 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -2571,38 +3076,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 60 g (½ plátano mediano) · Miel: 7 g (1 cucharadita)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 60,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "½ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "60 g pelado = ½ plátano mediano",
+              "piezas": 0.5,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 7,
+              "unidad": "g",
+              "medida": "1 cucharadita",
+              "estado": "tal cual",
+              "porcion": "7 g ≈ 1 cucharadita"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 15,
+            "c": 76,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -2612,88 +3135,106 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
               "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 50,
-            "c": 122,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 30 g (1 rebanada) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 30,
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "1 rebanada"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
               "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ ¾ vaso"
+              "medida": "≈ ¾ vaso",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 16,
-            "c": 62,
-            "g": 3
+            "p": 11,
+            "c": 86,
+            "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
           "hora": "18:00"
@@ -2702,7 +3243,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 225 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 150 g (≈ 1 taza) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
@@ -2710,38 +3251,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
+              "alimento": "Claras de huevo líquidas (San Juan)",
               "cantidad": 100,
               "unidad": "ml",
-              "medida": "3 claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 225,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "225 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 200,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "medida": "≈ 1 taza",
+              "estado": "tal cual",
+              "porcion": "150 g (cocidas o en ensalada) ≈ 1 taza"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 36,
-            "c": 104,
-            "g": 25
+            "p": 32,
+            "c": 74,
+            "g": 24
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -2755,10 +3309,10 @@
         }
       ],
       "totales": {
-        "p": 168,
-        "c": 485,
-        "g": 78,
-        "kcal": 3314
+        "p": 162,
+        "c": 482,
+        "g": 72,
+        "kcal": 3224
       }
     },
     {
@@ -2794,7 +3348,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -2818,54 +3376,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 50 g (≈ ½ taza) · Leche descremada: 250 ml (≈ 1 taza) · Plátano: 180 g (1½ plátanos medianos) · Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 50 ml (1½ claras)",
+          "detalle": "Avena en hojuelas (cruda): 60 g (≈ ¾ taza) · Proteína whey en polvo: 25 g (¾ scoop) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 50,
+              "cantidad": 60,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¾ taza",
+              "estado": "crudo",
+              "porcion": "60 g de hojuelas crudas ≈ ¾ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 25,
+              "unidad": "g",
+              "medida": "¾ scoop",
+              "estado": "tal cual",
+              "porcion": "25 g ≈ ¾ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ 1 taza"
+              "medida": "≈ ¾ taza",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 180,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
+              "alimento": "Arándanos azules (blueberries)",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
-            },
-            {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 35,
-            "c": 88,
-            "g": 14
+            "p": 37,
+            "c": 94,
+            "g": 6
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 180 g de plátano, o 270 g de manzana, o 338 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -2874,38 +3444,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 60 g (½ plátano mediano) · Miel: 14 g (2 cucharaditas)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 60,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "½ plátano mediano",
+              "estado": "tal cual",
+              "porcion": "60 g pelado = ½ plátano mediano",
+              "piezas": 0.5,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 14,
+              "unidad": "g",
+              "medida": "2 cucharaditas",
+              "estado": "tal cual",
+              "porcion": "14 g ≈ 2 cucharaditas"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 15,
+            "c": 82,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -2915,87 +3503,105 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Frijoles (cocidos): 75 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 75,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 52,
-            "c": 128,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 60 g (2 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 150 ml (≈ ½ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 250 ml (≈ 1 vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 60,
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "2 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 150,
+              "cantidad": 250,
               "unidad": "ml",
-              "medida": "≈ ½ vaso"
+              "medida": "≈ 1 vaso",
+              "estado": "líquido",
+              "porcion": "250 ml ≈ 1 vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 19,
-            "c": 70,
+            "p": 11,
+            "c": 91,
             "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
@@ -3014,7 +3620,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 100 ml (3 claras) · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g (≈ 1¾ tazas) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos. Es tu comida post-sesión.",
           "duracion_min": 30,
           "hora_default": "22:00",
           "alimentos": [
@@ -3022,38 +3628,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 150,
+              "alimento": "Claras de huevo líquidas (San Juan)",
+              "cantidad": 100,
               "unidad": "ml",
-              "medida": "4½ claras"
+              "medida": "3 claras",
+              "estado": "líquido",
+              "porcion": "100 ml de claras líquidas ≈ 7 cucharadas soperas (1 cucharada = 15 ml); ≈ 3 claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 200,
-              "unidad": "g"
+              "cantidad": 250,
+              "unidad": "g",
+              "medida": "≈ 1¾ tazas",
+              "estado": "tal cual",
+              "porcion": "250 g (cocidas o en ensalada) ≈ 1¾ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 42,
-            "c": 105,
+            "p": 34,
+            "c": 87,
             "g": 25
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 23 g): 75 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "22:00"
         },
         {
@@ -3067,10 +3686,10 @@
         }
       ],
       "totales": {
-        "p": 170,
-        "c": 481,
-        "g": 80,
-        "kcal": 3324
+        "p": 161,
+        "c": 480,
+        "g": 73,
+        "kcal": 3221
       }
     },
     {
@@ -3115,13 +3734,19 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Miel",
               "cantidad": 7,
               "unidad": "g",
-              "medida": "1 cucharadita"
+              "medida": "1 cucharadita",
+              "estado": "tal cual",
+              "porcion": "7 g ≈ 1 cucharadita"
             }
           ],
           "macros": {
@@ -3145,54 +3770,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 65 g (≈ ¾ taza) · Leche descremada: 300 ml (≈ 1¼ tazas) · Plátano: 180 g (1½ plátanos medianos) · Huevo entero: 100 g (2 piezas) · Miel: 14 g (2 cucharaditas)",
+          "detalle": "Avena en hojuelas (cruda): 60 g (≈ ¾ taza) · Proteína whey en polvo: 20 g (¾ scoop) · Leche descremada: 300 ml (≈ 1¼ tazas) · Plátano: 180 g (1½ plátanos medianos) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 65,
+              "cantidad": 60,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¾ taza",
+              "estado": "crudo",
+              "porcion": "60 g de hojuelas crudas ≈ ¾ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 20,
+              "unidad": "g",
+              "medida": "¾ scoop",
+              "estado": "tal cual",
+              "porcion": "20 g ≈ ¾ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
               "cantidad": 300,
               "unidad": "ml",
-              "medida": "≈ 1¼ tazas"
+              "medida": "≈ 1¼ tazas",
+              "estado": "líquido",
+              "porcion": "300 ml ≈ 1¼ tazas (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
               "cantidad": 180,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
+              "alimento": "Arándanos azules (blueberries)",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
-            },
-            {
-              "alimento": "Miel",
-              "cantidad": 14,
-              "unidad": "g",
-              "medida": "2 cucharaditas"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 33,
+            "p": 37,
             "c": 112,
-            "g": 15
+            "g": 6
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 180 g de plátano, o 270 g de manzana, o 338 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -3201,44 +3838,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano) · Miel: 7 g (1 cucharadita)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 250 g (≈ 1¾ tazas) · Plátano: 120 g (1 plátano mediano) · Miel: 14 g (2 cucharaditas)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¾ tazas",
+              "estado": "tal cual",
+              "porcion": "250 g ≈ 1¾ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 60,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Miel",
-              "cantidad": 7,
+              "cantidad": 14,
               "unidad": "g",
-              "medida": "1 cucharadita"
+              "medida": "2 cucharaditas",
+              "estado": "tal cual",
+              "porcion": "14 g ≈ 2 cucharaditas"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 68,
+            "p": 16,
+            "c": 101,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -3248,88 +3897,106 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Frijoles (cocidos): 100 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 100,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 56,
-            "c": 147,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 60 g (2 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 250 ml (≈ 1 vaso)",
+          "detalle": "Pan de caja integral: 120 g (4 rebanadas) · Plátano: 180 g (1½ plátanos medianos) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 60,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "2 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "4 rebanadas",
+              "estado": "tal cual",
+              "porcion": "4 rebanadas (≈ 30 g cada una)",
+              "piezas": 4,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
-              "cantidad": 120,
+              "cantidad": 180,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ 1 vaso"
+              "medida": "≈ ¾ vaso",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 19,
-            "c": 80,
-            "g": 4
+            "p": 14,
+            "c": 113,
+            "g": 5
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
           "hora": "18:00"
@@ -3338,7 +4005,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 100 ml (3 claras) · Arroz blanco (cocido): 375 g (≈ 2¼ tazas) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 150 ml (4½ claras) · Arroz blanco (cocido): 225 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 150 g (≈ 1 taza) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
@@ -3346,38 +4013,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 100,
+              "alimento": "Claras de huevo líquidas (San Juan)",
+              "cantidad": 150,
               "unidad": "ml",
-              "medida": "3 claras"
+              "medida": "4½ claras",
+              "estado": "líquido",
+              "porcion": "150 ml de claras líquidas ≈ 10 cucharadas soperas (1 cucharada = 15 ml); ≈ 4½ claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 375,
+              "cantidad": 225,
               "unidad": "g",
-              "medida": "≈ 2¼ tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "225 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "medida": "≈ 1 taza",
+              "estado": "tal cual",
+              "porcion": "150 g (cocidas o en ensalada) ≈ 1 taza"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 39,
-            "c": 121,
-            "g": 25
+            "p": 37,
+            "c": 74,
+            "g": 24
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 24 g): 75 g de pechuga de pollo cocida (suma ~10 ml de aceite para igualar la grasa) o 85 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 28 g): 90 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 100 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -3391,10 +4071,10 @@
         }
       ],
       "totales": {
-        "p": 169,
-        "c": 561,
-        "g": 81,
-        "kcal": 3649
+        "p": 168,
+        "c": 531,
+        "g": 73,
+        "kcal": 3453
       }
     },
     {
@@ -3429,7 +4109,11 @@
               "alimento": "Plátano",
               "cantidad": 120,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             }
           ],
           "macros": {
@@ -3453,54 +4137,66 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Desayuno",
-          "detalle": "Avena en hojuelas (cruda): 50 g (≈ ½ taza) · Leche descremada: 250 ml (≈ 1 taza) · Plátano: 180 g (1½ plátanos medianos) · Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 50 ml (1½ claras)",
+          "detalle": "Avena en hojuelas (cruda): 60 g (≈ ¾ taza) · Proteína whey en polvo: 25 g (¾ scoop) · Leche descremada: 200 ml (≈ ¾ taza) · Plátano: 120 g (1 plátano mediano) · Arándanos azules (blueberries): 100 g (≈ ¾ taza)",
           "duracion_min": 30,
           "hora_default": "08:00",
           "alimentos": [
             {
               "alimento": "Avena en hojuelas (cruda)",
-              "cantidad": 50,
+              "cantidad": 60,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¾ taza",
+              "estado": "crudo",
+              "porcion": "60 g de hojuelas crudas ≈ ¾ taza"
+            },
+            {
+              "alimento": "Proteína whey en polvo",
+              "cantidad": 25,
+              "unidad": "g",
+              "medida": "¾ scoop",
+              "estado": "tal cual",
+              "porcion": "25 g ≈ ¾ scoop (1 scoop ≈ 30 g)"
             },
             {
               "alimento": "Leche descremada",
-              "cantidad": 250,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ 1 taza"
+              "medida": "≈ ¾ taza",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ taza (1 taza = 240 ml)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 180,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "1½ plátanos medianos"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
             },
             {
-              "alimento": "Huevo entero",
+              "alimento": "Arándanos azules (blueberries)",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
-            },
-            {
-              "alimento": "Claras de huevo (líquidas)",
-              "cantidad": 50,
-              "unidad": "ml",
-              "medida": "1½ claras"
+              "medida": "≈ ¾ taza",
+              "estado": "tal cual",
+              "porcion": "100 g ≈ ¾ taza (1 taza ≈ 150 g)"
             }
           ],
           "macros": {
-            "p": 35,
-            "c": 88,
-            "g": 14
+            "p": 37,
+            "c": 94,
+            "g": 6
           },
-          "alternativas": "La avena siempre va con fruta. Fruta a elegir (misma cantidad de carbohidrato): 180 g de plátano, o 270 g de manzana, o 338 g de berries. Prepara la avena con la leche, caliente o remojada desde la noche anterior.",
+          "alternativas": "Bowl: cocina la avena con la leche; al final agrega el whey y la creatina (cuando ya no hierva) y sirve con el plátano y los arándanos. Si no hay arándanos: 100 g ≈ 190 g de fresas ≈ 100 g de manzana. Si usas agua en lugar de leche pierdes ~8 g de proteína y ~12 g de carbohidrato; compénsalo con 10 g más de whey.",
           "hora": "08:00"
         },
         {
           "ref": "fija",
           "tipo": "suplemento",
           "titulo": "Creatina 3-5 g",
-          "detalle": "Con el desayuno; todos los días, también de descanso.",
+          "detalle": "Mezclada en el bowl cuando la avena ya no esté hirviendo; todos los días, también de descanso.",
           "duracion_min": 0,
           "hora_default": "08:00",
           "hora": "08:00"
@@ -3509,38 +4205,56 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Yogurt griego natural sin azúcar: 170 g (≈ ¾ taza) · Granola: 40 g (≈ ¼ taza) · Berries (fresas o arándanos): 150 g (≈ 1 taza) · Plátano: 60 g (½ plátano mediano)",
+          "detalle": "Yogurt griego natural sin azúcar: 85 g (≈ ¼ taza) · Granola: 50 g (≈ ½ taza) · Berries (fresas o arándanos): 200 g (≈ 1¼ tazas) · Plátano: 120 g (1 plátano mediano) · Miel: 7 g (1 cucharadita)",
           "duracion_min": 15,
           "hora_default": "12:00",
           "alimentos": [
             {
               "alimento": "Yogurt griego natural sin azúcar",
-              "cantidad": 170,
+              "cantidad": 85,
               "unidad": "g",
-              "medida": "≈ ¾ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "tal cual",
+              "porcion": "85 g ≈ ¼ taza (un vaso individual ≈ 170 g)"
             },
             {
               "alimento": "Granola",
-              "cantidad": 40,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ¼ taza"
+              "medida": "≈ ½ taza",
+              "estado": "tal cual",
+              "porcion": "50 g ≈ ½ taza (¼ de taza ≈ 28 g)"
             },
             {
               "alimento": "Berries (fresas o arándanos)",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "g",
-              "medida": "≈ 1 taza"
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g ≈ 1¼ tazas (1 taza ≈ 150 g)"
             },
             {
               "alimento": "Plátano",
-              "cantidad": 60,
+              "cantidad": 120,
               "unidad": "g",
-              "medida": "½ plátano mediano"
+              "medida": "1 plátano mediano",
+              "estado": "tal cual",
+              "porcion": "120 g pelado = 1 plátano mediano",
+              "piezas": 1,
+              "g_por_pieza": 120
+            },
+            {
+              "alimento": "Miel",
+              "cantidad": 7,
+              "unidad": "g",
+              "medida": "1 cucharadita",
+              "estado": "tal cual",
+              "porcion": "7 g ≈ 1 cucharadita"
             }
           ],
           "macros": {
-            "p": 21,
-            "c": 62,
+            "p": 15,
+            "c": 90,
             "g": 10
           },
           "alternativas": "Cambia las berries por 1 manzana mediana (180 g) o 1 plátano si lo prefieres.",
@@ -3550,87 +4264,105 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Comida",
-          "detalle": "Pechuga de pollo (cocida): 100 g · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Frijoles (cocidos): 75 g (≈ ½ taza) · Verduras (brócoli, calabacitas, ensalada): 250 g · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos.",
+          "detalle": "Pechuga de pollo (cocida): 150 g · Arroz blanco (cocido): 250 g (≈ 1½ tazas) · Frijoles (cocidos): 50 g (≈ ¼ taza) · Verduras (brócoli, calabacitas, ensalada): 200 g (≈ 1¼ tazas) · Aceite de oliva: 15 ml (1 cucharada) · Aguacate: 50 g. Pesos cocidos. La comida es igual todos los días para cocinar por tandas.",
           "duracion_min": 30,
           "hora_default": "15:00",
           "alimentos": [
             {
               "alimento": "Pechuga de pollo (cocida)",
-              "cantidad": 100,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "estado": "cocido",
+              "porcion": "150 g de pechuga cocida, sin piel ni hueso (≈ 200 g en crudo)"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 250,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "250 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Frijoles (cocidos)",
-              "cantidad": 75,
+              "cantidad": 50,
               "unidad": "g",
-              "medida": "≈ ½ taza"
+              "medida": "≈ ¼ taza",
+              "estado": "cocido",
+              "porcion": "50 g cocidos ≈ ¼ taza (1 taza ≈ 175 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 250,
-              "unidad": "g"
+              "cantidad": 200,
+              "unidad": "g",
+              "medida": "≈ 1¼ tazas",
+              "estado": "tal cual",
+              "porcion": "200 g (cocidas o en ensalada) ≈ 1¼ tazas"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             },
             {
               "alimento": "Aguacate",
               "cantidad": 50,
-              "unidad": "g"
+              "unidad": "g",
+              "estado": "tal cual",
+              "porcion": "50 g de pulpa ≈ ⅓ de aguacate mediano (1 pieza ≈ 150 g de pulpa)"
             }
           ],
           "macros": {
-            "p": 52,
-            "c": 128,
-            "g": 27
+            "p": 63,
+            "c": 98,
+            "g": 28
           },
-          "alternativas": "Proteína: 100 g de pechuga de pollo cocida o 115 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "Proteína: 150 g de pechuga de pollo cocida o 170 g de res magra cocida (misma proteína). Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "15:00"
         },
         {
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Colación",
-          "detalle": "Pan de caja integral: 60 g (2 rebanadas) · Pechuga de pavo rebanada: 60 g · Plátano: 120 g (1 plátano mediano) · Jugo de naranja: 150 ml (≈ ½ vaso)",
+          "detalle": "Pan de caja integral: 90 g (3 rebanadas) · Plátano: 180 g (1½ plátanos medianos) · Jugo de naranja: 200 ml (≈ ¾ vaso)",
           "duracion_min": 15,
           "hora_default": "18:00",
           "alimentos": [
             {
               "alimento": "Pan de caja integral",
-              "cantidad": 60,
+              "cantidad": 90,
               "unidad": "g",
-              "medida": "2 rebanadas"
-            },
-            {
-              "alimento": "Pechuga de pavo rebanada",
-              "cantidad": 60,
-              "unidad": "g"
+              "medida": "3 rebanadas",
+              "estado": "tal cual",
+              "porcion": "3 rebanadas (≈ 30 g cada una)",
+              "piezas": 3,
+              "g_por_pieza": 30
             },
             {
               "alimento": "Plátano",
-              "cantidad": 120,
+              "cantidad": 180,
               "unidad": "g",
-              "medida": "1 plátano mediano"
+              "medida": "1½ plátanos medianos",
+              "estado": "tal cual",
+              "porcion": "180 g pelado = 1½ plátanos medianos",
+              "piezas": 1.5,
+              "g_por_pieza": 120
             },
             {
               "alimento": "Jugo de naranja",
-              "cantidad": 150,
+              "cantidad": 200,
               "unidad": "ml",
-              "medida": "≈ ½ vaso"
+              "medida": "≈ ¾ vaso",
+              "estado": "líquido",
+              "porcion": "200 ml ≈ ¾ vaso (1 vaso = 240 ml)"
             }
           ],
           "macros": {
-            "p": 19,
-            "c": 70,
+            "p": 11,
+            "c": 100,
             "g": 4
           },
           "alternativas": "El jugo de naranja se puede cambiar por una fruta (1 manzana o 1 plátano) más agua.",
@@ -3640,7 +4372,7 @@
           "ref": "fija",
           "tipo": "comida",
           "titulo": "Cena",
-          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo (líquidas): 150 ml (4½ claras) · Arroz blanco (cocido): 325 g (≈ 2 tazas) · Verduras (brócoli, calabacitas, ensalada): 200 g · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
+          "detalle": "Huevo entero: 100 g (2 piezas) · Claras de huevo líquidas (San Juan): 150 ml (4½ claras) · Arroz blanco (cocido): 225 g (≈ 1½ tazas) · Verduras (brócoli, calabacitas, ensalada): 150 g (≈ 1 taza) · Aceite de oliva: 15 ml (1 cucharada). Huevo y claras como base de proteína; arroz y verduras cocidos.",
           "duracion_min": 30,
           "hora_default": "20:30",
           "alimentos": [
@@ -3648,38 +4380,51 @@
               "alimento": "Huevo entero",
               "cantidad": 100,
               "unidad": "g",
-              "medida": "2 piezas"
+              "medida": "2 piezas",
+              "estado": "tal cual",
+              "porcion": "2 huevos enteros (≈ 50 g cada uno, sin cascarón)",
+              "piezas": 2,
+              "g_por_pieza": 50
             },
             {
-              "alimento": "Claras de huevo (líquidas)",
+              "alimento": "Claras de huevo líquidas (San Juan)",
               "cantidad": 150,
               "unidad": "ml",
-              "medida": "4½ claras"
+              "medida": "4½ claras",
+              "estado": "líquido",
+              "porcion": "150 ml de claras líquidas ≈ 10 cucharadas soperas (1 cucharada = 15 ml); ≈ 4½ claras"
             },
             {
               "alimento": "Arroz blanco (cocido)",
-              "cantidad": 325,
+              "cantidad": 225,
               "unidad": "g",
-              "medida": "≈ 2 tazas"
+              "medida": "≈ 1½ tazas",
+              "estado": "cocido",
+              "porcion": "225 g de arroz cocido ≈ 1½ tazas (1 taza ≈ 160 g)"
             },
             {
               "alimento": "Verduras (brócoli, calabacitas, ensalada)",
-              "cantidad": 200,
-              "unidad": "g"
+              "cantidad": 150,
+              "unidad": "g",
+              "medida": "≈ 1 taza",
+              "estado": "tal cual",
+              "porcion": "150 g (cocidas o en ensalada) ≈ 1 taza"
             },
             {
               "alimento": "Aceite de oliva",
               "cantidad": 15,
               "unidad": "ml",
-              "medida": "1 cucharada"
+              "medida": "1 cucharada",
+              "estado": "líquido",
+              "porcion": "15 ml = 1 cucharada sopera"
             }
           ],
           "macros": {
-            "p": 42,
-            "c": 105,
-            "g": 25
+            "p": 37,
+            "c": 74,
+            "g": 24
           },
-          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 29 g): 95 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 105 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
+          "alternativas": "La base es huevo + claras. Alternativas con la misma proteína (≈ 28 g): 90 g de pechuga de pollo cocida (suma ~5 ml de aceite para igualar la grasa) o 100 g de res magra cocida. Carbohidrato: 100 g de arroz cocido ≈ 140 g de papa cocida ≈ 90 g de pasta cocida ≈ 2 tortillas de maíz.",
           "hora": "20:30"
         },
         {
@@ -3693,10 +4438,10 @@
         }
       ],
       "totales": {
-        "p": 170,
-        "c": 481,
-        "g": 80,
-        "kcal": 3324
+        "p": 164,
+        "c": 484,
+        "g": 72,
+        "kcal": 3240
       }
     }
   ]
