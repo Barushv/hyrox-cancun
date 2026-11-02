@@ -1,4 +1,37 @@
 // Piezas compartidas para mostrar una sesión del plan (Hoy, Plan y pantalla de sesión)
+import { plan } from '../data/plan'
+import { metaProgresion } from '../engine/registro'
+
+// Un ejercicio del plan: series × reps, y si el plan los trae, intensidad, descanso, estación y meta de la fase
+export function EjercicioPlan({ e, semana, compacto = false }) {
+  const meta = metaProgresion(plan.progresion_gym, e.ejercicio, semana)
+  return (
+    <li className={`flex flex-col gap-0.5 ${compacto ? '' : 'py-2'}`}>
+      <div className="flex justify-between gap-3">
+        <span className="flex flex-wrap items-center gap-1.5">
+          {!compacto && <span>{e.ejercicio}</span>}
+          {e.especifico_hyrox && <span className="chip bg-sun/25 text-ink">Hyrox</span>}
+        </span>
+        {!compacto && (
+          <span className="shrink-0 font-mono text-xs text-muted tabular">
+            {e.series} × {e.reps}
+          </span>
+        )}
+      </div>
+      {(e.intensidad || e.descanso) && (
+        <span className="text-xs text-muted">
+          {[e.intensidad, e.descanso && `descanso ${e.descanso}`].filter(Boolean).join(' · ')}
+        </span>
+      )}
+      {e.estacion && <span className="text-xs text-accent">Para: {e.estacion}</span>}
+      {meta && (
+        <span className="text-xs">
+          <b>Meta {meta.fase}:</b> {meta.meta}
+        </span>
+      )}
+    </li>
+  )
+}
 
 export const CARGA_STYLE = {
   dura: 'bg-bad/10 text-bad',
@@ -29,7 +62,7 @@ export function tieneDetalle(s) {
   return Boolean(s.ejercicios || s.estructura || (s.indicaciones && s.indicaciones !== resumen) || (s.indicacion_semana && s.indicacion_semana !== resumen))
 }
 
-export default function SesionDetalle({ s }) {
+export default function SesionDetalle({ s, semana }) {
   const resumen = resumenSesion(s)
   return (
     <div className="flex flex-col gap-3 text-sm">
@@ -51,12 +84,7 @@ export default function SesionDetalle({ s }) {
       {s.ejercicios && (
         <ul className="divide-y divide-line">
           {s.ejercicios.map((e, i) => (
-            <li key={i} className="flex justify-between gap-3 py-1.5">
-              <span>{e.ejercicio}</span>
-              <span className="shrink-0 font-mono text-xs text-muted tabular">
-                {e.series} × {e.reps}
-              </span>
-            </li>
+            <EjercicioPlan key={i} e={e} semana={semana} />
           ))}
         </ul>
       )}

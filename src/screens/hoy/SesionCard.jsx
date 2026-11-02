@@ -4,7 +4,7 @@ import SesionDetalle, { CargaChip, resumenSesion, tieneDetalle } from '../../com
 import { tipoRegistro } from '../../engine/registro'
 
 // Sesión del día con su plantilla. Toca para ver ejercicios o estructura; "Registrar" abre el formulario.
-export default function SesionCard({ s, omitidaPorSemaforo, semanaRoja, estado, esFuturo, onRegistrar }) {
+export default function SesionCard({ s, semana, omitidaPorSemaforo, semanaRoja, estado, esFuturo, onRegistrar }) {
   const [open, setOpen] = useState(false)
   const omitida = s.omitir || omitidaPorSemaforo
   const resumen = resumenSesion(s)
@@ -41,7 +41,7 @@ export default function SesionCard({ s, omitidaPorSemaforo, semanaRoja, estado, 
 
       {open && (
         <div className="border-t border-line px-3 pb-3 pt-2.5">
-          <SesionDetalle s={s} />
+          <SesionDetalle s={s} semana={semana} />
         </div>
       )}
 

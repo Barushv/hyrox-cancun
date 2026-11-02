@@ -3,3 +3,4 @@ dist
 *.local
 .DS_Store
 data/_respaldo
+data/[0-9][0-9]-*/

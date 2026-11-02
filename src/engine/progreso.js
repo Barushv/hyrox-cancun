@@ -1,6 +1,6 @@
 import { plan } from '../data/plan'
 import { getSesiones } from './calendar'
-import { tipoRegistro } from './registro'
+import { tipoRegistro, nombreActual } from './registro'
 
 // Cumplimiento desde el inicio del plan hasta hoy
 export function adherencia(sesiones, checkins, hoy) {
@@ -41,8 +41,9 @@ export function progresionGym(sesiones) {
         const series = ej.series.filter((x) => typeof x.peso_kg === 'number')
         if (!series.length) continue
         const top = series.reduce((a, b) => (b.peso_kg > a.peso_kg || (b.peso_kg === a.peso_kg && (b.reps ?? 0) > (a.reps ?? 0)) ? b : a))
-        if (!mapa.has(ej.nombre)) mapa.set(ej.nombre, [])
-        mapa.get(ej.nombre).push({ fecha, valor: top.peso_kg, extra: `${top.peso_kg} kg × ${top.reps ?? '–'}` })
+        const nombre = nombreActual(ej.nombre)
+        if (!mapa.has(nombre)) mapa.set(nombre, [])
+        mapa.get(nombre).push({ fecha, valor: top.peso_kg, extra: `${top.peso_kg} kg × ${top.reps ?? '–'}` })
       }
     }
   }

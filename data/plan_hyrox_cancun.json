@@ -1,8 +1,8 @@
 {
   "meta": {
     "nombre_plan": "Plan integrado Hyrox Cancún 2027",
-    "version": "1.0",
-    "generado": "2026-10-14",
+    "version": "1.1",
+    "generado": "2026-11-02",
     "objetivo_principal": "Hyrox Cancún, 19-21 feb 2027 (fecha/ola exacta por confirmar)",
     "objetivos": [
       "Recuperar y aumentar masa muscular",
@@ -25,7 +25,10 @@
     "nutricion": {
       "archivo": "plan_nutricion_hyrox_cancun.json",
       "estado": "v1.0"
-    }
+    },
+    "cambios_version": [
+      "1.1: plantillas de gym con trabajo específico de estaciones (opción híbrida B); nuevos campos por ejercicio (intensidad, descanso, estación, específico_hyrox) y progresión_gym."
+    ]
   },
   "zonas_fc": {
     "fuente": "Amazfit Helio Strap (fuente de verdad). El reloj solo para pace y distancia.",
@@ -133,7 +136,8 @@
     "Rodilla (debajo de la rótula): si llega a 3/10 quita extensión de cuádriceps, zancada búlgara y saltos; si persiste, descanso.",
     "Clase Engine del martes: extra opcional. Se cancela si la fuerza baja, el semáforo no está en verde o es semana de descarga.",
     "Semanas de descarga: S4, S8, S12 (volumen -40/50%, sin clase extra).",
-    "Con 12 sesiones por semana, dormir 7-9 h y comer suficiente son condición del plan, no un extra."
+    "Con 12 sesiones por semana, dormir 7-9 h y comer suficiente son condición del plan, no un extra.",
+    "Gym específico de Hyrox: hand-over-hand, colgado, farmers, zancada con saco y wall balls; técnica primero y sin llegar al fallo."
   ],
   "fases": [
     {
@@ -259,127 +263,232 @@
     },
     "gym_superior_a": {
       "tipo": "gym",
-      "titulo": "Gym superior A (martes AM, ~50 min)",
+      "titulo": "Gym superior A (martes AM, ~60 min)",
       "carga": "media",
       "ejercicios": [
         {
-          "ejercicio": "Press de pecho en máquina o inclinado con mancuernas",
+          "ejercicio": "Jalón al pecho, agarre neutro",
           "series": 4,
-          "reps": "8-10"
+          "reps": "6-8",
+          "intensidad": "2 reps en reserva; bajada de 2 s",
+          "descanso": "2 min",
+          "estacion": "Sled pull, SkiErg"
         },
         {
-          "ejercicio": "Jalón al pecho",
+          "ejercicio": "Press de pecho en máquina o inclinado con mancuernas",
           "series": 4,
-          "reps": "8-10"
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva",
+          "descanso": "90-120 s",
+          "estacion": "Sled push, burpees"
+        },
+        {
+          "ejercicio": "Remo sentado en polea, agarre neutro, pausa de 1 s",
+          "series": 4,
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva",
+          "descanso": "90 s",
+          "estacion": "Row, sled pull"
+        },
+        {
+          "ejercicio": "Hand-over-hand en polea con cuerda gruesa",
+          "series": 4,
+          "reps": "16 tirones (8 por brazo)",
+          "intensidad": "Esfuerzo 7-8/10; la última serie con técnica limpia",
+          "descanso": "90 s",
+          "estacion": "Sled pull",
+          "especifico_hyrox": true
         },
         {
           "ejercicio": "Press de hombro en máquina",
           "series": 3,
-          "reps": "8-10"
-        },
-        {
-          "ejercicio": "Remo en polea o máquina",
-          "series": 3,
-          "reps": "10-12"
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva",
+          "descanso": "90 s",
+          "estacion": "Wall balls"
         },
         {
           "ejercicio": "Elevaciones laterales en polea",
-          "series": 3,
-          "reps": "12-15"
+          "series": 2,
+          "reps": "12-15",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Hombro"
         },
         {
           "ejercicio": "Tríceps en polea",
-          "series": 3,
-          "reps": "10-12"
+          "series": 2,
+          "reps": "12",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "SkiErg"
         }
       ],
-      "indicaciones": "Sin core hoy (cansa para correr). Después corres Intervalos 1."
+      "indicaciones": "Sin core hoy (cansa para correr). Después corres Intervalos 1. Hand-over-hand: en semisentadilla, espalda neutra e inclinado hacia atrás; jala hasta la cadera alternando las manos sin pausas."
     },
     "gym_superior_b": {
       "tipo": "gym",
-      "titulo": "Gym superior B + core (viernes, ~50 min)",
+      "titulo": "Gym superior B + core (viernes, ~60 min)",
       "carga": "media",
       "ejercicios": [
         {
-          "ejercicio": "Remo con apoyo o máquina",
+          "ejercicio": "Remo con apoyo en el pecho (máquina o mancuernas)",
           "series": 4,
-          "reps": "8-10"
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva",
+          "descanso": "90 s",
+          "estacion": "Row, sled pull"
+        },
+        {
+          "ejercicio": "Jalón a una mano en polea (o dominadas supinas asistidas)",
+          "series": 3,
+          "reps": "8-10 por lado",
+          "intensidad": "2 reps en reserva",
+          "descanso": "75 s",
+          "estacion": "Sled pull"
         },
         {
           "ejercicio": "Press inclinado con mancuernas o press de pecho en máquina",
           "series": 3,
-          "reps": "8-10"
-        },
-        {
-          "ejercicio": "Jalón agarre neutro o dominadas asistidas",
-          "series": 3,
-          "reps": "8-10"
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva",
+          "descanso": "90 s",
+          "estacion": "Burpees, sled push"
         },
         {
           "ejercicio": "Cruce de poleas o pec deck",
+          "series": 2,
+          "reps": "12-15",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Pecho"
+        },
+        {
+          "ejercicio": "Colgado en barra",
           "series": 3,
-          "reps": "12-15"
+          "reps": "30-45 s",
+          "intensidad": "La última serie al límite",
+          "descanso": "60 s",
+          "estacion": "Agarre",
+          "especifico_hyrox": true
+        },
+        {
+          "ejercicio": "Farmers carry pesado",
+          "series": 4,
+          "reps": "40 m con 2 × 28-32 kg",
+          "intensidad": "Peso de carrera: 24 kg por mano",
+          "descanso": "60-75 s",
+          "estacion": "Farmers",
+          "especifico_hyrox": true
+        },
+        {
+          "ejercicio": "Curl martillo",
+          "series": 3,
+          "reps": "10-12",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Agarre y bíceps"
         },
         {
           "ejercicio": "Face pull o pájaros en máquina",
           "series": 3,
-          "reps": "12-15"
+          "reps": "12-15",
+          "intensidad": "Controlado",
+          "descanso": "45 s",
+          "estacion": "Hombro"
         },
         {
-          "ejercicio": "Curl de bíceps en polea",
+          "ejercicio": "Core: Pallof press",
           "series": 3,
-          "reps": "10-12"
+          "reps": "10 por lado",
+          "intensidad": "Lento",
+          "descanso": "45 s",
+          "estacion": "Postura"
         },
         {
-          "ejercicio": "Core: plancha lateral, Pallof, bird dog",
+          "ejercicio": "Core: dead bug",
           "series": 3,
-          "reps": "30 s / 10 / 10"
+          "reps": "8 por lado",
+          "intensidad": "Lento",
+          "descanso": "45 s",
+          "estacion": "Postura"
         }
       ],
-      "indicaciones": "Después del rodaje fácil."
+      "indicaciones": "Después del rodaje fácil. El colgado y los farmers pesados trabajan el agarre, que es lo primero que falla en el sled pull."
     },
     "gym_piernas": {
       "tipo": "gym",
-      "titulo": "Gym piernas (jueves PM, ~60 min)",
+      "titulo": "Gym piernas (jueves PM, ~70 min)",
       "carga": "dura",
       "ejercicios": [
         {
           "ejercicio": "Prensa de pierna o hack squat (bajada de 3 s)",
           "series": 4,
-          "reps": "8-10"
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva",
+          "descanso": "2 min",
+          "estacion": "Sled push"
         },
         {
           "ejercicio": "Peso muerto rumano",
-          "series": 3,
-          "reps": "8-10"
+          "series": 4,
+          "reps": "6-8",
+          "intensidad": "2 reps en reserva",
+          "descanso": "2 min",
+          "estacion": "Sled pull (cadera), lunges"
         },
         {
-          "ejercicio": "Curl femoral sentado",
+          "ejercicio": "Zancada búlgara con mancuernas",
           "series": 3,
-          "reps": "10-12"
+          "reps": "8 por pierna",
+          "intensidad": "2 reps en reserva",
+          "descanso": "90 s",
+          "estacion": "Lunges"
         },
         {
           "ejercicio": "Hip thrust",
           "series": 3,
-          "reps": "8-10"
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva",
+          "descanso": "90 s",
+          "estacion": "Cadera y glúteo"
         },
         {
-          "ejercicio": "Zancada búlgara o step-up",
+          "ejercicio": "Zancada caminando con saco (20 kg)",
           "series": 3,
-          "reps": "8-10 por pierna"
+          "reps": "20 m",
+          "intensidad": "Técnica constante",
+          "descanso": "60-75 s",
+          "estacion": "Lunges",
+          "especifico_hyrox": true
+        },
+        {
+          "ejercicio": "Wall balls, pelota de 6 kg a 3.0 m",
+          "series": 3,
+          "reps": "15",
+          "intensidad": "Ritmo parejo, esfuerzo 7/10",
+          "descanso": "75 s",
+          "estacion": "Wall balls",
+          "especifico_hyrox": true
+        },
+        {
+          "ejercicio": "Curl femoral sentado",
+          "series": 3,
+          "reps": "10-12",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Isquiotibiales"
         },
         {
           "ejercicio": "Pantorrilla de pie + sentada",
           "series": 3,
-          "reps": "10-15 / 12-15"
-        },
-        {
-          "ejercicio": "Extensión de cuádriceps (opcional, según rodilla)",
-          "series": 2,
-          "reps": "12-15"
+          "reps": "10-15 / 12-15",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Soporte"
         }
       ],
-      "indicaciones": "Mínimo 6 h después de Intervalos 2. Comer 60-90 min antes (30-40 g de carbohidrato)."
+      "indicaciones": "Mínimo 6 h después de Intervalos 2. Comer 60-90 min antes (30-40 g de carbohidrato). La zancada con saco y los wall balls van al final, con técnica."
     },
     "descanso": {
       "tipo": "descanso",
@@ -791,7 +900,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Transición: los ejercicios nuevos (hand-over-hand, colgado, farmers, zancada con saco, wall balls) con 2-3 series y 3 reps en reserva; el resto, series completas, 1-3 reps en reserva."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -838,7 +947,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Transición: los ejercicios nuevos (hand-over-hand, colgado, farmers, zancada con saco, wall balls) con 2-3 series y 3 reps en reserva; el resto, series completas, 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "alta",
@@ -856,7 +965,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Transición: los ejercicios nuevos (hand-over-hand, colgado, farmers, zancada con saco, wall balls) con 2-3 series y 3 reps en reserva; el resto, series completas, 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -1046,7 +1155,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -1093,7 +1202,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "alta",
@@ -1111,7 +1220,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "media",
@@ -1173,7 +1282,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -1220,7 +1329,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "alta",
@@ -1238,7 +1347,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "media",
@@ -1300,7 +1409,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -1347,7 +1456,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "alta",
@@ -1365,7 +1474,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Series completas según plantilla, RIR 1-3. Progresión doble."
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "media",
@@ -1555,7 +1664,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -1602,7 +1711,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "alta",
@@ -1620,7 +1729,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -1682,7 +1791,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -1729,7 +1838,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "alta",
@@ -1747,7 +1856,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -1809,7 +1918,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -1856,7 +1965,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "alta",
@@ -1874,7 +1983,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -2064,7 +2173,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -2111,7 +2220,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "alta",
@@ -2129,7 +2238,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -2191,7 +2300,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -2238,7 +2347,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "alta",
@@ -2256,7 +2365,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (prensa, RDL, press, jalón 4 x 5-8); accesorios 3 x 8-12; RIR 1-3."
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -2318,7 +2427,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo."
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -2365,7 +2474,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo."
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
           "nutricion_tipo": "alta",
@@ -2383,7 +2492,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo."
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
           "nutricion_tipo": "media",
@@ -2445,7 +2554,7 @@
             {
               "plantilla": "gym_superior_a",
               "momento": "mañana 5am (1o)",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo."
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             },
             {
               "plantilla": "run_intervalos_1",
@@ -2492,7 +2601,7 @@
             {
               "plantilla": "gym_piernas",
               "momento": "tarde (min. 6 h después)",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo."
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
           "nutricion_tipo": "alta",
@@ -2510,7 +2619,7 @@
             {
               "plantilla": "gym_superior_b",
               "momento": "después del rodaje",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo."
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
           "nutricion_tipo": "media",
@@ -2862,6 +2971,64 @@
       "masa_muscular_kg",
       "grasa_pct",
       "cintura_cm"
+    ]
+  },
+  "progresion_gym": {
+    "regla": "Sube la carga cuando completes el rango alto de todas las series con 2 reps en reserva. En descargas (S4, S8, S12): la mitad de las series con el mismo peso.",
+    "fases": [
+      "S3-S8",
+      "S9-S14",
+      "S15-S17"
+    ],
+    "ejercicios": [
+      {
+        "ejercicio": "Jalón al pecho, agarre neutro",
+        "S3-S8": "4 × 6-8",
+        "S9-S14": "4 × 5-6, más pesado",
+        "S15-S17": "3 × 6"
+      },
+      {
+        "ejercicio": "Hand-over-hand en polea con cuerda gruesa",
+        "S3-S8": "4 × 16 tirones",
+        "S9-S14": "5 × 16-20 tirones, más peso",
+        "S15-S17": "3 × 16 después de SkiErg o de un run"
+      },
+      {
+        "ejercicio": "Farmers carry pesado",
+        "S3-S8": "4 × 40 m con 28 kg",
+        "S9-S14": "4 × 40 m con 30-32 kg",
+        "S15-S17": "3 × 40 m con 24-28 kg después de un run"
+      },
+      {
+        "ejercicio": "Colgado en barra",
+        "S3-S8": "3 × 30-45 s",
+        "S9-S14": "3 × 45-60 s",
+        "S15-S17": "2 × 45 s"
+      },
+      {
+        "ejercicio": "Prensa de pierna o hack squat",
+        "S3-S8": "4 × 8-10",
+        "S9-S14": "4 × 6-8",
+        "S15-S17": "3 × 8"
+      },
+      {
+        "ejercicio": "Peso muerto rumano",
+        "S3-S8": "4 × 6-8",
+        "S9-S14": "4 × 5-6",
+        "S15-S17": "3 × 6-8"
+      },
+      {
+        "ejercicio": "Zancada caminando con saco",
+        "S3-S8": "3 × 20 m a 20 kg",
+        "S9-S14": "4 × 25 m a 25 kg",
+        "S15-S17": "3 × 20 m a 20 kg después de un run"
+      },
+      {
+        "ejercicio": "Wall balls",
+        "S3-S8": "3 × 15",
+        "S9-S14": "4 × 20 con 6-9 kg",
+        "S15-S17": "3 × 25 bajo fatiga"
+      }
     ]
   }
 }

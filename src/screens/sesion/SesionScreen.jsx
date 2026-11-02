@@ -71,13 +71,13 @@ export default function SesionScreen({ fecha, idx, onClose }) {
 
         <section className="card flex flex-col gap-3 p-3">
           {resumenSesion(s) && <p className="font-semibold">{resumenSesion(s)}</p>}
-          <SesionDetalle s={s} />
+          <SesionDetalle s={s} semana={info.semana.semana} />
         </section>
 
         {tipo ? (
           <section className="flex flex-col gap-3">
             <h2 className="h-section">Registro</h2>
-            {tipo === 'gym' && <FormGym s={s} r={r} set={set} anterior={anterior} />}
+            {tipo === 'gym' && <FormGym s={s} r={r} set={set} anterior={anterior} semana={info.semana.semana} />}
             {tipo === 'running' && <FormRunning s={s} r={r} set={set} />}
             {tipo === 'clase' && <FormClase r={r} set={set} />}
           </section>

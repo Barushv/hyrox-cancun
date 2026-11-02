@@ -65,12 +65,14 @@ export function registroAnterior(sesiones, fecha, plantillaId) {
 
 // Series de un ejercicio en el registro anterior (busca por nombre)
 export function seriesAnteriores(anterior, nombre) {
-  const ej = anterior?.registro?.ejercicios?.find((e) => e.nombre === nombre)
+  const nombres = nombresDe(nombre)
+  const ej = anterior?.registro?.ejercicios?.find((e) => nombres.includes(e.nombre))
   return ej?.series?.filter((x) => x.peso_kg != null || x.reps != null) ?? []
 }
 
 // Progresión doble: sube peso cuando completas el rango alto en todas las series
 export function sugerenciaProgresion(seriesPrev, reps) {
+  if (unidadReps(reps) !== 'Reps') return null
   const tope = repsTope(reps)
   if (!tope || seriesPrev.length === 0) return null
   if (seriesPrev.every((x) => x.reps != null && x.reps >= tope)) return 'Completaste el rango alto en todas las series: sube el peso.'
@@ -92,4 +94,46 @@ export const TIPOS_PRUEBA = {
   '5rm_estimado': { label: '5RM estimado', ayuda: 'Ejercicio y peso', placeholder: 'Prensa 180 kg' },
   simulacion: { label: 'Simulación Hyrox', ayuda: 'Tiempo total y tipo', placeholder: '38:20 (media)' },
   inbody: { label: 'InBody', ayuda: null, placeholder: '' },
+}
+
+// --- Plan v1.1: ejercicios renombrados y progresión por fase ---
+
+const sinAcento = (t) => String(t ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+
+// Nombres anteriores del mismo ejercicio, para que el registro de semanas pasadas siga sirviendo de referencia
+export const NOMBRES_ANTERIORES = {
+  'Jalón al pecho, agarre neutro': ['Jalón al pecho'],
+  'Remo sentado en polea, agarre neutro, pausa de 1 s': ['Remo en polea o máquina'],
+  'Remo con apoyo en el pecho (máquina o mancuernas)': ['Remo con apoyo o máquina'],
+  'Zancada búlgara con mancuernas': ['Zancada búlgara o step-up'],
+}
+
+// Todos los nombres con los que se pudo haber registrado un ejercicio
+export const nombresDe = (nombre) => [nombre, ...(NOMBRES_ANTERIORES[nombre] ?? [])]
+
+// Nombre actual de un ejercicio registrado con un nombre viejo
+export function nombreActual(nombre) {
+  for (const [actual, viejos] of Object.entries(NOMBRES_ANTERIORES)) if (viejos.includes(nombre)) return actual
+  return nombre
+}
+
+// Qué se mide en la columna de repeticiones: segundos (colgado), metros (farmers, zancada) o reps
+export function unidadReps(reps) {
+  const t = String(reps ?? '')
+  if (/\d\s*s\b|seg/.test(t)) return 'Seg'
+  if (/\d\s*m\b/.test(t)) return 'Metros'
+  return 'Reps'
+}
+
+// Meta de la tabla progresion_gym para la semana actual (S3-S8, S9-S14, S15-S17)
+export function metaProgresion(progresion, nombreEjercicio, semana) {
+  if (!progresion?.ejercicios || semana == null) return null
+  const fase = (progresion.fases ?? []).find((f) => {
+    const m = f.match(/S(\d+)\s*-\s*S(\d+)/)
+    return m && semana >= Number(m[1]) && semana <= Number(m[2])
+  })
+  if (!fase) return null
+  const n = sinAcento(nombreEjercicio)
+  const ej = progresion.ejercicios.find((e) => n.startsWith(sinAcento(e.ejercicio)))
+  return ej?.[fase] ? { fase, meta: ej[fase] } : null
 }

@@ -158,6 +158,7 @@ export default function HoyScreen({ fecha, setFecha, onOpenSesion }) {
               <SesionCard
                 key={i}
                 s={s}
+                semana={info.semana.semana}
                 omitidaPorSemaforo={s.opcional && semaforo && semaforo !== 'verde'}
                 semanaRoja={semaforo === 'rojo'}
                 estado={estadoSesion(registros[fecha]?.[s.id], s, fecha, hoy)}

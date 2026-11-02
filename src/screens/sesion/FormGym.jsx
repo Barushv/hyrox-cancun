@@ -1,9 +1,11 @@
 import Icon from '../../components/Icon'
 import { Escala, Numero, Texto } from '../../components/Campos'
-import { seriesAnteriores, sugerenciaProgresion } from '../../engine/registro'
+import { seriesAnteriores, sugerenciaProgresion, unidadReps } from '../../engine/registro'
+import { EjercicioPlan } from '../../components/SesionDetalle'
 import { formatShort } from '../../engine/dates'
 
-function Ejercicio({ idx, ej, plantilla, anterior, onChange }) {
+function Ejercicio({ idx, ej, plantilla, anterior, semana, onChange }) {
+  const unidad = unidadReps(plantilla?.reps)
   const prev = seriesAnteriores(anterior, ej.nombre)
   const sugerencia = sugerenciaProgresion(prev, plantilla?.reps)
   const setSerie = (i, campo, v) => onChange({ ...ej, series: ej.series.map((x, j) => (j === i ? { ...x, [campo]: v } : x)) })
@@ -19,6 +21,11 @@ function Ejercicio({ idx, ej, plantilla, anterior, onChange }) {
           </span>
         )}
       </div>
+      {plantilla && (
+        <ul>
+          <EjercicioPlan e={plantilla} semana={semana} compacto />
+        </ul>
+      )}
       {prev.length > 0 && (
         <p className="font-mono text-[11px] text-muted tabular">
           {formatShort(anterior.fecha)}: {prev.map((x) => `${x.peso_kg ?? '–'}×${x.reps ?? '–'}`).join(' · ')}
@@ -34,14 +41,14 @@ function Ejercicio({ idx, ej, plantilla, anterior, onChange }) {
       <div className="grid grid-cols-[24px_1fr_1fr_1fr] items-center gap-1.5 text-[11px] uppercase tracking-wide text-muted">
         <span />
         <span className="text-center">Peso kg</span>
-        <span className="text-center">Reps</span>
+        <span className="text-center">{unidad}</span>
         <span className="text-center">RIR</span>
       </div>
       {ej.series.map((x, i) => (
         <div key={i} className="grid grid-cols-[24px_1fr_1fr_1fr] items-center gap-1.5">
           <span className="font-mono text-xs text-accent tabular">{i + 1}</span>
           <Numero compacto id={`gym-${idx}-${i}-peso`} label={`Serie ${i + 1} peso`} step="0.5" value={x.peso_kg} placeholder={ultimo?.peso_kg != null ? String(ultimo.peso_kg) : ''} onChange={(v) => setSerie(i, 'peso_kg', v)} />
-          <Numero compacto id={`gym-${idx}-${i}-reps`} label={`Serie ${i + 1} reps`} value={x.reps} onChange={(v) => setSerie(i, 'reps', v)} />
+          <Numero compacto id={`gym-${idx}-${i}-reps`} label={`Serie ${i + 1} ${unidad.toLowerCase()}`} value={x.reps} onChange={(v) => setSerie(i, 'reps', v)} />
           <Numero compacto id={`gym-${idx}-${i}-rir`} label={`Serie ${i + 1} RIR`} value={x.rir} onChange={(v) => setSerie(i, 'rir', v)} />
         </div>
       ))}
@@ -59,7 +66,7 @@ function Ejercicio({ idx, ej, plantilla, anterior, onChange }) {
   )
 }
 
-export default function FormGym({ s, r, set, anterior }) {
+export default function FormGym({ s, r, set, anterior, semana }) {
   return (
     <div className="flex flex-col gap-3">
       <p className="text-xs text-muted">El peso de la última vez aparece en gris. Si una serie no la hiciste, déjala vacía o quítala.</p>
@@ -70,6 +77,7 @@ export default function FormGym({ s, r, set, anterior }) {
           ej={ej}
           plantilla={s.ejercicios?.find((e) => e.ejercicio === ej.nombre)}
           anterior={anterior}
+          semana={semana}
           onChange={(nuevo) => set('ejercicios', r.ejercicios.map((x, j) => (j === i ? nuevo : x)))}
         />
       ))}
