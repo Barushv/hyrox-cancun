@@ -15,6 +15,7 @@ import MacroSummary from './MacroSummary'
 import AnclasSheet from './AnclasSheet'
 import CalendarioSheet from './CalendarioSheet'
 import InstalarApp from '../../components/InstalarApp'
+import { Copyright } from '../../components/AcercaDe'
 import RecordatorioRespaldo from '../../components/RecordatorioRespaldo'
 
 const FECHA_CARRERA_DEFAULT = '2027-02-19'
@@ -221,6 +222,8 @@ export default function HoyScreen({ fecha, setFecha, onOpenSesion }) {
             <MacroSummary meta={dia.meta} consumido={consumido} tipo={info.dia.nutricion_tipo} ajuste={dia.ajuste} />
           </section>
         )}
+
+        <Copyright />
       </div>
 
       {sheet === 'checkin' && (

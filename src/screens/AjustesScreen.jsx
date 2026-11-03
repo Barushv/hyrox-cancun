@@ -6,6 +6,7 @@ import { PRIMER_DIA, ULTIMO_DIA } from '../engine/calendar'
 import { useStored, KEYS, clearAll, importarTodo, validarRespaldo } from '../store/store'
 import { useRespaldo } from '../components/RecordatorioRespaldo'
 import InstalarApp from '../components/InstalarApp'
+import AcercaDe from '../components/AcercaDe'
 
 // Días con más de una plantilla diaria. El martes se decide solo (semáforo y semana).
 const DIAS_CON_VARIANTE = [...new Set(diario.dias.map((d) => d.dia))].filter((d) => d !== 'martes' && variantesDe(d).length > 1)
@@ -203,6 +204,8 @@ export default function AjustesScreen() {
           )}
         </div>
       </Seccion>
+
+      <AcercaDe />
     </div>
   )
 }

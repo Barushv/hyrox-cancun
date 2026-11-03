@@ -59,3 +59,11 @@ node scripts/add-acentos.cjs     # acentos en textos visibles (no toca identific
 2. Plan: calendario de 19 semanas, detalle de sesión, registro (gym, running, clase) y pruebas ✅
 3. Nutrición: metas, agua, suplementos, peso con promedio de 7 días y ajuste cada 2 semanas ✅
 4. Progreso: cumplimiento, semáforo, FC, sueño, ritmo Z2, fuerza, pruebas vs Roma; respaldo y recordatorios (.ics) ✅
+
+## Autor y derechos
+
+Diseñada y desarrollada por **Israel Ortiz** · [GitHub](https://github.com/barushv) · [Instagram](https://www.instagram.com/israel.ortiza/)
+
+© 2026 Israel Ortiz. Todos los derechos reservados. Ver [LICENSE](LICENSE).
+
+App personal no oficial de HYROX.

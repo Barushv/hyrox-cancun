@@ -1,7 +1,9 @@
 {
   "name": "hyrox-cancun",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.2.0",
+  "author": "Israel Ortiz (https://github.com/barushv)",
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
