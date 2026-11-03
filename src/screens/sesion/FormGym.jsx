@@ -1,14 +1,20 @@
 import Icon from '../../components/Icon'
 import { Escala, Numero, Texto } from '../../components/Campos'
-import { seriesAnteriores, sugerenciaProgresion, unidadReps } from '../../engine/registro'
+import { seriesAnteriores, sugerenciaProgresion, unidadReps, llenarSeries, segundosDescanso, INCREMENTO_KG } from '../../engine/registro'
 import { EjercicioPlan } from '../../components/SesionDetalle'
 import { formatShort } from '../../engine/dates'
 
-function Ejercicio({ idx, ej, plantilla, anterior, semana, onChange }) {
+function Ejercicio({ idx, ej, plantilla, anterior, semana, onChange, onSerie }) {
   const unidad = unidadReps(plantilla?.reps)
   const prev = seriesAnteriores(anterior, ej.nombre)
   const sugerencia = sugerenciaProgresion(prev, plantilla?.reps)
-  const setSerie = (i, campo, v) => onChange({ ...ej, series: ej.series.map((x, j) => (j === i ? { ...x, [campo]: v } : x)) })
+  const setSerie = (i, campo, v) => {
+    // Al anotar las reps de una serie por primera vez arranca el descanso
+    if (campo === 'reps' && ej.series[i].reps == null && v != null) onSerie?.(segundosDescanso(plantilla?.descanso), ej.nombre)
+    onChange({ ...ej, series: ej.series.map((x, j) => (j === i ? { ...x, [campo]: v } : x)) })
+  }
+  const llenar = (subir) => onChange({ ...ej, series: llenarSeries(ej.series, prev, { subir, reps: plantilla?.reps }) })
+  const conPeso = prev.some((x) => x.peso_kg != null)
   const ultimo = prev[prev.length - 1]
 
   return (
@@ -36,6 +42,18 @@ function Ejercicio({ idx, ej, plantilla, anterior, semana, onChange }) {
           <Icon name="chevronRight" className="w-3.5 h-3.5 -rotate-90" strokeWidth={3} />
           {sugerencia}
         </p>
+      )}
+      {prev.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          <button type="button" className="rounded-lg border border-line px-2.5 py-1.5 text-xs font-semibold" onClick={() => llenar(false)}>
+            Igual que la vez pasada
+          </button>
+          {sugerencia && conPeso && (
+            <button type="button" className="rounded-lg bg-ok px-2.5 py-1.5 text-xs font-bold text-white" onClick={() => llenar(true)}>
+              Subir +{INCREMENTO_KG} kg
+            </button>
+          )}
+        </div>
       )}
 
       <div className="grid grid-cols-[24px_1fr_1fr_1fr] items-center gap-1.5 text-[11px] uppercase tracking-wide text-muted">
@@ -66,10 +84,10 @@ function Ejercicio({ idx, ej, plantilla, anterior, semana, onChange }) {
   )
 }
 
-export default function FormGym({ s, r, set, anterior, semana }) {
+export default function FormGym({ s, r, set, anterior, semana, onSerie }) {
   return (
     <div className="flex flex-col gap-3">
-      <p className="text-xs text-muted">El peso de la última vez aparece en gris. Si una serie no la hiciste, déjala vacía o quítala.</p>
+      <p className="text-xs text-muted">El peso de la última vez aparece en gris. Al anotar las reps de una serie arranca el descanso. Si una serie no la hiciste, déjala vacía o quítala.</p>
       {r.ejercicios.map((ej, i) => (
         <Ejercicio
           key={ej.nombre}
@@ -78,6 +96,7 @@ export default function FormGym({ s, r, set, anterior, semana }) {
           plantilla={s.ejercicios?.find((e) => e.ejercicio === ej.nombre)}
           anterior={anterior}
           semana={semana}
+          onSerie={onSerie}
           onChange={(nuevo) => set('ejercicios', r.ejercicios.map((x, j) => (j === i ? nuevo : x)))}
         />
       ))}

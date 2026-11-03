@@ -3,10 +3,9 @@ import { plan, nutricion, diario } from '../data/plan'
 import { variantesDe, etiquetaVariante } from '../engine/diario'
 import { DIAS_LABEL, formatShort } from '../engine/dates'
 import { PRIMER_DIA, ULTIMO_DIA } from '../engine/calendar'
-import { useStored, KEYS, clearAll, exportarTodo, importarTodo, validarRespaldo } from '../store/store'
-import { compartirArchivo } from '../engine/ics'
+import { useStored, KEYS, clearAll, importarTodo, validarRespaldo } from '../store/store'
+import { useRespaldo } from '../components/RecordatorioRespaldo'
 import InstalarApp from '../components/InstalarApp'
-import { todayISO } from '../engine/dates'
 
 // Días con más de una plantilla diaria. El martes se decide solo (semáforo y semana).
 const DIAS_CON_VARIANTE = [...new Set(diario.dias.map((d) => d.dia))].filter((d) => d !== 'martes' && variantesDe(d).length > 1)
@@ -25,9 +24,10 @@ export default function AjustesScreen() {
   const [confirmar, setConfirmar] = useState(false)
   const [respaldo, setRespaldo] = useState(null) // respaldo leído, esperando confirmación
   const [mensaje, setMensaje] = useState(null)
+  const { exportar: exportarRespaldo, ultimo: ultimoRespaldo } = useRespaldo()
 
   const exportar = async () => {
-    const r = await compartirArchivo(`hyrox-cancun-respaldo-${todayISO()}.json`, JSON.stringify(exportarTodo(), null, 2), 'application/json')
+    const r = await exportarRespaldo()
     if (r !== 'cancelado') setMensaje(r === 'compartido' ? 'Respaldo compartido. Guárdalo en Archivos o mándatelo por correo.' : 'Respaldo descargado.')
   }
 
@@ -142,7 +142,7 @@ export default function AjustesScreen() {
 
       <Seccion titulo="Respaldo">
         <div className="flex flex-col gap-3 p-3">
-          <p className="text-xs text-muted">Tus registros viven solo en este teléfono. Exporta un respaldo cada semana o antes de cambiar de teléfono.</p>
+          <p className="text-xs text-muted">Tus registros viven solo en este teléfono. Exporta un respaldo cada semana o antes de cambiar de teléfono.{ultimoRespaldo && ` Último respaldo: ${formatShort(ultimoRespaldo)}.`}</p>
           <div className="grid grid-cols-2 gap-2">
             <button className="rounded-xl bg-accent py-2.5 text-sm font-bold text-accent-on" onClick={exportar}>
               Exportar respaldo

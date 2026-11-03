@@ -6,6 +6,7 @@ import { DIAS_LABEL, formatShort, weekdayKey } from '../../engine/dates'
 import { registroAnterior, registroVacio, tipoRegistro } from '../../engine/registro'
 import { useStored, KEYS } from '../../store/store'
 import FormGym from './FormGym'
+import Descanso, { useDescanso } from '../../components/Descanso'
 import FormRunning from './FormRunning'
 import FormClase from './FormClase'
 
@@ -17,6 +18,7 @@ export default function SesionScreen({ fecha, idx, onClose }) {
   const guardado = s ? sesiones[fecha]?.[s.id] : null
   const [r, setR] = useState(() => (s ? guardado ?? registroVacio(s) : null))
   const [borrar, setBorrar] = useState(false)
+  const { descanso, iniciar, ajustar, cerrar } = useDescanso()
 
   useEffect(() => {
     window.scrollTo({ top: 0 })
@@ -41,7 +43,7 @@ export default function SesionScreen({ fecha, idx, onClose }) {
   }
 
   return (
-    <div className="mx-auto max-w-lg pb-32">
+    <div className={`mx-auto max-w-lg ${descanso ? 'pb-52' : 'pb-32'}`}>
       <header className="safe-top sticky top-0 z-40 bg-bg/95 backdrop-blur">
         <div className="flex items-center gap-2 px-2 pt-3 pb-2">
           <button onClick={onClose} className="rounded-full p-2 text-muted active:bg-accent-soft" aria-label="Volver">
@@ -77,7 +79,7 @@ export default function SesionScreen({ fecha, idx, onClose }) {
         {tipo ? (
           <section className="flex flex-col gap-3">
             <h2 className="h-section">Registro</h2>
-            {tipo === 'gym' && <FormGym s={s} r={r} set={set} anterior={anterior} semana={info.semana.semana} />}
+            {tipo === 'gym' && <FormGym s={s} r={r} set={set} anterior={anterior} semana={info.semana.semana} onSerie={iniciar} />}
             {tipo === 'running' && <FormRunning s={s} r={r} set={set} />}
             {tipo === 'clase' && <FormClase r={r} set={set} />}
           </section>
@@ -107,6 +109,7 @@ export default function SesionScreen({ fecha, idx, onClose }) {
 
       {tipo && (
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-surface/95 px-4 pt-3 pb-3 backdrop-blur safe-bottom">
+          <Descanso descanso={descanso} onAjustar={ajustar} onCerrar={cerrar} />
           <div className="mx-auto max-w-lg">
             <button className="btn-primary" onClick={guardar}>
               <Icon name="check" className="w-5 h-5" strokeWidth={3} />

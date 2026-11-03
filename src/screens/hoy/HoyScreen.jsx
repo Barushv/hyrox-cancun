@@ -15,6 +15,7 @@ import MacroSummary from './MacroSummary'
 import AnclasSheet from './AnclasSheet'
 import CalendarioSheet from './CalendarioSheet'
 import InstalarApp from '../../components/InstalarApp'
+import RecordatorioRespaldo from '../../components/RecordatorioRespaldo'
 
 const FECHA_CARRERA_DEFAULT = '2027-02-19'
 
@@ -140,6 +141,8 @@ export default function HoyScreen({ fecha, setFecha, onOpenSesion }) {
         )}
 
         <InstalarApp compacto />
+
+        {esHoy && <RecordatorioRespaldo />}
 
         <CheckinCard checkin={checkin} esFuturo={esFuturo} onOpen={() => setSheet('checkin')} />
 

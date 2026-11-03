@@ -137,3 +137,36 @@ export function metaProgresion(progresion, nombreEjercicio, semana) {
   const ej = progresion.ejercicios.find((e) => n.startsWith(sinAcento(e.ejercicio)))
   return ej?.[fase] ? { fase, meta: ej[fase] } : null
 }
+
+// --- Registro rápido: descanso y series llenadas con la sesión anterior ---
+
+const DESCANSO_DEFAULT = 90
+
+// "90 s" → 90, "60-75 s" → 75, "2 min" → 120. Si el plan no lo trae, 90 s.
+export function segundosDescanso(texto) {
+  const t = String(texto ?? '')
+  const nums = [...t.matchAll(/\d+(?:[.,]\d+)?/g)].map((m) => Number(m[0].replace(',', '.')))
+  if (!nums.length) return DESCANSO_DEFAULT
+  const n = Math.max(...nums)
+  return Math.round(/min/.test(t) ? n * 60 : n)
+}
+
+// "8-10" → 8, "12-15" → 12: el piso del rango, para cuando se sube el peso
+export function repsPiso(reps) {
+  const rango = String(reps ?? '').match(/(\d+)\s*-\s*\d+/)
+  if (rango) return Number(rango[1])
+  const n = String(reps ?? '').match(/\d+/)
+  return n ? Number(n[0]) : null
+}
+
+export const INCREMENTO_KG = 2.5
+
+// Copia peso y reps de la vez pasada. Con subir: más peso y reps al piso del rango (progresión doble).
+export function llenarSeries(actuales, previas, { subir = false, reps } = {}) {
+  if (!previas.length) return actuales
+  return actuales.map((x, i) => {
+    const p = previas[Math.min(i, previas.length - 1)]
+    if (!subir) return { ...x, peso_kg: p.peso_kg ?? x.peso_kg, reps: p.reps ?? x.reps }
+    return { ...x, peso_kg: p.peso_kg != null ? p.peso_kg + INCREMENTO_KG : x.peso_kg, reps: repsPiso(reps) ?? p.reps ?? x.reps }
+  })
+}
