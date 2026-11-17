@@ -17,6 +17,7 @@ export function calcularDia(fecha, { checkins = {}, hechosAll = {}, ajustes = {}
   const sinSesiones = !info.dia.sesiones
 
   const { variante, vars, auto } = elegirVariante({
+    fecha,
     diaKey,
     elegidaFecha: varFecha[fecha],
     preferida: ajustes.variantes?.[diaKey],

@@ -163,7 +163,7 @@ export default function HoyScreen({ fecha, setFecha, onOpenSesion }) {
                 key={i}
                 s={s}
                 semana={info.semana.semana}
-                omitidaPorSemaforo={semaforo && semaforo !== 'verde' && (s.opcional || (s.id === 'clase_hybrid_controlada' && variante?.id === 'miercoles_B'))}
+                omitidaPorSemaforo={semaforo && semaforo !== 'verde' && (s.opcional || (s.id === 'clase_hybrid_controlada' && variante?.id === 'miercoles_B' && !variante.anclas?.clase))}
                 semanaRoja={semaforo === 'rojo'}
                 estado={estadoSesion(registros[fecha]?.[s.id], s, fecha, hoy)}
                 esFuturo={esFuturo}

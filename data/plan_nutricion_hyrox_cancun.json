@@ -13,7 +13,7 @@
       3500
     ],
     "nota_estimacion": "TMB 1,904 + ~800 kcal de ejercicio + ~400 de actividad diaria + ~10% de digestión. Error posible 10-15%.",
-    "promedio_semanal_objetivo_kcal": 3400,
+    "promedio_semanal_objetivo_kcal": 3400.0,
     "cambios_version": [
       "1.1: semana nueva. El miércoles pasa a día alta (piernas B + rodaje + clase). Lunes y viernes quedan en media. Promedio semanal ≈ 3,400 kcal. Si haces el comodín del viernes por la noche, no cambia el tipo de día: come completa la colación de las 18:00."
     ]
@@ -45,7 +45,7 @@
         "domingo"
       ],
       "descripcion": "Días de gym único, gym ligero con rodaje, o long run. También todas las semanas de descarga y el taper.",
-      "carbos_g_kg": 6,
+      "carbos_g_kg": 6.0,
       "carbos_g": 481,
       "proteina_g": 162,
       "grasa_g": 72,
@@ -391,10 +391,10 @@
     "base": [
       "lunes_B",
       "martes_A",
-      "miércoles_A",
+      "miercoles_A",
       "jueves",
       "viernes_B",
-      "sábado",
+      "sabado",
       "domingo"
     ],
     "nota": "Con ~5% de margen. Cocido a crudo: pollo ÷0.75, arroz ÷2.6, frijoles ÷2.3 (aproximado).",

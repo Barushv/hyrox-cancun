@@ -1,7 +1,8 @@
-import { diario, nutricion } from '../data/plan'
+import { diarioPara, nutricion } from '../data/plan'
 import { toMin, fromMin } from './dates'
 
-export const variantesDe = (diaKey) => diario.dias.filter((d) => d.dia === diaKey)
+// Sin fecha: las variantes del plan diario vigente (las que se eligen en Ajustes)
+export const variantesDe = (diaKey, fecha) => diarioPara(fecha).dias.filter((d) => d.dia === diaKey)
 
 // "A: clase en la manana" → "Clase en la manana"
 export function etiquetaVariante(v) {
@@ -48,8 +49,10 @@ export const DIAS_AUTOMATICOS = ['martes', 'miercoles']
  * Miércoles: sin clase Hybrid (B) si el semáforo no está en verde.
  * Viernes: sin comodín (A) si la semana lo omite o el semáforo no está en verde; si no, el que prefieras.
  */
-export function elegirVariante({ diaKey, elegidaFecha, preferida, sesiones, semaforo }) {
-  const vars = variantesDe(diaKey)
+export function elegirVariante({ fecha, diaKey, elegidaFecha, preferida, sesiones, semaforo }) {
+  const vars = variantesDe(diaKey, fecha)
+  // Miércoles y viernes automáticos solo con la estructura nueva; antes se elegían a mano
+  const vigente = diarioPara(fecha) === diarioPara()
   if (vars.length === 0) return { variante: null, vars, auto: null }
   const porId = (id) => vars.find((v) => v.id === id)
 
@@ -68,11 +71,11 @@ export function elegirVariante({ diaKey, elegidaFecha, preferida, sesiones, sema
     const r = sinClase('clase_engine_extra', 'martes_B', 'clase Hyrox')
     if (r) return r
   }
-  if (diaKey === 'miercoles') {
+  if (vigente && diaKey === 'miercoles') {
     const r = sinClase('clase_hybrid_controlada', 'miercoles_B', 'clase Hybrid')
     return r ?? { variante: porId('miercoles_A') ?? vars[0], vars, auto: null }
   }
-  if (diaKey === 'viernes') {
+  if (vigente && diaKey === 'viernes') {
     const r = sinClase('clase_comodin', 'viernes_A', 'clase comodín')
     if (r) return r
   }
