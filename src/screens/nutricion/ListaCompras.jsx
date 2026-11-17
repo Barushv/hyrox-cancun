@@ -108,6 +108,13 @@ export default function ListaCompras() {
 
         <div className="text-xs text-muted">
           <p>{LISTA.nota}</p>
+          {Object.keys(LISTA)
+            .filter((k) => k.startsWith('nota_'))
+            .map((k) => (
+              <p key={k} className="mt-1 font-semibold text-ink">
+                {LISTA[k]}
+              </p>
+            ))}
           {BASE.length > 0 && <p className="mt-1">Calculada con: {BASE.join(' · ')}.</p>}
         </div>
       </div>

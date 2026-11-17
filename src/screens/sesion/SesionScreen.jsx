@@ -3,7 +3,7 @@ import Icon, { iconoSesion } from '../../components/Icon'
 import SesionDetalle, { CargaChip, resumenSesion } from '../../components/SesionDetalle'
 import { getDia, getSesiones } from '../../engine/calendar'
 import { DIAS_LABEL, formatShort, weekdayKey } from '../../engine/dates'
-import { registroAnterior, registroVacio, tipoRegistro } from '../../engine/registro'
+import { registroVacio, tipoRegistro } from '../../engine/registro'
 import { useStored, KEYS } from '../../store/store'
 import FormGym from './FormGym'
 import Descanso, { useDescanso } from '../../components/Descanso'
@@ -26,7 +26,6 @@ export default function SesionScreen({ fecha, idx, onClose }) {
 
   if (!s) return null
   const tipo = tipoRegistro(s)
-  const anterior = registroAnterior(sesiones, fecha, s.id)
   const set = (k, v) => setR((prev) => ({ ...prev, [k]: v }))
 
   const guardar = () => {
@@ -79,7 +78,7 @@ export default function SesionScreen({ fecha, idx, onClose }) {
         {tipo ? (
           <section className="flex flex-col gap-3">
             <h2 className="h-section">Registro</h2>
-            {tipo === 'gym' && <FormGym s={s} r={r} set={set} anterior={anterior} semana={info.semana.semana} onSerie={iniciar} />}
+            {tipo === 'gym' && <FormGym s={s} r={r} set={set} sesiones={sesiones} fecha={fecha} semana={info.semana.semana} onSerie={iniciar} />}
             {tipo === 'running' && <FormRunning s={s} r={r} set={set} />}
             {tipo === 'clase' && <FormClase r={r} set={set} />}
           </section>

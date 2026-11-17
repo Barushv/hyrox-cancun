@@ -1,12 +1,12 @@
 import Icon from '../../components/Icon'
 import { Escala, Numero, Texto } from '../../components/Campos'
-import { seriesAnteriores, sugerenciaProgresion, unidadReps, llenarSeries, segundosDescanso, INCREMENTO_KG } from '../../engine/registro'
+import { anteriorEjercicio, sugerenciaProgresion, unidadReps, llenarSeries, segundosDescanso, INCREMENTO_KG } from '../../engine/registro'
 import { EjercicioPlan } from '../../components/SesionDetalle'
 import { formatShort } from '../../engine/dates'
 
 function Ejercicio({ idx, ej, plantilla, anterior, semana, onChange, onSerie }) {
   const unidad = unidadReps(plantilla?.reps)
-  const prev = seriesAnteriores(anterior, ej.nombre)
+  const prev = anterior.series
   const sugerencia = sugerenciaProgresion(prev, plantilla?.reps)
   const setSerie = (i, campo, v) => {
     // Al anotar las reps de una serie por primera vez arranca el descanso
@@ -84,7 +84,7 @@ function Ejercicio({ idx, ej, plantilla, anterior, semana, onChange, onSerie }) 
   )
 }
 
-export default function FormGym({ s, r, set, anterior, semana, onSerie }) {
+export default function FormGym({ s, r, set, sesiones, fecha, semana, onSerie }) {
   return (
     <div className="flex flex-col gap-3">
       <p className="text-xs text-muted">El peso de la última vez aparece en gris. Al anotar las reps de una serie arranca el descanso. Si una serie no la hiciste, déjala vacía o quítala.</p>
@@ -94,7 +94,7 @@ export default function FormGym({ s, r, set, anterior, semana, onSerie }) {
           idx={i}
           ej={ej}
           plantilla={s.ejercicios?.find((e) => e.ejercicio === ej.nombre)}
-          anterior={anterior}
+          anterior={anteriorEjercicio(sesiones, fecha, s.id, ej.nombre)}
           semana={semana}
           onSerie={onSerie}
           onChange={(nuevo) => set('ejercicios', r.ejercicios.map((x, j) => (j === i ? nuevo : x)))}

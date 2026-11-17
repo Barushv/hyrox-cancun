@@ -2,7 +2,12 @@
 import planJson from '../../data/plan_hyrox_cancun.json'
 import nutricionJson from '../../data/plan_nutricion_hyrox_cancun.json'
 import diarioJson from '../../data/plan_diario_hyrox_cancun.json'
+import retiradas from './plantillas_retiradas.json'
 
-export const plan = planJson
+// Las semanas ya pasadas pueden apuntar a plantillas que el plan quitó (p. ej. gym_piernas en S1-S4).
+// Se agregan solo si el plan no trae una con ese id.
+// eslint-disable-next-line no-unused-vars
+const { _nota, ...plantillasRetiradas } = retiradas
+export const plan = { ...planJson, plantillas: { ...plantillasRetiradas, ...planJson.plantillas } }
 export const nutricion = nutricionJson
 export const diario = diarioJson

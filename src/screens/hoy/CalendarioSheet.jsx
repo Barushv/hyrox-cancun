@@ -51,7 +51,7 @@ export default function CalendarioSheet({ fecha, onClose }) {
           Los próximos 7 días
         </button>
         <p className="text-xs text-muted">
-          Los martes que aún no tienen check-in salen con la clase Engine; si ese día tu semáforo no está en verde, sáltala. Se respetan las variantes que elegiste.
+          Los martes y miércoles que aún no tienen check-in salen con la clase de la noche; si ese día tu semáforo no está en verde, sáltala. Se respetan las variantes que elegiste.
         </p>
         {estado && <p className="rounded-lg bg-accent-soft p-2 text-sm">{estado}</p>}
       </div>

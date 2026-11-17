@@ -36,12 +36,17 @@ function reducirCarbo(alimentos, quita) {
   return alimentos.map((a) => (a === carbo ? { ...a, cantidad: gr, medida, ajustada: true } : a))
 }
 
-export const ANCLA_LABEL = { clase: 'Clase', gym: 'Gym', engine: 'Clase Engine', correr: 'Correr', rodaje: 'Rodaje' }
+export const ANCLA_LABEL = { clase: 'Clase', gym: 'Gym', engine: 'Clase Hyrox', correr: 'Correr', rodaje: 'Rodaje' }
+
+// Días cuya variante decide la app según el semáforo y la semana (no se eligen en Ajustes)
+export const DIAS_AUTOMATICOS = ['martes', 'miercoles']
 
 /**
  * Elige la plantilla diaria.
- * Prioridad: la que elegiste para esa fecha → (martes) regla automática → tu preferida del día → la primera.
- * Martes: sin Engine (variante B) si la semana la omite o el semáforo no está en verde.
+ * Prioridad: la que elegiste para esa fecha → regla automática → tu preferida del día → la primera.
+ * Martes: sin clase Hyrox (B) si la semana la omite o el semáforo no está en verde.
+ * Miércoles: sin clase Hybrid (B) si el semáforo no está en verde.
+ * Viernes: sin comodín (A) si la semana lo omite o el semáforo no está en verde; si no, el que prefieras.
  */
 export function elegirVariante({ diaKey, elegidaFecha, preferida, sesiones, semaforo }) {
   const vars = variantesDe(diaKey)
@@ -50,12 +55,26 @@ export function elegirVariante({ diaKey, elegidaFecha, preferida, sesiones, sema
 
   if (elegidaFecha && porId(elegidaFecha)) return { variante: porId(elegidaFecha), vars, auto: null }
 
-  if (diaKey === 'martes' && porId('martes_B')) {
-    const engine = sesiones.find((s) => s.id === 'clase_engine_extra')
+  // Quita una clase si la semana no la trae o el semáforo no está en verde
+  const sinClase = (claseId, varianteId, nombre) => {
+    if (!porId(varianteId)) return null
+    const clase = sesiones.find((s) => s.id === claseId)
     let auto = null
-    if (!engine || engine.omitir) auto = 'Esta semana no va la clase Engine.'
-    else if (semaforo && semaforo !== 'verde') auto = 'El semáforo no está en verde: se omite la clase Engine.'
-    if (auto) return { variante: porId('martes_B'), vars, auto }
+    if (!clase || clase.omitir) auto = `Esta semana no va la ${nombre}.`
+    else if (semaforo && semaforo !== 'verde') auto = `El semáforo no está en verde: se omite la ${nombre}.`
+    return auto ? { variante: porId(varianteId), vars, auto } : null
+  }
+  if (diaKey === 'martes') {
+    const r = sinClase('clase_engine_extra', 'martes_B', 'clase Hyrox')
+    if (r) return r
+  }
+  if (diaKey === 'miercoles') {
+    const r = sinClase('clase_hybrid_controlada', 'miercoles_B', 'clase Hybrid')
+    return r ?? { variante: porId('miercoles_A') ?? vars[0], vars, auto: null }
+  }
+  if (diaKey === 'viernes') {
+    const r = sinClase('clase_comodin', 'viernes_A', 'clase comodín')
+    if (r) return r
   }
 
   return { variante: porId(preferida) ?? vars[0], vars, auto: null }

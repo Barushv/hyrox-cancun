@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "1.0",
-    "generado": "2026-10-15",
+    "version": "1.1",
+    "generado": "2026-11-16",
     "base": {
       "peso_kg": 80,
       "masa_libre_grasa_kg": 71.1,
@@ -13,7 +13,10 @@
       3500
     ],
     "nota_estimacion": "TMB 1,904 + ~800 kcal de ejercicio + ~400 de actividad diaria + ~10% de digestión. Error posible 10-15%.",
-    "promedio_semanal_objetivo_kcal": 3350
+    "promedio_semanal_objetivo_kcal": 3400,
+    "cambios_version": [
+      "1.1: semana nueva. El miércoles pasa a día alta (piernas B + rodaje + clase). Lunes y viernes quedan en media. Promedio semanal ≈ 3,400 kcal. Si haces el comodín del viernes por la noche, no cambia el tipo de día: come completa la colación de las 18:00."
+    ]
   },
   "macros_g_kg": {
     "proteina": "2.0-2.1 (rango 1.8-2.2)",
@@ -24,10 +27,11 @@
     "alta": {
       "dias_semana": [
         "martes",
+        "miercoles",
         "jueves",
         "sabado"
       ],
-      "descripcion": "Días con doble sesión o calidad + piernas (martes, jueves) y clase larga del sábado.",
+      "descripcion": "Días con doble o triple sesión (martes, miércoles, jueves) y clase larga del sábado.",
       "carbos_g_kg": 6.9,
       "carbos_g": 549,
       "proteina_g": 167,
@@ -37,11 +41,10 @@
     "media": {
       "dias_semana": [
         "lunes",
-        "miercoles",
         "viernes",
         "domingo"
       ],
-      "descripcion": "Días de clase única, rodaje, gym superior o long run. También todas las semanas de descarga y el taper.",
+      "descripcion": "Días de gym único, gym ligero con rodaje, o long run. También todas las semanas de descarga y el taper.",
       "carbos_g_kg": 6,
       "carbos_g": 481,
       "proteina_g": 162,
@@ -81,14 +84,14 @@
     "alta": [
       "martes_A",
       "martes_B",
+      "miercoles_A",
+      "miercoles_B",
       "jueves",
       "sabado"
     ],
     "media": [
       "lunes_A",
       "lunes_B",
-      "miercoles_A",
-      "miercoles_B",
       "viernes_A",
       "viernes_B",
       "domingo"
@@ -388,7 +391,7 @@
     "base": [
       "lunes_B",
       "martes_A",
-      "miércoles_B",
+      "miércoles_A",
       "jueves",
       "viernes_B",
       "sábado",
@@ -529,6 +532,7 @@
         "cantidad_g_ml": 800,
         "unidad": "ml"
       }
-    ]
+    ],
+    "nota_v1_2": "Cantidades calculadas con la semana anterior (v1.0). El miércoles ahora es día alta (+~350 kcal, ≈ +85 g de carbohidrato: arroz, plátano y pan). Añade ~10% a arroz, plátano, pan y jugo hasta recalcular."
   }
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { plan, nutricion, diario } from '../data/plan'
-import { variantesDe, etiquetaVariante } from '../engine/diario'
+import { variantesDe, etiquetaVariante, DIAS_AUTOMATICOS } from '../engine/diario'
 import { DIAS_LABEL, formatShort } from '../engine/dates'
 import { PRIMER_DIA, ULTIMO_DIA } from '../engine/calendar'
 import { useStored, KEYS, clearAll, importarTodo, validarRespaldo } from '../store/store'
@@ -8,8 +8,8 @@ import { useRespaldo } from '../components/RecordatorioRespaldo'
 import InstalarApp from '../components/InstalarApp'
 import AcercaDe from '../components/AcercaDe'
 
-// Días con más de una plantilla diaria. El martes se decide solo (semáforo y semana).
-const DIAS_CON_VARIANTE = [...new Set(diario.dias.map((d) => d.dia))].filter((d) => d !== 'martes' && variantesDe(d).length > 1)
+// Días con más de una plantilla diaria. Martes y miércoles se deciden solos (semáforo y semana).
+const DIAS_CON_VARIANTE = [...new Set(diario.dias.map((d) => d.dia))].filter((d) => !DIAS_AUTOMATICOS.includes(d) && variantesDe(d).length > 1)
 
 function Seccion({ titulo, children }) {
   return (
@@ -98,7 +98,7 @@ export default function AjustesScreen() {
 
       <Seccion titulo="Tu horario habitual">
         <p className="p-3 text-xs text-muted">
-          Lo que eliges aquí se usa cada semana. En la pantalla Hoy puedes cambiarlo solo para ese día. El martes se ajusta solo: sin clase Engine si el semáforo no está en verde o en semanas de descarga.
+          Lo que eliges aquí se usa cada semana. En la pantalla Hoy puedes cambiarlo solo para ese día. Martes y miércoles se ajustan solos: sin la clase de la noche si el semáforo no está en verde. El viernes, el comodín también se quita con semáforo amarillo o rojo.
         </p>
         {DIAS_CON_VARIANTE.map((d) => {
           const vars = variantesDe(d)

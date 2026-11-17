@@ -66,6 +66,11 @@ export default function SesionDetalle({ s, semana }) {
   const resumen = resumenSesion(s)
   return (
     <div className="flex flex-col gap-3 text-sm">
+      {s.enfoque && (
+        <p className="rounded-lg bg-accent-soft px-2.5 py-1.5 text-xs">
+          <b>Enfoque:</b> {s.enfoque}
+        </p>
+      )}
       {s.indicacion_semana && s.indicacion_semana !== resumen && (
         <p>
           <b>Esta semana:</b> {s.indicacion_semana}

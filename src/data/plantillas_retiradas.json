@@ -1,0 +1,77 @@
+{
+  "_nota": "Plantillas que ya no están en el plan pero que usan semanas pasadas. Se toman de la versión anterior del JSON.",
+  "gym_piernas": {
+    "tipo": "gym",
+    "titulo": "Gym piernas (jueves PM, ~70 min)",
+    "carga": "dura",
+    "ejercicios": [
+      {
+        "ejercicio": "Prensa de pierna o hack squat (bajada de 3 s)",
+        "series": 4,
+        "reps": "8-10",
+        "intensidad": "2 reps en reserva",
+        "descanso": "2 min",
+        "estacion": "Sled push"
+      },
+      {
+        "ejercicio": "Peso muerto rumano",
+        "series": 4,
+        "reps": "6-8",
+        "intensidad": "2 reps en reserva",
+        "descanso": "2 min",
+        "estacion": "Sled pull (cadera), lunges"
+      },
+      {
+        "ejercicio": "Zancada búlgara con mancuernas",
+        "series": 3,
+        "reps": "8 por pierna",
+        "intensidad": "2 reps en reserva",
+        "descanso": "90 s",
+        "estacion": "Lunges"
+      },
+      {
+        "ejercicio": "Hip thrust",
+        "series": 3,
+        "reps": "8-10",
+        "intensidad": "2 reps en reserva",
+        "descanso": "90 s",
+        "estacion": "Cadera y glúteo"
+      },
+      {
+        "ejercicio": "Zancada caminando con saco (20 kg)",
+        "series": 3,
+        "reps": "20 m",
+        "intensidad": "Técnica constante",
+        "descanso": "60-75 s",
+        "estacion": "Lunges",
+        "especifico_hyrox": true
+      },
+      {
+        "ejercicio": "Wall balls, pelota de 6 kg a 3.0 m",
+        "series": 3,
+        "reps": "15",
+        "intensidad": "Ritmo parejo, esfuerzo 7/10",
+        "descanso": "75 s",
+        "estacion": "Wall balls",
+        "especifico_hyrox": true
+      },
+      {
+        "ejercicio": "Curl femoral sentado",
+        "series": 3,
+        "reps": "10-12",
+        "intensidad": "2 reps en reserva",
+        "descanso": "60 s",
+        "estacion": "Isquiotibiales"
+      },
+      {
+        "ejercicio": "Pantorrilla de pie + sentada",
+        "series": 3,
+        "reps": "10-15 / 12-15",
+        "intensidad": "2 reps en reserva",
+        "descanso": "60 s",
+        "estacion": "Soporte"
+      }
+    ],
+    "indicaciones": "Mínimo 6 h después de Intervalos 2. Comer 60-90 min antes (30-40 g de carbohidrato). La zancada con saco y los wall balls van al final, con técnica."
+  }
+}

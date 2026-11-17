@@ -37,6 +37,10 @@ export default function CheckinSheet({ inicial, fcPromedio, onSave, onClose }) {
             Dolor agudo
           </label>
         </div>
+        <label htmlFor="ci-calambres" className="-mt-2 flex items-center gap-2 rounded-lg border border-line bg-bg px-3 py-2.5 text-sm font-semibold">
+          <input id="ci-calambres" type="checkbox" className="h-4 w-4 accent-[rgb(var(--warn))]" checked={!!c.calambres} onChange={(e) => set('calambres')(e.target.checked)} />
+          Calambres de pantorrilla
+        </label>
 
         <div className={`rounded-xl border-2 p-3 ${st.border} ${st.bgSoft}`}>
           <div className="flex items-center gap-2">

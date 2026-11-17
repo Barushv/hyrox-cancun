@@ -1,8 +1,8 @@
 {
   "meta": {
     "nombre_plan": "Plan integrado Hyrox Cancún 2027",
-    "version": "1.1",
-    "generado": "2026-11-02",
+    "version": "1.3",
+    "generado": "2026-11-16",
     "objetivo_principal": "Hyrox Cancún, 19-21 feb 2027 (fecha/ola exacta por confirmar)",
     "objetivos": [
       "Recuperar y aumentar masa muscular",
@@ -27,7 +27,9 @@
       "estado": "v1.0"
     },
     "cambios_version": [
-      "1.1: plantillas de gym con trabajo específico de estaciones (opción híbrida B); nuevos campos por ejercicio (intensidad, descanso, estación, específico_hyrox) y progresión_gym."
+      "1.1: plantillas de gym con trabajo específico de estaciones (opción híbrida B); nuevos campos por ejercicio (intensidad, descanso, estación, específico_hyrox) y progresión_gym.",
+      "1.2: nueva semana (piernas lunes/miércoles/viernes, superior martes/jueves, sin clase el lunes, clase comodín viernes noche opcional); plantillas gym_piernas_a/b/c y clase_comodin (gym_piernas eliminada); press con mancuernas; miércoles pasa a día alta de nutrición. Aplica desde el martes 17 nov 2026 (S5).",
+      "1.3: cada rutina de gym tiene enfoque y estímulo propio. Piernas A (lunes): glúteo y femoral, fuerza de cadera; piernas B (miércoles): cuádriceps y femoral; piernas C (viernes): glúteo y femoral unilateral y específico. Superior A (martes): fuerza; superior B (jueves): volumen y agarre. Nuevos ejercicios: swing de kettlebell, curl femoral tumbado, sentadilla isométrica en pared, extensión de cuádriceps, rumano a una pierna, puente a una pierna, pullover en polea. Sale el hip thrust de B y C a A."
     ]
   },
   "zonas_fc": {
@@ -129,15 +131,20 @@
   },
   "reglas": [
     "Días duros muy duros, días fáciles muy fáciles: los rodajes son de verdad fáciles (Z2 máximo 131 lpm).",
-    "Doble sesión el mismo día: mínimo 6 h entre sesiones y comer entre ellas. Excepción: martes (gym superior primero, luego intervalos, sin core).",
-    "Jueves: intervalos en la mañana, piernas en la tarde. Nunca piernas antes de correr.",
     "Long run máximo 65 min en Fase 1 y máximo 70 min en Fases 2-3.",
     "Gym: 1-3 repeticiones en reserva (RIR); en la última serie de una máquina puedes acercarte al fallo. Progresión doble: sube peso cuando completes el rango alto en todas las series.",
     "Rodilla (debajo de la rótula): si llega a 3/10 quita extensión de cuádriceps, zancada búlgara y saltos; si persiste, descanso.",
-    "Clase Engine del martes: extra opcional. Se cancela si la fuerza baja, el semáforo no está en verde o es semana de descarga.",
     "Semanas de descarga: S4, S8, S12 (volumen -40/50%, sin clase extra).",
-    "Con 12 sesiones por semana, dormir 7-9 h y comer suficiente son condición del plan, no un extra.",
-    "Gym específico de Hyrox: hand-over-hand, colgado, farmers, zancada con saco y wall balls; técnica primero y sin llegar al fallo."
+    "Gym específico de Hyrox: hand-over-hand, colgado, farmers, zancada con saco y wall balls; técnica primero y sin llegar al fallo.",
+    "Estructura de gym desde la v1.2: piernas lunes (A: glúteo y femoral, fuerza de cadera), miércoles (B: cuádriceps y femoral, pesado) y viernes (C: glúteo y femoral, unilateral y específico); superior martes (A: fuerza) y jueves (B: volumen y agarre).",
+    "Doble sesión el mismo día: mínimo 6 h entre sesiones y comer entre ellas. Excepción: martes, miércoles y viernes (gym primero, luego rodaje o intervalos).",
+    "Jueves: intervalos 2 en la mañana (6:00) y gym superior B en la tarde o noche, mínimo 6 h después. Nunca gym pesado de piernas antes de correr fuerte.",
+    "Después de una sesión nocturna (clase o gym), la sesión de la mañana siguiente empieza a las 6:00, no a las 5:15.",
+    "Clase del martes: extra opcional. Se cancela si la fuerza baja, el semáforo no está en verde o es semana de descarga.",
+    "Clase comodín del viernes por la noche: opcional, controlada 6-7/10. Se decide cada domingo (≥6 h de sueño, FC en reposo normal, piernas bien) y es la primera sesión que se cancela con semáforo amarillo.",
+    "Si el martes hay agujetas de 5/10 o más tras piernas A, cambia Intervalos 1 por rodaje + 4 strides.",
+    "Prueba de la estructura S5-S7. Vuelve a la estructura anterior si: duermes menos de 6 h más de 3 noches por semana, la FC en reposo sube +7 lpm durante 2 días, no puedes repetir las cargas de la semana previa o vuelven los calambres.",
+    "Con 13 sesiones por semana (14 con el comodín), dormir 7-9 h y comer suficiente son condición del plan, no un extra."
   ],
   "fases": [
     {
@@ -200,11 +207,11 @@
       "tipo": "clase",
       "titulo": "Clase Strength (club)",
       "carga": "dura",
-      "indicaciones": "Esfuerzo 8/10. Horario 5am, 6am u 8pm."
+      "indicaciones": "Ya no está en la semana tipo (el lunes ahora es piernas A). Disponible si quieres cambiarla por el comodín del viernes."
     },
     "clase_engine_extra": {
       "tipo": "clase",
-      "titulo": "Clase Engine (extra opcional)",
+      "titulo": "Clase Hyrox del martes (extra opcional)",
       "carga": "media",
       "opcional": true,
       "indicaciones": "Controlada 6-7/10, FC máxima Z3 alto. Se cancela según semáforo y fuerza."
@@ -213,7 +220,7 @@
       "tipo": "clase",
       "titulo": "Clase Hybrid (controlada)",
       "carga": "media",
-      "indicaciones": "6-7/10. Es el día más ligero de la semana."
+      "indicaciones": "6-7/10. Va el miércoles por la noche, después de piernas B y rodaje: mantén el esfuerzo controlado."
     },
     "clase_mezcla_sabado": {
       "tipo": "clase",
@@ -242,7 +249,7 @@
         "Bloque principal corto (ver semana)",
         "Vuelta a la calma 8 min Z1"
       ],
-      "indicaciones": "Mañana. Piernas en la tarde (mínimo 6 h después). Volumen bajo."
+      "indicaciones": "Mañana. Piernas en la tarde (mínimo 6 h después). Volumen bajo. Después de la clase del miércoles por la noche empieza a las 6:00, no a las 5:15."
     },
     "run_rodaje": {
       "tipo": "running",
@@ -263,7 +270,7 @@
     },
     "gym_superior_a": {
       "tipo": "gym",
-      "titulo": "Gym superior A (martes AM, ~60 min)",
+      "titulo": "Gym superior A (martes AM, ~60 min): fuerza de tirón y empuje",
       "carga": "media",
       "ejercicios": [
         {
@@ -275,10 +282,10 @@
           "estacion": "Sled pull, SkiErg"
         },
         {
-          "ejercicio": "Press de pecho en máquina o inclinado con mancuernas",
+          "ejercicio": "Press de banco plano con mancuernas",
           "series": 4,
           "reps": "8-10",
-          "intensidad": "2 reps en reserva",
+          "intensidad": "2 reps en reserva; la serie pesada manda",
           "descanso": "90-120 s",
           "estacion": "Sled push, burpees"
         },
@@ -297,7 +304,8 @@
           "intensidad": "Esfuerzo 7-8/10; la última serie con técnica limpia",
           "descanso": "90 s",
           "estacion": "Sled pull",
-          "especifico_hyrox": true
+          "especifico_hyrox": true,
+          "alternativa": "Remo a una mano en polea, alternando brazos (mismo volumen)"
         },
         {
           "ejercicio": "Press de hombro en máquina",
@@ -324,11 +332,12 @@
           "estacion": "SkiErg"
         }
       ],
-      "indicaciones": "Sin core hoy (cansa para correr). Después corres Intervalos 1. Hand-over-hand: en semisentadilla, espalda neutra e inclinado hacia atrás; jala hasta la cadera alternando las manos sin pausas."
+      "indicaciones": "Día de fuerza: pesos altos y descansos largos en jalón, press y remo. Sin core hoy (cansa para correr). Después corres Intervalos 1. Hand-over-hand: en semisentadilla, espalda neutra e inclinado hacia atrás; jala hasta la cadera alternando las manos sin pausas.",
+      "enfoque": "Tren superior. Estímulo: fuerza, series más pesadas y descansos largos. Tirón vertical y empuje horizontal."
     },
     "gym_superior_b": {
       "tipo": "gym",
-      "titulo": "Gym superior B + core (viernes, ~60 min)",
+      "titulo": "Gym superior B + core (jueves, ~60 min): volumen y agarre",
       "carga": "media",
       "ejercicios": [
         {
@@ -348,7 +357,7 @@
           "estacion": "Sled pull"
         },
         {
-          "ejercicio": "Press inclinado con mancuernas o press de pecho en máquina",
+          "ejercicio": "Press inclinado 30° con mancuernas",
           "series": 3,
           "reps": "8-10",
           "intensidad": "2 reps en reserva",
@@ -356,12 +365,13 @@
           "estacion": "Burpees, sled push"
         },
         {
-          "ejercicio": "Cruce de poleas o pec deck",
-          "series": 2,
+          "ejercicio": "Pullover en polea de pie, brazos rectos",
+          "series": 3,
           "reps": "12-15",
-          "intensidad": "2 reps en reserva",
+          "intensidad": "2 reps en reserva; simula el tirón del SkiErg",
           "descanso": "60 s",
-          "estacion": "Pecho"
+          "estacion": "SkiErg",
+          "especifico_hyrox": true
         },
         {
           "ejercicio": "Colgado en barra",
@@ -414,28 +424,85 @@
           "estacion": "Postura"
         }
       ],
-      "indicaciones": "Después del rodaje fácil. El colgado y los farmers pesados trabajan el agarre, que es lo primero que falla en el sled pull."
+      "indicaciones": "Día de volumen y agarre: más repeticiones, menos descanso y trabajo específico (pullover tipo SkiErg, colgado, farmers). Jueves después de Intervalos 2 (mínimo 6 h). El agarre es lo primero que falla en el sled pull.",
+      "enfoque": "Tren superior. Estímulo: volumen, tirón horizontal, agarre y resistencia muscular."
     },
-    "gym_piernas": {
+    "descanso": {
+      "tipo": "descanso",
+      "titulo": "Descanso / movilidad",
+      "carga": "nula"
+    },
+    "gym_piernas_a": {
       "tipo": "gym",
-      "titulo": "Gym piernas (jueves PM, ~70 min)",
+      "titulo": "Gym piernas A (lunes, ~45 min): glúteo y femoral, fuerza de cadera",
+      "enfoque": "Glúteo y femoral. Estímulo: fuerza de cadera con cargas moderadas-altas.",
+      "carga": "media",
+      "ejercicios": [
+        {
+          "ejercicio": "Hip thrust",
+          "series": 4,
+          "reps": "6-8",
+          "intensidad": "2 reps en reserva; pausa de 1 s arriba",
+          "descanso": "2 min",
+          "estacion": "Sled push y pull, burpees (extensión de cadera)"
+        },
+        {
+          "ejercicio": "Peso muerto rumano",
+          "series": 3,
+          "reps": "8",
+          "intensidad": "3 reps en reserva",
+          "descanso": "2 min",
+          "estacion": "Sled pull (cadera), farmers, lunges"
+        },
+        {
+          "ejercicio": "Curl femoral tumbado",
+          "series": 3,
+          "reps": "8-10",
+          "intensidad": "2 reps en reserva; bajada de 3 s",
+          "descanso": "90 s",
+          "estacion": "Isquiotibiales, frenado en la carrera"
+        },
+        {
+          "ejercicio": "Swing de kettlebell",
+          "series": 4,
+          "reps": "12-15",
+          "intensidad": "Potencia de cadera, técnica limpia, esfuerzo 7/10",
+          "descanso": "75 s",
+          "estacion": "SkiErg, row, sled push (empuje de cadera)",
+          "especifico_hyrox": true
+        },
+        {
+          "ejercicio": "Abducción de cadera en máquina o patada de glúteo en polea",
+          "series": 2,
+          "reps": "12-15 por lado",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Glúteo medio, estabilidad al correr"
+        },
+        {
+          "ejercicio": "Pantorrilla de pie + sentada",
+          "series": 3,
+          "reps": "12",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Soporte y rodaje"
+        }
+      ],
+      "indicaciones": "Día de glúteo y femoral con foco en fuerza de cadera. Sin fallo: mañana hay superior A + Intervalos 1, así que el rumano queda en 3 reps en reserva. Si el martes tienes agujetas de 5/10 o más, cambia Intervalos 1 por rodaje + strides."
+    },
+    "gym_piernas_b": {
+      "tipo": "gym",
+      "titulo": "Gym piernas B (miércoles, ~50 min, pesado): cuádriceps y femoral",
+      "enfoque": "Cuádriceps y femoral. Estímulo: fuerza y tensión en cuádriceps, con femoral de apoyo.",
       "carga": "dura",
       "ejercicios": [
         {
           "ejercicio": "Prensa de pierna o hack squat (bajada de 3 s)",
           "series": 4,
-          "reps": "8-10",
-          "intensidad": "2 reps en reserva",
-          "descanso": "2 min",
-          "estacion": "Sled push"
-        },
-        {
-          "ejercicio": "Peso muerto rumano",
-          "series": 4,
           "reps": "6-8",
           "intensidad": "2 reps en reserva",
           "descanso": "2 min",
-          "estacion": "Sled pull (cadera), lunges"
+          "estacion": "Sled push, wall balls"
         },
         {
           "ejercicio": "Zancada búlgara con mancuernas",
@@ -446,21 +513,79 @@
           "estacion": "Lunges"
         },
         {
-          "ejercicio": "Hip thrust",
-          "series": 3,
+          "ejercicio": "Curl femoral sentado",
+          "series": 4,
           "reps": "8-10",
           "intensidad": "2 reps en reserva",
           "descanso": "90 s",
-          "estacion": "Cadera y glúteo"
+          "estacion": "Isquiotibiales, frenado en la carrera"
         },
         {
-          "ejercicio": "Zancada caminando con saco (20 kg)",
+          "ejercicio": "Peso muerto rumano",
           "series": 3,
+          "reps": "6",
+          "intensidad": "2 reps en reserva",
+          "descanso": "2 min",
+          "estacion": "Sled pull (cadera), lunges"
+        },
+        {
+          "ejercicio": "Extensión de cuádriceps en máquina",
+          "series": 3,
+          "reps": "10-12",
+          "intensidad": "2 reps en reserva; si la rodilla llega a 3/10, omítela",
+          "descanso": "60 s",
+          "estacion": "Cuádriceps, sled push"
+        },
+        {
+          "ejercicio": "Sentadilla isométrica en pared",
+          "series": 3,
+          "reps": "40-45 s",
+          "intensidad": "Muslos paralelos, esfuerzo 7-8/10",
+          "descanso": "60 s",
+          "estacion": "Wall balls, sled push (postura baja)",
+          "especifico_hyrox": true
+        }
+      ],
+      "indicaciones": "Es el día pesado de cuádriceps. Va primero; después un rodaje de 30 min muy fácil (Z2 máximo 131 lpm) y por la noche la clase Hybrid controlada. Si el semáforo no está en verde: cambia la clase por descanso."
+    },
+    "gym_piernas_c": {
+      "tipo": "gym",
+      "titulo": "Gym piernas C (viernes, ~40 min, ligero): glúteo y femoral, unilateral y específico",
+      "enfoque": "Glúteo y femoral. Estímulo: unilateral, control y trabajo específico de estaciones, sin cargas máximas.",
+      "carga": "media",
+      "ejercicios": [
+        {
+          "ejercicio": "Zancada caminando con saco (20 kg)",
+          "series": 4,
           "reps": "20 m",
           "intensidad": "Técnica constante",
           "descanso": "60-75 s",
           "estacion": "Lunges",
           "especifico_hyrox": true
+        },
+        {
+          "ejercicio": "Peso muerto rumano a una pierna con mancuerna",
+          "series": 3,
+          "reps": "8 por pierna",
+          "intensidad": "3 reps en reserva; control y equilibrio",
+          "descanso": "75 s",
+          "estacion": "Estabilidad de cadera, lunges"
+        },
+        {
+          "ejercicio": "Puente de glúteo a una pierna con pie elevado",
+          "series": 2,
+          "reps": "10 por pierna",
+          "intensidad": "2 reps en reserva",
+          "descanso": "60 s",
+          "estacion": "Glúteo, sled push"
+        },
+        {
+          "ejercicio": "Curl femoral sentado, bajada lenta",
+          "series": 3,
+          "reps": "12-15",
+          "intensidad": "3 reps en reserva; bajada de 4 s",
+          "descanso": "60 s",
+          "estacion": "Isquiotibiales, frenado en la carrera"
         },
         {
           "ejercicio": "Wall balls, pelota de 6 kg a 3.0 m",
@@ -472,35 +597,29 @@
           "especifico_hyrox": true
         },
         {
-          "ejercicio": "Curl femoral sentado",
+          "ejercicio": "Core (plancha, dead bug, paloff)",
           "series": 3,
-          "reps": "10-12",
-          "intensidad": "2 reps en reserva",
-          "descanso": "60 s",
-          "estacion": "Isquiotibiales"
-        },
-        {
-          "ejercicio": "Pantorrilla de pie + sentada",
-          "series": 3,
-          "reps": "10-15 / 12-15",
-          "intensidad": "2 reps en reserva",
-          "descanso": "60 s",
-          "estacion": "Soporte"
+          "reps": "30-40 s / 10",
+          "intensidad": "Controlado",
+          "descanso": "45 s",
+          "estacion": "Core"
         }
       ],
-      "indicaciones": "Mínimo 6 h después de Intervalos 2. Comer 60-90 min antes (30-40 g de carbohidrato). La zancada con saco y los wall balls van al final, con técnica."
+      "indicaciones": "Mismo foco que el lunes (glúteo y femoral) pero con otro estímulo: un solo lado, control y técnica de estaciones. Nada de fallo ni cargas pesadas, porque el sábado hay clase 8/10 y el domingo long run. Después, rodaje fácil de 30 min."
     },
-    "descanso": {
-      "tipo": "descanso",
-      "titulo": "Descanso / movilidad",
-      "carga": "nula"
+    "clase_comodin": {
+      "tipo": "clase",
+      "titulo": "Clase comodín Hyrox (viernes noche, opcional)",
+      "carga": "media",
+      "opcional": true,
+      "indicaciones": "Controlada 6-7/10, FC máxima Z3 alto. Se decide cada domingo: ≥6 h de sueño, FC en reposo normal y piernas bien. Es la primera que se cancela con semáforo amarillo. Si la haces, el sábado es el día más delicado: duermes menos y la clase del sábado es 8/10."
     }
   },
   "semana_tipo": {
     "lunes": [
       {
-        "plantilla": "clase_strength",
-        "momento": "mañana o noche",
+        "plantilla": "gym_piernas_a",
+        "momento": "mañana 5:15 o noche",
         "opcional": false
       }
     ],
@@ -523,38 +642,48 @@
     ],
     "miercoles": [
       {
+        "plantilla": "gym_piernas_b",
+        "momento": "mañana 6am (1o)",
+        "opcional": false
+      },
+      {
         "plantilla": "run_rodaje",
-        "momento": "mañana",
+        "momento": "mañana, después del gym (2o)",
         "opcional": false
       },
       {
         "plantilla": "clase_hybrid_controlada",
-        "momento": "mañana después del rodaje, o noche 8pm",
+        "momento": "noche 8pm",
         "opcional": false
       }
     ],
     "jueves": [
       {
         "plantilla": "run_intervalos_2",
-        "momento": "mañana",
+        "momento": "mañana 6am",
         "opcional": false
       },
       {
-        "plantilla": "gym_piernas",
-        "momento": "tarde (min. 6 h después)",
+        "plantilla": "gym_superior_b",
+        "momento": "tarde o noche (min. 6 h después)",
         "opcional": false
       }
     ],
     "viernes": [
       {
-        "plantilla": "run_rodaje",
-        "momento": "mañana",
+        "plantilla": "gym_piernas_c",
+        "momento": "mañana 6am (1o)",
         "opcional": false
       },
       {
-        "plantilla": "gym_superior_b",
-        "momento": "después del rodaje",
+        "plantilla": "run_rodaje",
+        "momento": "mañana, después del gym (2o)",
         "opcional": false
+      },
+      {
+        "plantilla": "clase_comodin",
+        "momento": "noche 8pm",
+        "opcional": true
       }
     ],
     "sabado": [
@@ -1146,7 +1275,8 @@
             }
           ],
           "nutricion_tipo": "media",
-          "dia_nombre": "lunes"
+          "dia_nombre": "lunes",
+          "indicacion": "Lunes 16 nov: sesión ya hecha con la estructura anterior. La nueva estructura empieza el martes 17."
         },
         {
           "fecha": "2026-11-17",
@@ -1177,17 +1307,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine (extra opcional): controlada 6-7/10. Hybrid: controlada 6-7/10. Sábado: 8/10 con ritmo constante en los runs."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -1196,12 +1331,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "6 x 15 s cuesta / 90 s caminando"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
@@ -1213,14 +1348,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -1267,9 +1408,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 8/10. Engine (extra opcional): controlada 6-7/10. Hybrid: controlada 6-7/10. Sábado: 8/10 con ritmo constante en los runs."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "media",
@@ -1304,17 +1445,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine (extra opcional): controlada 6-7/10. Hybrid: controlada 6-7/10. Sábado: 8/10 con ritmo constante en los runs."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -1323,12 +1469,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "8 x 40 s fuerte / 20 s trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
@@ -1340,14 +1486,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -1394,9 +1546,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 8/10. Engine (extra opcional): controlada 6-7/10. Hybrid: controlada 6-7/10. Sábado: 8/10 con ritmo constante en los runs."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
           "nutricion_tipo": "media",
@@ -1431,17 +1583,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine (extra opcional): controlada 6-7/10. Hybrid: controlada 6-7/10. Sábado: 8/10 con ritmo constante en los runs."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -1450,12 +1607,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "8 x 15 s cuesta / 90 s caminando"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
             }
           ],
@@ -1467,14 +1624,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Series completas según plantilla, 1-3 reps en reserva. Progresión doble: sube carga al completar el rango alto en todas las series."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -1521,9 +1684,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "DESCARGA: Strength 6/10 con peso -20%. Sin Engine. Hybrid 6/10. Sábado 6/10."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
             }
           ],
           "nutricion_tipo": "media",
@@ -1559,13 +1722,18 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "20 min Z1-Z2"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "DESCARGA: Strength 6/10 con peso -20%. Sin Engine. Hybrid 6/10. Sábado 6/10."
             }
           ],
@@ -1578,12 +1746,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "6 strides de 20 s (sin intervalos)"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
             }
           ],
@@ -1595,14 +1763,21 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "20 min Z1-Z2"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "DESCARGA: Strength 6/10 con peso -20%. Sin Engine. Hybrid 6/10. Sábado 6/10.",
+              "omitir": true
             }
           ],
           "nutricion_tipo": "media",
@@ -1649,9 +1824,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -1686,17 +1861,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -1705,12 +1885,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "6 x 1 min a ritmo 5K / 1 min trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
@@ -1722,14 +1902,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -1776,9 +1962,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -1813,17 +1999,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -1832,12 +2023,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "8 x 45 s fuerte / 45 s trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
@@ -1849,14 +2040,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -1903,9 +2100,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -1940,17 +2137,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -1959,12 +2161,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "6 x 1 min a ritmo 5K / 1 min trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
@@ -1976,14 +2178,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -2030,9 +2238,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "DESCARGA: Strength 6/10 con peso -20%. Sin Engine. Hybrid 6/10. Sábado 6/10."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
             }
           ],
           "nutricion_tipo": "media",
@@ -2068,13 +2276,18 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "20 min Z1-Z2"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "DESCARGA: Strength 6/10 con peso -20%. Sin Engine. Hybrid 6/10. Sábado 6/10."
             }
           ],
@@ -2087,12 +2300,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "6 strides de 20 s (sin intervalos)"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
             }
           ],
@@ -2104,14 +2317,21 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "20 min Z1-Z2"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "DESCARGA: 50% de las series, mismo peso, RIR 4."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "DESCARGA: Strength 6/10 con peso -20%. Sin Engine. Hybrid 6/10. Sábado 6/10.",
+              "omitir": true
             }
           ],
           "nutricion_tipo": "media",
@@ -2158,9 +2378,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -2195,17 +2415,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -2214,12 +2439,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "8 x 1 min a ritmo 5K / 1 min trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
@@ -2231,14 +2456,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -2285,9 +2516,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
           "nutricion_tipo": "media",
@@ -2322,17 +2553,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 8/10. Engine extra opcional. Hybrid controlada. Sábado con foco Hyrox: compromised runs y estaciones a ritmo objetivo."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -2341,12 +2577,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "10 x 45 s fuerte / 45 s trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
             }
           ],
@@ -2358,14 +2594,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "35 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Fase 2: principales más pesados (jalón 4 × 5-6, prensa 4 × 6-8, rumano 4 × 5-6); hand-over-hand 5 × 16-20 tirones; farmers con 30-32 kg; colgado 45-60 s; accesorios 3 × 8-12; 1-3 reps en reserva."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -2412,9 +2654,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 7-8/10. Engine extra opcional. Hybrid controlada. Sábado: ensayo de carrera (runs 1 y 8, row, wall balls)."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
           "nutricion_tipo": "media",
@@ -2449,17 +2691,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 7-8/10. Engine extra opcional. Hybrid controlada. Sábado: ensayo de carrera (runs 1 y 8, row, wall balls)."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -2468,12 +2715,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "4 x 400 m a ritmo 3K / 2 min trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
@@ -2485,14 +2732,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -2539,9 +2792,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Strength 7-8/10. Engine extra opcional. Hybrid controlada. Sábado: ensayo de carrera (runs 1 y 8, row, wall balls)."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
           "nutricion_tipo": "media",
@@ -2576,17 +2829,22 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Strength 7-8/10. Engine extra opcional. Hybrid controlada. Sábado: ensayo de carrera (runs 1 y 8, row, wall balls)."
             }
           ],
-          "nutricion_tipo": "media",
+          "nutricion_tipo": "alta",
           "dia_nombre": "miércoles"
         },
         {
@@ -2595,12 +2853,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "8 x 30 s fuerte / 30 s trote"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
             }
           ],
@@ -2612,14 +2870,20 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "30 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Mantenimiento: 1 serie menos por ejercicio (aprox. -30%), mismo peso, sin fallo. El trabajo específico (hand-over-hand, farmers, zancada con saco, wall balls) se hace después de un run o de SkiErg."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Controlada 6-7/10. Decide el domingo anterior."
             }
           ],
           "nutricion_tipo": "media",
@@ -2666,9 +2930,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Clases controladas 6/10. Sin Engine."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Taper: 50% de las series, RIR 3-4."
             }
           ],
           "nutricion_tipo": "media",
@@ -2704,13 +2968,18 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Taper: 50% de las series, RIR 3-4."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "25 min Z2 + 4 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Clases controladas 6/10. Sin Engine."
             }
           ],
@@ -2723,12 +2992,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "6 strides + 4 x 30 s"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Taper: 50% de las series, RIR 3-4."
             }
           ],
@@ -2740,14 +3009,21 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Taper: 50% de las series, RIR 3-4."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "25 min Z2 + 4 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Taper: 50% de las series, RIR 3-4."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Clases controladas 6/10. Sin Engine.",
+              "omitir": true
             }
           ],
           "nutricion_tipo": "media",
@@ -2794,9 +3070,9 @@
           "dia": "lunes",
           "sesiones": [
             {
-              "plantilla": "clase_strength",
-              "momento": "mañana o noche",
-              "indicacion_semana": "Solo clase corta de activación si te sientes bien."
+              "plantilla": "gym_piernas_a",
+              "momento": "mañana 5:15 o noche",
+              "indicacion_semana": "Sin gym. Solo movilidad."
             }
           ],
           "nutricion_tipo": "media",
@@ -2832,13 +3108,18 @@
           "dia": "miercoles",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_b",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Sin gym. Solo movilidad."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "20 min Z1-Z2 + 3 strides"
             },
             {
               "plantilla": "clase_hybrid_controlada",
-              "momento": "mañana después del rodaje, o noche 8pm",
+              "momento": "noche 8pm",
               "indicacion_semana": "Solo clase corta de activación si te sientes bien."
             }
           ],
@@ -2851,12 +3132,12 @@
           "sesiones": [
             {
               "plantilla": "run_intervalos_2",
-              "momento": "mañana",
+              "momento": "mañana 6am",
               "bloque_principal": "Descanso o 15 min Z1"
             },
             {
-              "plantilla": "gym_piernas",
-              "momento": "tarde (min. 6 h después)",
+              "plantilla": "gym_superior_b",
+              "momento": "tarde o noche (min. 6 h después)",
               "indicacion_semana": "Sin gym. Solo movilidad."
             }
           ],
@@ -2868,14 +3149,21 @@
           "dia": "viernes",
           "sesiones": [
             {
+              "plantilla": "gym_piernas_c",
+              "momento": "mañana 6am (1o)",
+              "indicacion_semana": "Sin gym. Solo movilidad."
+            },
+            {
               "plantilla": "run_rodaje",
-              "momento": "mañana",
+              "momento": "mañana, después del gym (2o)",
               "parametros": "20 min Z1-Z2 + 3 strides"
             },
             {
-              "plantilla": "gym_superior_b",
-              "momento": "después del rodaje",
-              "indicacion_semana": "Sin gym. Solo movilidad."
+              "plantilla": "clase_comodin",
+              "momento": "noche 8pm",
+              "opcional": true,
+              "indicacion_semana": "Solo clase corta de activación si te sientes bien.",
+              "omitir": true
             }
           ],
           "nutricion_tipo": "media",
@@ -2921,7 +3209,8 @@
       "energia_1_5",
       "peso_kg_opcional",
       "semaforo",
-      "notas"
+      "notas",
+      "calambres_pantorrilla(bool)"
     ],
     "running": [
       "fecha",
@@ -2957,7 +3246,8 @@
       "rpe_1_10",
       "duracion_min",
       "fc_prom",
-      "notas"
+      "notas",
+      "es_comodin(bool)"
     ],
     "pruebas": [
       "fecha",
@@ -3009,25 +3299,43 @@
         "ejercicio": "Prensa de pierna o hack squat",
         "S3-S8": "4 × 8-10",
         "S9-S14": "4 × 6-8",
-        "S15-S17": "3 × 8"
+        "S15-S17": "3 × 8",
+        "nota": "Piernas B (4 × 6-8, 2 RIR)."
       },
       {
         "ejercicio": "Peso muerto rumano",
         "S3-S8": "4 × 6-8",
         "S9-S14": "4 × 5-6",
-        "S15-S17": "3 × 6-8"
+        "S15-S17": "3 × 6-8",
+        "nota": "Piernas A (3 × 8, 3 RIR) y piernas B (3 × 6); a una pierna en piernas C."
       },
       {
         "ejercicio": "Zancada caminando con saco",
         "S3-S8": "3 × 20 m a 20 kg",
         "S9-S14": "4 × 25 m a 25 kg",
-        "S15-S17": "3 × 20 m a 20 kg después de un run"
+        "S15-S17": "3 × 20 m a 20 kg después de un run",
+        "nota": "Solo en piernas C (viernes), 4 × 20 m."
       },
       {
         "ejercicio": "Wall balls",
         "S3-S8": "3 × 15",
         "S9-S14": "4 × 20 con 6-9 kg",
-        "S15-S17": "3 × 25 bajo fatiga"
+        "S15-S17": "3 × 25 bajo fatiga",
+        "nota": "Piernas C (viernes)."
+      },
+      {
+        "ejercicio": "Hip thrust",
+        "S3-S8": "4 × 6-8",
+        "S9-S14": "4 × 5-6, más pesado",
+        "S15-S17": "3 × 6",
+        "nota": "Piernas A (lunes)."
+      },
+      {
+        "ejercicio": "Swing de kettlebell",
+        "S3-S8": "4 × 12-15",
+        "S9-S14": "5 × 12-15, más peso",
+        "S15-S17": "3 × 12 antes o después de un run",
+        "nota": "Piernas A (lunes)."
       }
     ]
   }

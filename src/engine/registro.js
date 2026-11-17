@@ -63,6 +63,25 @@ export function registroAnterior(sesiones, fecha, plantillaId) {
   return f ? { fecha: f, registro: sesiones[f][plantillaId] } : null
 }
 
+// Última vez que hiciste un ejercicio antes de esta fecha: primero en la misma sesión del plan,
+// y si no, en cualquier otra (las piernas A, B y C heredan del gym de piernas anterior).
+export function anteriorEjercicio(sesiones, fecha, plantillaId, nombre) {
+  const nombres = nombresDe(nombre)
+  const fechas = Object.keys(sesiones).filter((f) => f < fecha).sort().reverse()
+  const buscar = (soloMisma) => {
+    for (const f of fechas) {
+      for (const [id, reg] of Object.entries(sesiones[f] ?? {})) {
+        if (soloMisma && id !== plantillaId) continue
+        const ej = reg?.ejercicios?.find((e) => nombres.includes(e.nombre))
+        const series = ej?.series?.filter((x) => x.peso_kg != null || x.reps != null) ?? []
+        if (series.length) return { fecha: f, series }
+      }
+    }
+    return null
+  }
+  return buscar(true) ?? buscar(false) ?? { fecha: null, series: [] }
+}
+
 // Series de un ejercicio en el registro anterior (busca por nombre)
 export function seriesAnteriores(anterior, nombre) {
   const nombres = nombresDe(nombre)
@@ -106,6 +125,8 @@ export const NOMBRES_ANTERIORES = {
   'Remo sentado en polea, agarre neutro, pausa de 1 s': ['Remo en polea o máquina'],
   'Remo con apoyo en el pecho (máquina o mancuernas)': ['Remo con apoyo o máquina'],
   'Zancada búlgara con mancuernas': ['Zancada búlgara o step-up'],
+  // v1.3
+  'Press inclinado 30° con mancuernas': ['Press inclinado con mancuernas o press de pecho en máquina'],
 }
 
 // Todos los nombres con los que se pudo haber registrado un ejercicio
